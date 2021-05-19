@@ -12,4 +12,5 @@ namespace E_VOTING
 
         public string Summary { get; set; }
     }
+
 }
