@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\E-VOTING"
+    "\\E-VOTING",
+    "\\E-VOTING\\Properties"
   ],
+  "SelectedNode": "\\E-VOTING\\appsettings.json",
   "PreviewInSolutionExplorer": false
 }
