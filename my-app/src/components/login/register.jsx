@@ -21,6 +21,10 @@ export class Register extends React.Component {
                         <input type="text" name="username" placeholder="username" />
                     </div>
                     <div className="form-group">
+                        <label htmlFor="nrleternjoftimit">Numri i Leternjoftimit</label>
+                        <input type="text" name="nrleternjoftimit" placeholder="Numri i Leternjoftimit" />
+                    </div>
+                    <div className="form-group">
                         <label htmlFor="email">Email</label>
                         <input type="text" name="email" placeholder="email" />
                     </div>
