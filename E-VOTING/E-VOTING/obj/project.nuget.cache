@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "k46qSG858CpuZvPBSMHImJiC77OuXmlf7ZHSo8Wk/sfaZVmoLgWjVfdeJZN9BSuyMTaXk+tcO/Q/3MmjkuPkaQ==",
+  "dgSpecHash": "dLO9KnyJ1zV5WHYjJ6yIZCoGDfIE9Y2wWCsFrtNsTzDdbhNXapalB5TCfRWzSKyAEt33/6zMsF9CqpnuSAJXjA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\Source\\Repos\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
+  "projectFilePath": "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+    "C:\\Users\\flore\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\flore\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\flore\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\flore\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\flore\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\flore\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
   ],
   "logs": []
 }
