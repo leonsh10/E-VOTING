@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Leon\\Desktop\\New folder\\E-VOTING\\E-VOTING\\E-VOTING.csproj": {}
+    "C:\\Users\\Leon\\Desktop\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Leon\\Desktop\\New folder\\E-VOTING\\E-VOTING\\E-VOTING.csproj": {
+    "C:\\Users\\Leon\\Desktop\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Leon\\Desktop\\New folder\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
+        "projectUniqueName": "C:\\Users\\Leon\\Desktop\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
         "projectName": "E-VOTING",
-        "projectPath": "C:\\Users\\Leon\\Desktop\\New folder\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
+        "projectPath": "C:\\Users\\Leon\\Desktop\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
         "packagesPath": "C:\\Users\\Leon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Leon\\Desktop\\New folder\\E-VOTING\\E-VOTING\\obj\\",
+        "outputPath": "C:\\Users\\Leon\\Desktop\\E-VOTING\\E-VOTING\\E-VOTING\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Leon\\AppData\\Roaming\\NuGet\\NuGet.Config",
