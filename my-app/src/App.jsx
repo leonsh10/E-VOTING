@@ -1,7 +1,10 @@
 import React from "react";
 import "./App.scss";
 import { Login, Register } from "./components/login/index";
-// import {dashboard} from "./components/dashboard/dashboard";
+// import Nav from './components/navigation/nav';
+// import dashboard from "./components/dashboard/dashboard";
+// import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 
 
 class App extends React.Component {
@@ -35,8 +38,15 @@ class App extends React.Component {
     const current = isLogginActive ? "Register" : "Login";
     const currentActive = isLogginActive ? "login" : "register";
     return (
-      <div className="App">
-        {/* <a href={dashboard.dashboard}>Dashboard</a> */}
+       <div className="App">
+         {/* <Router>
+           <div className="App1">
+             <Nav />
+             <Switch>
+               <Route path="/dashboard" component={dashboard} />
+             </Switch>
+           </div>
+         </Router> */}
         <div className="login">
           <div className="container" ref={ref => (this.container = ref)}>
             {isLogginActive && (
