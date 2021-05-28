@@ -29,9 +29,9 @@ namespace E_VOTING.Controllers
         {
             var applicationUser = new ApplicationUser()
             {
-                UserName = model.userName,
-                NrLeter=model.nrLeternjoftimit,
-                Email = model.email,
+                userName = model.userName,
+                nrLeternjoftimit=model.nrLeternjoftimit,
+                email = model.email
        
             };
 

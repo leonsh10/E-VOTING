@@ -38,6 +38,12 @@ namespace E_VOTING
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "E_VOTING", Version = "v1" });
             });
 
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod()
+                 .AllowAnyHeader());
+            });
+
             services.AddDbContext<AuthenticationContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
 
