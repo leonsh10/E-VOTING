@@ -1,7 +1,9 @@
+using E_VOTING.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -11,6 +13,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+
+using Microsoft.Extensions.Options;
 
 namespace E_VOTING
 {
@@ -32,6 +37,18 @@ namespace E_VOTING
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "E_VOTING", Version = "v1" });
             });
+
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod()
+                 .AllowAnyHeader());
+            });
+
+            services.AddDbContext<AuthenticationContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
+
+            services.AddDefaultIdentity<ApplicationUser>()
+            .AddEntityFrameworkStores<AuthenticationContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +61,7 @@ namespace E_VOTING
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "E_VOTING v1"));
             }
 
+            app.UseAuthentication();
             app.UseHttpsRedirection();
 
             app.UseRouting();

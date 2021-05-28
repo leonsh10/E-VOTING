@@ -1,11 +1,21 @@
 import React from "react";
 import "./App.scss";
 import { Login, Register } from "./components/login/index";
+<<<<<<< HEAD
 // import Nav from './components/navigation/nav';
 // import dashboard from "./components/dashboard/dashboard";
 // import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
+=======
+// import {Dashboard} from "./components/dashboard/dashboard";
+// import Header from './header'
+// import {
+//   BrowserRouter as Router,
+//   Route,
+//   Link
+// } from 'react-router-dom'
+>>>>>>> eb27591f440648a49afb3dba3e3df226d24b0db4
 
 class App extends React.Component {
   constructor(props) {
@@ -14,7 +24,7 @@ class App extends React.Component {
       isLogginActive: true
     };
   }
-
+  
   componentDidMount() {
     
     this.rightSide.classList.add("right");
@@ -37,7 +47,9 @@ class App extends React.Component {
     const { isLogginActive } = this.state;
     const current = isLogginActive ? "Register" : "Login";
     const currentActive = isLogginActive ? "login" : "register";
+    
     return (
+<<<<<<< HEAD
        <div className="App">
          {/* <Router>
            <div className="App1">
@@ -47,8 +59,21 @@ class App extends React.Component {
              </Switch>
            </div>
          </Router> */}
+=======
+      <div className="App">
+        {/* <Router>
+          <div>
+            <Header>
+              <Route path="./components/dashboard/dashboard" Component={Dashboard}></Route>
+            </Header>
+          </div>
+        </Router> */}
+        {/* <a href={dashboard.dashboard}>Dashboard</a> */}
+        
+>>>>>>> eb27591f440648a49afb3dba3e3df226d24b0db4
         <div className="login">
           <div className="container" ref={ref => (this.container = ref)}>
+            
             {isLogginActive && (
               <Login containerRef={ref => (this.current = ref)} />
             )}
@@ -64,7 +89,9 @@ class App extends React.Component {
           />
         </div>
       </div>
+      
     );
+    
   }
 }
 
