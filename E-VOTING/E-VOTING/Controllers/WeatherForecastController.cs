@@ -1,5 +1,4 @@
-﻿using E_VOTING.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -10,21 +9,16 @@ namespace E_VOTING.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ValuesController : ControllerBase
+    public class WeatherForecastController : ControllerBase
     {
-
-        public ValuesController(AuthenticationContext context)
-        {
-
-        }
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<ValuesController> _logger;
+        private readonly ILogger<WeatherForecastController> _logger;
 
-        public ValuesController(ILogger<ValuesController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
         }

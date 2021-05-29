@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.scss";
 import { Login, Register } from "./components/login/index";
-<<<<<<< HEAD
+// <<<<<<< HEAD
 // import Nav from './components/navigation/nav';
 // import dashboard from "./components/dashboard/dashboard";
 // import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
-=======
+
 // import {Dashboard} from "./components/dashboard/dashboard";
 // import Header from './header'
 // import {
@@ -15,7 +15,7 @@ import { Login, Register } from "./components/login/index";
 //   Route,
 //   Link
 // } from 'react-router-dom'
->>>>>>> eb27591f440648a49afb3dba3e3df226d24b0db4
+// >>>>>>> eb27591f440648a49afb3dba3e3df226d24b0db4
 
 class App extends React.Component {
   constructor(props) {

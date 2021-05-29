@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-VOTING", "E-VOTING\E-VOTING.csproj", "{8ABD3EA0-096F-4765-8F7E-3380FF2E5A64}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-VOTING", "E-VOTING\E-VOTING.csproj", "{B5595490-145C-4186-B5DA-F683E4656B65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8ABD3EA0-096F-4765-8F7E-3380FF2E5A64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8ABD3EA0-096F-4765-8F7E-3380FF2E5A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8ABD3EA0-096F-4765-8F7E-3380FF2E5A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8ABD3EA0-096F-4765-8F7E-3380FF2E5A64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5595490-145C-4186-B5DA-F683E4656B65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5595490-145C-4186-B5DA-F683E4656B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5595490-145C-4186-B5DA-F683E4656B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5595490-145C-4186-B5DA-F683E4656B65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1E6F78CF-89C7-488C-9F23-867549EEAA78}
+		SolutionGuid = {1945C5CF-F4EC-4DC8-BBD1-12404BF4B458}
 	EndGlobalSection
 EndGlobal
