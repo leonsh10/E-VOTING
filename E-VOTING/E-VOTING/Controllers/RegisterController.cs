@@ -28,7 +28,7 @@ namespace E_VOTING.Controllers
         public JsonResult Get()
         {
             string query = @"
-                    select votuesi_id, nrLeternjoftimit, email,Password               
+                    select votuesi_id, username,nrLeternjoftimit, email,Password               
                     from dbo.Login
                     ";
             DataTable table = new DataTable();
