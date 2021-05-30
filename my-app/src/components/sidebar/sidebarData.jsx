@@ -1,21 +1,25 @@
-// import React from 'react';
+import React from 'react';
 
-// export const sidebarData = [
-//     {
-//         title: "PARTITE",
-//         link: "/src/components/dashboard/dashboard.jsx"
-//     },
-//     {
-//         title: "DEPUTETET",
-//         link: "/src/components/dashboard/dashboard.jsx"
-//     },
-//     {
-//         title: "SHTETET",
-//         link: "/src/components/dashboard/dashboard.jsx"
-//     },
-//     {
-//         title: "KOMUNAT",
-//         link: "/src/components/dashboard/dashboard.jsx"
-//     }
-// ]
+export const sidebarData = [
+    {
+        title: "PARTITE",
+        link: "/partite"
+    },
+    {
+        title: "DEPUTETET",
+        link: "/deputetet"
+    },
+    {
+        title: "SHTETET",
+        link: "/shtetet"
+    },
+    {
+        title: "KOMUNAT",
+        link: "/komunat"
+    },
+    {
+        title: "LOG OUT",
+        link: "/logout"
+    }
+]
 

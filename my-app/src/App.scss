@@ -148,3 +148,56 @@ nav{
     outline: none;
   }
 }
+
+/* ------------------------------------ */
+.App1{
+  width: 100vw;
+  height: 100vh;
+}
+
+.Sidebar{
+  height: 100%;
+  width: 250px;
+  background-color: #191c24;
+}
+.SidebarList{
+  height: auto;
+  padding: 0;
+  width: 90%;
+}
+
+.SidebarList .row{
+  width: 100%;
+  height: 60px;
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  padding: 5px 5px 5px 15px;
+  flex-direction: row;
+  color: #697595;
+  font-size: 23px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.SidebarList .row:hover{
+  cursor: pointer;
+  background-color: #15181f;
+}
+
+.SidebarList #active{
+  background-color: #15181f;
+}
+
+.SidebarList .row:first-child{
+  //padding-top: 200px;
+}
+
+.SidebarList .row:last-child{
+  margin-top: 200%;
+}
+.row #title{
+  flex: 70%;
+}
