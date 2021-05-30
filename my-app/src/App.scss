@@ -20,13 +20,20 @@ nav{
   // margin-right: 40%;
 }
 
-.nav-Links{
+.nav-links{
   width: 50%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   list-style: none;
+ 
 }
+
+.nav-links  *{
+  text-decoration: none;
+}
+
+
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
