@@ -9,9 +9,35 @@ export class Register extends React.Component {
         this.state={regs:[], addModalShow:false, editModalShow:false}
     }
 
+    handleSubmit(event){
+        event.preventDefault();
+        fetch('http://localhost:5000/api/Register',{
+            method:'POST',
+            headers:{
+                'Accept':'application/json',
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify({
+                username:"Leon",
+                nrLeternjoftimit:123556,
+                email:"lssf@hotmail.com",
+                Password:"dffdgdf"
+                
+             
+            })
+        })
+        .then(res=>res.json())
+        .then((result)=>{
+            alert(result);
+        },
+        (error)=>{
+            alert('Failed');
+        })
+    }
+
 
     render() {
-        const {regId,username,nrLeternjoftimit,email,Password}=this.state;
+        // const {regId,username,nrLeternjoftimit,email,Password}=this.state;
         // let addModalClose=()=>this.setState({addModalShow:false});
         return <div className="base-container" ref={this.props.conatinerRef}>
             <div className="header">Register</div>
@@ -23,7 +49,8 @@ export class Register extends React.Component {
                 <div className="form">
                     <div className="form-group">
                         <label htmlFor="username">Username</label>
-                        <input type="text" name="username" placeholder="username" required />
+                        <input type="hidden" name="hiden" id="hiden" />
+                        <input type="text" name="username" id="username" placeholder="username" required />
                     </div>
                     <div className="form-group">
                         <label htmlFor="nrleternjoftimit">Numri i Leternjoftimit</label>
@@ -41,7 +68,7 @@ export class Register extends React.Component {
             </div>
             <div className="footer">
              <div className="footer">
-<button type="submit" className="btn" onClick={this.props.handleSubmit}>Register</button>
+<button type="submit" className="btn" onClick={this.handleSubmit}>Register</button>
 </div> 
             </div>
         </div>

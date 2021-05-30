@@ -80,7 +80,7 @@ namespace E_VOTING.Controllers
                 }
             }
 
-            return new JsonResult("Added Successfully");
+            return new JsonResult("Jeni regjistruar me sukses.");
         }
     }
 }
