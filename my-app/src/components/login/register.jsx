@@ -12,7 +12,7 @@ export class Register extends React.Component {
 
     render() {
         const {regId,username,nrLeternjoftimit,email,Password}=this.state;
-        let addModalClose=()=>this.setState({addModalShow:false});
+        // let addModalClose=()=>this.setState({addModalShow:false});
         return <div className="base-container" ref={this.props.conatinerRef}>
             <div className="header">Register</div>
             <div className="content">
@@ -40,24 +40,21 @@ export class Register extends React.Component {
                 </div>
             </div>
             <div className="footer">
-            <ButtonToolbar className="btn">
-                    <Button variant='primary'
-                    onClick={()=>this.setState({addModalShow:true})}
-                    onSubmit={this.handleSubmit}>
-                    
-                    Register</Button>
-
-                    <AddRegModal show={this.state.addModalShow}
-                   onHide={addModalClose}/>
-                    
-                </ButtonToolbar>
+             <div className="footer">
+<button type="submit" className="btn" onClick={this.props.handleSubmit}>Register</button>
+</div> 
             </div>
         </div>
     }
 
 }
 
+  {/* <ButtonToolbar className="btn">
+                    <Button variant='primary'
+                    onClick={this.handleSubmit}>
+                    Register</Button>
 
-{/* <div className="footer">
-<button type="submit" className="btn" onClick="">Register</button>
-</div> */}
+                    <AddRegModal show={this.state.addModalShow}
+                   onHide={addModalClose}/>
+                    
+                </ButtonToolbar> */}

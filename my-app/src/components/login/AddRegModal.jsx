@@ -7,7 +7,7 @@ export class AddRegModal extends Component{
         this.handleSubmit=this.handleSubmit.bind(this);
     }
     
-    render = ()=> { return <h1>Hi</h1>}
+    render = ()=> { return <p></p>}
         handleSubmit(event){
             event.preventDefault();
             fetch('http://localhost:5000/api/Register',{
@@ -29,13 +29,6 @@ export class AddRegModal extends Component{
                 alert('Failed');
             })
         }
-//         render(){
-//             return (
-// //                 <div className="container">
-    
-// //   </div>
-
-//             )}
 
     
             
