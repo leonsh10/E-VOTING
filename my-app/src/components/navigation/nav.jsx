@@ -12,11 +12,14 @@ function Nav(){
                 <Link style={navStyle} to="/dashboard">
                     <li>Dashboard</li>
                 </Link>
-                <Link style={navStyle} to="/login">
+                {/* <Link style={navStyle} to="/login">
                     <li>Login</li>
                 </Link>
                 <Link style={navStyle} to="/register">
                     <li>Register</li>
+                </Link> */}
+                <Link style={navStyle} to="/app2">
+                    <li>Login</li>
                 </Link>
             </ul>
         </nav>

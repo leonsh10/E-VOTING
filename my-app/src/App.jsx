@@ -59,6 +59,7 @@ class App extends React.Component {
                <Route path="/dashboard" component={dashboard} />
                <Route path="/login" component={Login} />
                <Route path="/register" component={Register} />
+               <Route path="/App2" component={App2} />
              </Switch>
            </div>
          </Router>

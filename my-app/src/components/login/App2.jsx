@@ -1,6 +1,7 @@
 import React from "react";
 import "../../App.scss";
-import  {Login,Register} from "./index";
+import  {Login} from "./index";
+import  {Register} from "./index";
 
 
 class App2 extends React.Component {

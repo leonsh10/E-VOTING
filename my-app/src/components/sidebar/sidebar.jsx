@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-// import React from 'react';
-// import {sidebarData} from './sidebarData';
-=======
 import React from 'react';
-import "../../App.scss";
-import {sidebarData} from "./sidebarData";
->>>>>>> 97dfa98825de77e0047d8f81b241cb17ea502adb
+import {sidebarData} from './sidebarData';
 
 function sidebar() {
     return (
@@ -22,6 +16,6 @@ function sidebar() {
         </div>
     )
 }
-export default sidebar
+export default sidebar;
 
 
