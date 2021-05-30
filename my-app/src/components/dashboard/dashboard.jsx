@@ -1,12 +1,12 @@
-// import React from 'react';
-// import '../../App.scss';
-// function Dashboard(){
-//     return(
-//         <div className="App">
-//             <h1>Dashboard</h1>
-//         </div>
-//     )
-// }
+import React from 'react';
+import '../../App.scss';
+function Dashboard(){
+    return(
+        <div className="App">
+            <h1>Dashboard</h1>
+        </div>
+    )
+}
 //--------------------------------------------------------
 // import "../sidebar/sidebar.scss";
 // import {sidebarData} from '../sidebar/sidebarData';
@@ -38,4 +38,4 @@
 
 // }
 
-//export default Dashboard;
+export default Dashboard;
