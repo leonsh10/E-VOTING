@@ -14,8 +14,8 @@ export const sidebarData = [
         link: "/shtetet"
     },
     {
-        title: "KOMUNAT",
-        link: "/komunat"
+        title: "QYTETET",
+        link: "/qytetet"
     },
     {
         title: "LOG OUT",
