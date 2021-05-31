@@ -14,6 +14,7 @@ nav{
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
+  width:initial;
   background-color: #191c24;
   color: white;
   // margin-bottom: 500%;
@@ -151,21 +152,22 @@ nav{
 
 /* ------------------------------------ */
 .App2{
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
+  width: fit-content;
+  height: fit-content;
+  // background-color: black;
   display: flex;
 }
 
 .Sidebar{
   height: 100%;
-  width: 250px;
+  width: 175px;
   background-color: #191c24;
 }
 .SidebarList{
   height: auto;
   padding: 0;
-  width: 90%;
+  width: 100%;
+  margin:0;
 }
 
 .SidebarList .row{
@@ -206,18 +208,22 @@ nav{
 
 .deputetetContent{
   color: white;
-  width: 1500px;
+  width: 1174px;
   height: 600px;
   background-color: #15181f;
-  margin: auto auto;
+  // margin: auto auto;
 }
 
 .mb-2{
   background-color: #15181f;
-  color: #697595;
+  color: #8ccef5;
   height: 70px;
   width: 300px;
 }
+.mb-2:hover{
+  background-color:#4d4d4d;
+}
+
 .forma{
   width: 100%;
   height: 100%;
@@ -225,6 +231,7 @@ nav{
 }
 
 .form-content{
+  
   border-radius: 10px;
   padding: 5px;
   margin-left: 100px;
@@ -272,5 +279,5 @@ nav{
   background-color: black;
 }
 .btn-toolbar{
-  background-color: black;
+  // background-color: black;
 }
