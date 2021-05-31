@@ -15,21 +15,23 @@ function partite() {
           </ButtonToolbar>
           <div className="forma">
             <Form>
+            <Form className="forma1">
               <Form.Row>
-                
-                <Form.Control
+              <input type="text" id="inputi" class="form-content2" placeholder="Emri dhe Mbiemri"></input>
+                {/* <Form.Control
                   size="lg"
                   type="text"
                   name="EmriMbiemri"
                   placeholder="Partia..."
                   className="form-content"
-                />
+                /> */}
                 <div>
-                  <Button variant="primary" type="submit" className="btn-shtoP">
-                    Shto partine
+                  <Button variant="primary" type="submit" className="shto-btnD">
+                    Shto
                   </Button>
                 </div>
               </Form.Row>
+              </Form>
             </Form>
           </div>
         </div>

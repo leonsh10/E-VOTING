@@ -29,7 +29,7 @@ import React from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
-
+// import * as FaIcons from 'react-icons/fa';
 export const SidebarData = [
 //   {
 //     title: 'Home',
@@ -46,19 +46,19 @@ export const SidebarData = [
   {
     title: 'Deputetet',
     path: '/deputetet',
-    icon: <FaIcons.FaCartPlus />,
+    icon: <IoIcons.IoMdPerson />,
     cName: 'nav-text'
   },
   {
     title: 'Shtetet',
     path: '/shtetet',
-    icon: <IoIcons.IoMdPeople />,
+    icon: <FaIcons.FaCity />,
     cName: 'nav-text'
   },
   {
     title: 'Qytetet',
     path: '/qytetet',
-    icon: <FaIcons.FaEnvelopeOpenText />,
+    icon: <FaIcons.FaCity />,
     cName: 'nav-text'
   },
 
