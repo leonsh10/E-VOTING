@@ -12,8 +12,8 @@ function Dashboard(){
             <Sidebar />
             {/* <Partite /> */}
             <Deputetet />
-            {/* <Shtetet />
-            <Qytetet /> */}
+            {/* <Shtetet /> */}
+            {/* <Qytetet /> */}
         </div>  
     )
 }

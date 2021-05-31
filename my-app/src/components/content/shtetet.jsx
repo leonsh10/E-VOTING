@@ -20,7 +20,7 @@ function shtetet() {
                   size="lg"
                   type="text"
                   name="EmriMbiemri"
-                  placeholder="Emri dhe mbiemri.."
+                  placeholder="Shteti..."
                   className="form-content"
                 />
               </Form.Row>

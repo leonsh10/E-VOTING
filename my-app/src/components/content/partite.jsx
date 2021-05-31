@@ -21,7 +21,7 @@ function partite() {
                   size="lg"
                   type="text"
                   name="EmriMbiemri"
-                  placeholder="Emri dhe mbiemri.."
+                  placeholder="Partia..."
                   className="form-content"
                 />
               </Form.Row>
