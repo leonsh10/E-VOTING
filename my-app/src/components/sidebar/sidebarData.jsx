@@ -3,7 +3,7 @@ import React from 'react';
 export const sidebarData = [
     {
         title: "PARTITE",
-        link: "/partite"
+        link: "../dashboard/dashboard.jsx"
     },
     {
         title: "DEPUTETET",

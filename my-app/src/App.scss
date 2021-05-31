@@ -14,7 +14,7 @@ nav{
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background-color: rgb(73, 79, 82);
+  background-color: #191c24;
   color: white;
   // margin-bottom: 500%;
   // margin-right: 40%;
@@ -231,9 +231,46 @@ nav{
   margin-right: 50px;
   margin-bottom: 50px;
   margin-top: 200px;
-  width: 320px;
+  width: 220px;
   background-color: #15181f;
   color: #697595;
   border-color: #697595;
+  outline: none;
 }
 
+.shto-btn{
+  margin-left: 1200px;
+}
+.btn-shtoP{
+  background-color: #191c24;
+  color: #697595;
+  margin-left: 100px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  margin-top: 200px;
+}
+
+.btn-shtoP:hover{
+  background-color: black;
+}
+.form-row{
+  display: flex;
+  flex-direction: row;
+}
+.buton-div{
+  width: 200px;
+}
+
+.shto-btnD{
+  margin-top: 200px;
+  margin-left: 20px;
+  color: #697595;
+  background-color: #191c24;
+
+}
+.shto-btnD:hover{
+  background-color: black;
+}
+.btn-toolbar{
+  background-color: black;
+}

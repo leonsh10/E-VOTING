@@ -7,10 +7,10 @@ function deputetet() {
     return (
       <div className="deputetetContent">
         <ButtonToolbar>
-          <Button className="mb-2" variant="secondary" size="lg">
+          <Button className="mb-2 shtoBtn" variant="secondary" size="lg">
             +SHTO DEPUTET
           </Button>
-          <Button className="mb-2" variant="secondary" size="lg">
+          <Button className="mb-2 shtoBtn" variant="secondary" size="lg">
             -FSHIJ DEPUTET
           </Button>
         </ButtonToolbar>
@@ -42,6 +42,11 @@ function deputetet() {
                 <option>4</option>
                 <option>5</option>
               </Form.Control>
+              <div className="buton-div">
+                <Button variant="primary" type="submit" className="shto-btnD">
+                  Shto deputetin
+                </Button>
+              </div>
             </Form.Row>
           </Form>
         </div>
