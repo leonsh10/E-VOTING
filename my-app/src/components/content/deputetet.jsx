@@ -18,6 +18,7 @@ function deputetet() {
           <Form>
             <Form.Row>
               {/* <Form.Control as="select" size="lg" className="form-content"> */}
+              <Form className="forma1">
               <select class="form-content2">
                 <option>Zgjedh Partine</option>
                 <option>VV</option>
@@ -28,7 +29,7 @@ function deputetet() {
                 </select>
               {/* </Form.Control> */}
 
-              <input type="text" class="form-content2" placeholder="Emri dhe Mbiemri"></input>
+              <input type="text" id="inputi" class="form-content2" placeholder="Emri dhe Mbiemri"></input>
 
               <select class="form-content2">
                 <option>Zgjedh numrin</option>
@@ -38,14 +39,15 @@ function deputetet() {
                 <option>4</option>
                 <option>5</option>
                 </select>
-             
+           
               <div className="buton-div">
               
                 <Button variant="primary" type="submit" className="shto-btnD">
-                  Shto deputetin
+                  Shto 
                 </Button>
                 
               </div>
+              </Form>
             </Form.Row>
           </Form>
         </div>

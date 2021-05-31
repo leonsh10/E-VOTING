@@ -140,7 +140,7 @@ nav{
   background-color: #3498db;
   color: #fff;
   border-radius: 3px;
-  transition: all 250ms ease-in-out;
+  // transition: all 250ms ease-in-out;
   cursor: pointer;
   &:hover {
     background-color: #2386c8;
@@ -271,22 +271,51 @@ nav{
 .shto-btnD{
   // margin-top: 200px;
   margin-left: 20px;
-  color: #697595;
-  background-color: #191c24;
+  color: #ffffff;
+  background-color: #de6b76;
+
 
 }
 .shto-btnD:hover{
-  background-color: black;
+  background-color: rgb(53, 185, 48);
 }
 .btn-toolbar{
   // background-color: black;
 }
 
 .form-content2{
-  width:fit-content;
-  height:fit-content;
+  width:350px;
+  height:30px;
   background-color:#9dadd8;
   outline:none;
   border-radius:5px;
   margin:10px;
+
+    appearance: none;
+
+   
+    border: none;
+   
+    
+    
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color:rgb(14, 37, 37);
 }
+
+#inputi::placeholder{
+  color:rgb(14, 37, 37);
+}
+
+.forma1{
+  width:fit-content;
+  height:55px;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
