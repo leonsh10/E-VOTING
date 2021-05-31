@@ -42,10 +42,13 @@ function deputetet() {
                 <option>4</option>
                 <option>5</option>
               </Form.Control>
+             
               <div className="buton-div">
+              
                 <Button variant="primary" type="submit" className="shto-btnD">
                   Shto deputetin
                 </Button>
+                
               </div>
             </Form.Row>
           </Form>

@@ -1,15 +1,35 @@
-import React from "react";
+// import React from "react";
+import React,{Component} from 'react';
 import loginImg from "../../login.svg";
 import {Button,ButtonToolbar} from 'react-bootstrap';
 import {AddRegModal} from "./AddRegModal";
-export class Register extends React.Component {
+import {Modal,Row, Col, Form} from 'react-bootstrap';
+export class Register extends Component {
 
     constructor(props) {
         super(props);
-        this.state={regs:[], addModalShow:false, editModalShow:false}
+        this.state={regs:[]};
+        this.handleSubmit=this.handleSubmit.bind(this);
     }
 
+    refreshList(){
+        fetch('http://localhost:5000/api/Register')
+        .then(response=>response.json())
+        .then(data=>{
+            this.setState({regs:data});
+        });
+    }
+
+    componentDidMount(){
+        this.refreshList();
+    }
+
+    componentDidUpdate(){
+        this.refreshList();
+    }
+    
     handleSubmit(event){
+        
         event.preventDefault();
         fetch('http://localhost:5000/api/Register',{
             method:'POST',
@@ -18,11 +38,23 @@ export class Register extends React.Component {
                 'Content-Type':'application/json'
             },
             body:JSON.stringify({
-                username:this.username,
-                // nrLeternjoftimit:nrLeternjoftimit,
-                // email:email,
-                // Password:Password
-             
+               
+                votuesi_id:null,
+                username:event.target.username.value,
+                nrLeternjoftimit:event.target.nrLeternjoftimit.value,
+                email:event.target.email.value,
+                password:event.target.password.value
+
+            //    username:"Leon",
+            //    nrLeternjoftimit:12312321,
+            //    email:"dfsd@hotmail.com",
+            //    password:"fsdfsd"
+
+                // username:this.state.username,
+                // nrLeternjoftimit:this.state.nrLeternjotimit,
+                // email:this.state.email,
+                // password:this.state.password,
+               
             })
         })
         .then(res=>res.json())
@@ -38,6 +70,7 @@ export class Register extends React.Component {
     render() {
         // const {regId,username,nrLeternjoftimit,email,Password}=this.state;
         // let addModalClose=()=>this.setState({addModalShow:false});
+    
         return <div className="base-container" ref={this.props.conatinerRef}>
             <div className="header">Register</div>
             <div className="content">
@@ -47,21 +80,22 @@ export class Register extends React.Component {
                
                 <div className="form">
                     <div className="form-group">
-                        <label htmlFor="username">Username</label>
-                        <input type="hidden" name="hiden" id="hiden" />
-                        <input type="text" name="username" id="username" placeholder="username" required />
+                          <label htmlFor="username">Username</label>
+                       
+                        <input className="username" type="text" id="username" name="username"  placeholder="username"  />
+                       
                     </div>
                     <div className="form-group">
                         <label htmlFor="nrleternjoftimit">Numri i Leternjoftimit</label>
-                        <input type="text" name="nrleternjoftimit" placeholder="Numri i Leternjoftimit" required/>
+                        <input className="nrLeternjoftimit" type="text" id="nrLeternjoftimit" name="nrleternjoftimit" placeholder="Numri i Leternjoftimit" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
-                        <input type="text" name="email" placeholder="email" required/>
+                        <input  className="email" type="text" id="email" name="email" placeholder="email" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="password">Password</label>
-                        <input type="password" name="password" placeholder="password" required/>
+                        <input className="password" type="password" id="password" name="password" placeholder="password" />
                     </div>
                 </div>
             </div>
