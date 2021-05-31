@@ -18,11 +18,10 @@ export class Register extends React.Component {
                 'Content-Type':'application/json'
             },
             body:JSON.stringify({
-                username:"Leon",
-                nrLeternjoftimit:123556,
-                email:"lssf@hotmail.com",
-                Password:"dffdgdf"
-                
+                username:this.username,
+                // nrLeternjoftimit:nrLeternjoftimit,
+                // email:email,
+                // Password:Password
              
             })
         })
