@@ -20,7 +20,7 @@ function deputetet() {
               {/* <Form.Control as="select" size="lg" className="form-content"> */}
               <Form className="forma1">
               <select class="form-content2">
-                <option>Zgjedh Partine</option>
+                <option>Zgjedh Partine </option>
                 <option>VV</option>
                 <option>PDK</option>
                 <option>LDK</option>

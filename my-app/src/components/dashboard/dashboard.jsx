@@ -5,7 +5,7 @@ import Partite from "../content/partite";
 import Deputetet from "../content/deputetet";
 import Shtetet from "../content/shtetet";
 import Qytetet from "../content/qytetet";
-
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 function Dashboard(){
     return(
         <div className="App2">

@@ -1,21 +1,22 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 export const sidebarData = [
     {
         title: "PARTITE",
-        link: "../dashboard/dashboard.jsx"
+        link: "../content/partite.jsx"
     },
     {
         title: "DEPUTETET",
-        link: "/deputetet"
+        link: "../content/deputetet.jsx"
     },
     {
         title: "SHTETET",
-        link: "/shtetet"
+        link: "../content/shtetet.jsx"
     },
     {
         title: "QYTETET",
-        link: "/qytetet"
+        link: "../content/qytetet.jsx"
     },
     {
         title: "LOG OUT",
