@@ -10,7 +10,7 @@ function Dashboard(){
     return(
         <div className="App2">
             <Sidebar />
-            {/* <Partite /> */}
+            {/* <Partite />  */}
             <Deputetet />
             {/* <Shtetet /> */}
             {/* <Qytetet /> */}

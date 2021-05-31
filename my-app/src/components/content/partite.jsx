@@ -24,6 +24,11 @@ function partite() {
                   placeholder="Partia..."
                   className="form-content"
                 />
+                <div>
+                  <Button variant="primary" type="submit" className="btn-shtoP">
+                    Shto partine
+                  </Button>
+                </div>
               </Form.Row>
             </Form>
           </div>

@@ -23,6 +23,11 @@ function shtetet() {
                   placeholder="Shteti..."
                   className="form-content"
                 />
+                <div>
+                  <Button variant="primary" type="submit" className="btn-shtoP">
+                    Shto shtetin
+                  </Button>
+                </div>
               </Form.Row>
             </Form>
           </div>

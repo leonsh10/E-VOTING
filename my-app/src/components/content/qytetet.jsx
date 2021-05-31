@@ -31,6 +31,11 @@ function qytetet() {
                   placeholder="Emri dhe mbiemri.."
                   className="form-content"
                 />
+                <div>
+                  <Button variant="primary" type="submit" className="btn-shtoP">
+                    Shto qytetin
+                  </Button>
+                </div>
               </Form.Row>
             </Form>
           </div>
