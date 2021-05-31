@@ -269,7 +269,7 @@ nav{
 }
 
 .shto-btnD{
-  margin-top: 200px;
+  // margin-top: 200px;
   margin-left: 20px;
   color: #697595;
   background-color: #191c24;
@@ -280,4 +280,13 @@ nav{
 }
 .btn-toolbar{
   // background-color: black;
+}
+
+.form-content2{
+  width:fit-content;
+  height:fit-content;
+  background-color:#9dadd8;
+  outline:none;
+  border-radius:5px;
+  margin:10px;
 }
