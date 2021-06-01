@@ -5,14 +5,15 @@ import {Button, ButtonToolbar, Form, Row, Col} from 'react-bootstrap';
 function qytetet() {
     return (
         <div className="deputetetContent">
-          <ButtonToolbar>
+          <h1 class="titulliLart">Qytetet</h1>
+          {/* <ButtonToolbar>
             <Button className="mb-2" variant="secondary" size="lg">
               +SHTO QYTET
             </Button>
             <Button className="mb-2" variant="secondary" size="lg">
               -FSHIJ QYTET
             </Button>
-          </ButtonToolbar>
+          </ButtonToolbar> */}
           <div className="forma">
             <Form>
               <Form.Row>

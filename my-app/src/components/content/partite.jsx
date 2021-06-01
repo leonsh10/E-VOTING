@@ -5,14 +5,15 @@ import {Button, ButtonToolbar, Form, Row, Col} from 'react-bootstrap';
 function partite() {
     return (
         <div className="deputetetContent">
-          <ButtonToolbar>
+          <h1 class="titulliLart">Partite</h1>
+          {/* <ButtonToolbar>
             <Button className="mb-2" variant="secondary" size="lg">
               +SHTO SUBJEKT
             </Button>
             <Button className="mb-2" variant="secondary" size="lg">
               -FSHIJ SUBJEKT
             </Button>
-          </ButtonToolbar>
+          </ButtonToolbar> */}
           <div className="forma">
             <Form>
             <Form className="forma1">

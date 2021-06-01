@@ -5,14 +5,15 @@ import {Button, ButtonToolbar, Form, Row, Col} from 'react-bootstrap';
 function shtetet() {
     return (
         <div className="deputetetContent">
-          <ButtonToolbar>
+          <h1 class="titulliLart">Shtetet</h1>
+          {/* <ButtonToolbar>
             <Button className="mb-2" variant="secondary" size="lg">
               +SHTO SHTET
             </Button>
             <Button className="mb-2" variant="secondary" size="lg">
               -FSHIJ SHTET
             </Button>
-          </ButtonToolbar>
+          </ButtonToolbar> */}
           <div className="forma">
             <Form>
               <Form.Row>
