@@ -6,14 +6,15 @@ import {Button, ButtonToolbar, Form, Row, Col} from 'react-bootstrap';
 function deputetet() {
     return (
       <div className="deputetetContent">
-        <ButtonToolbar>
+        <h1 class="titulliLart">Deputetet</h1>
+        {/* <ButtonToolbar>
           <Button className="mb-2 shtoBtn" variant="secondary" size="lg">
             +SHTO DEPUTET
           </Button>
           <Button className="mb-2 shtoBtn" variant="secondary" size="lg">
             -FSHIJ DEPUTET
           </Button>
-        </ButtonToolbar>
+        </ButtonToolbar> */}
         <div className="forma">
           <Form>
             <Form.Row>
