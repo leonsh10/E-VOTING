@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Leon\\Desktop\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj": {}
+    "C:\\Users\\User\\OneDrive\\Desktop\\BESIM\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Leon\\Desktop\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj": {
+    "C:\\Users\\User\\OneDrive\\Desktop\\BESIM\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Leon\\Desktop\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
+        "projectUniqueName": "C:\\Users\\User\\OneDrive\\Desktop\\BESIM\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
         "projectName": "E-VOTING",
-        "projectPath": "C:\\Users\\Leon\\Desktop\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
-        "packagesPath": "C:\\Users\\Leon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Leon\\Desktop\\E-VOTING\\E-VOTING\\E-VOTING\\obj\\",
+        "projectPath": "C:\\Users\\User\\OneDrive\\Desktop\\BESIM\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\OneDrive\\Desktop\\BESIM\\E-VOTING\\E-VOTING\\E-VOTING\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Leon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
