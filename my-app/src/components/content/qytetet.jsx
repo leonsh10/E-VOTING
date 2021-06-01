@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.scss';
-import {Button, ButtonToolbar, Form, Row, Col} from 'react-bootstrap';
+import {Button, ButtonToolbar, Form, Row, Col, Table} from 'react-bootstrap';
 
 function qytetet() {
     return (
@@ -40,6 +40,40 @@ function qytetet() {
               </Form.Row>
             </Form>
           </div>
+          <Table className="tableData">
+          <thead>
+            <tr>
+              <th>Test</th>
+              <th>Test</th>
+              <th>Test</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              Test
+              <td>Test</td>
+              <td>Test</td>
+              <td>
+                <ButtonToolbar>
+                  <Button
+                    className="info"
+                    variant="info"
+                  >
+                    Edit
+                  </Button>
+
+                  <Button
+                    className="danger"
+                    variant="danger"
+                  >
+                    Delete
+                  </Button>
+
+                </ButtonToolbar>
+              </td>
+            </tr>
+          </tbody>
+        </Table>
         </div>
       );
 }
