@@ -16,7 +16,7 @@ function qytetet() {
           <div className="forma">
             <Form>
               <Form.Row>
-                <Form.Control as="select" size="lg" className="form-content">
+                <Form.Control as="select" size="lg" className="form-content2">
                     <option>Zgjedh Shtetin</option>
                     <option>Kosove</option>
                     <option>Shqiperi</option>
@@ -28,12 +28,12 @@ function qytetet() {
                   size="lg"
                   type="text"
                   name="EmriMbiemri"
-                  placeholder="Emri dhe mbiemri.."
-                  className="form-content"
+                  placeholder="Emri Qytetit..."
+                  className="form-content2"
                 />
-                <div>
-                  <Button variant="primary" type="submit" className="btn-shtoP">
-                    Shto qytetin
+                <div className="buton-div">
+                  <Button variant="primary" type="submit" className="shto-btnD">
+                    Shto
                   </Button>
                 </div>
               </Form.Row>

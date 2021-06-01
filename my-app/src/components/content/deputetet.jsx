@@ -30,7 +30,7 @@ function deputetet() {
                 </select>
               {/* </Form.Control> */}
 
-              <input type="text" id="inputi" class="form-content2" placeholder="Emri dhe Mbiemri"></input>
+              <input type="text" id="inputi" class="form-content2" placeholder="Emri dhe Mbiemri..."></input>
 
               <select class="form-content2">
                 <option>Zgjedh numrin</option>
@@ -41,7 +41,7 @@ function deputetet() {
                 <option>5</option>
                 </select>
            
-              <div className="buton-div">
+              <div className="buton-div1">
               
                 <Button variant="primary" type="submit" className="shto-btnD">
                   Shto 

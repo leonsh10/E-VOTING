@@ -234,20 +234,20 @@ nav{
   margin: 0 auto;
 }
 
-.form-content{
+// .form-content{
 
-  border-radius: 10px;
-  padding: 5px;
-  margin-left: 100px;
-  margin-right: 50px;
-  margin-bottom: 50px;
-  margin-top: 200px;
-  width: 220px;
-  background-color: #15181f;
-  color: #697595;
-  border-color: #697595;
-  outline: none;
-}
+//   border-radius: 10px;
+//   padding: 5px;
+//   margin-left: 100px;
+//   margin-right: 50px;
+//   margin-bottom: 50px;
+//   margin-top: 200px;
+//   width: 220px;
+//   background-color: #15181f;
+//   color: #697595;
+//   border-color: #697595;
+//   outline: none;
+// }
 
 .shto-btn{
   margin-left: 1200px;
@@ -276,12 +276,14 @@ nav{
   // margin-top: 200px;
   margin-left: 20px;
   color: #ffffff;
-  background-color: #de6b76;
+  // background-color: #de6b76;
+  background-color: rgb(53, 185, 48);
 width:137px;
 
 }
 .shto-btnD:hover{
-  background-color: rgb(53, 185, 48);
+  // background-color: rgb(53, 185, 48);
+  background-color: rgb(37, 148, 34);
 }
 .btn-toolbar{
   // background-color: black;
@@ -294,6 +296,7 @@ width:137px;
   outline:none;
   border-radius:5px;
   margin:10px;
+  padding-left: 3px;
 
     // appearance: none;
 
@@ -324,7 +327,12 @@ width:137px;
 }
 
 .buton-div{
+  // margin:0 auto;
+  margin-top: 9px;
+}
+.buton-div1{
   margin:0 auto;
+  margin-left: 450px;
 }
 .btn-toolbar{
   display:flex;

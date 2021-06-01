@@ -17,7 +17,7 @@ function partite() {
             <Form>
             <Form className="forma1">
               <Form.Row>
-              <input type="text" id="inputi" class="form-content2" placeholder="Emri dhe Mbiemri"></input>
+              <input type="text" id="inputi" class="form-content2" placeholder="Emri i Partise..."></input>
                 {/* <Form.Control
                   size="lg"
                   type="text"
@@ -25,7 +25,7 @@ function partite() {
                   placeholder="Partia..."
                   className="form-content"
                 /> */}
-                <div>
+                <div className="buton-div">
                   <Button variant="primary" type="submit" className="shto-btnD">
                     Shto
                   </Button>
