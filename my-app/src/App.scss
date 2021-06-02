@@ -350,7 +350,7 @@ width:137px;
 }
 
 .tableData{
-  border: 1px solid white;
+  // border: 1px solid white;
   margin: 0 auto;
 }
 
@@ -373,4 +373,7 @@ width:137px;
 
 .danger:hover{
   background-color: rgb(172, 8, 8);
+}
+.trData{
+  border: 1px solid white;
 }
