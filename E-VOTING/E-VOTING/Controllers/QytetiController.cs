@@ -90,7 +90,7 @@ namespace E_VOTING.Controllers
                update dbo.Qyteti set
                Shteti = '" + qyt.Shteti + @"'
                ,EmriQytetit = '" + qyt.EmriQytetit + @"'
-                where EmployeeId = " + qyt.IDQyteti + @"
+                where IDQyteti = " + qyt.IDQyteti + @"
                  ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");

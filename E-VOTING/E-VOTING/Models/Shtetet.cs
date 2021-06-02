@@ -8,9 +8,9 @@ namespace E_VOTING.Models
     public class Shtetet
     {
 
-        public int IDShteti { get; set; }
+        public int shtetet_id { get; set; }
 
-        public string Shteti { get; set; }
+        public string emri_shtetet { get; set; }
 
 }
 }
