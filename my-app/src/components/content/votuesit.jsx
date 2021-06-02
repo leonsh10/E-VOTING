@@ -54,7 +54,7 @@ render() {
           <Button className="editButon">
             Edit
           </Button>
-          <Button className="editButon" onClick={this.deleteUser(reg.votuesi_id)}>
+          <Button className="editButon" >
             Fshij
           </Button>
         </ButtonToolbar></td>
