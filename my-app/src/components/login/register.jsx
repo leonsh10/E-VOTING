@@ -52,13 +52,16 @@ export class Register extends Component {
             ,
             body:JSON.stringify({
                
-                votuesi_id:null,
-                name:event.target.name.value,
-                nrL:event.target.nrL.value,
-                mail:event.target.mail.value,
-                Password:event.target.Password.value
+                // votuesi_id:null,
+                // name:event.target.name.value,
+                // nrL:event.target.nrL.value,
+                // mail:event.target.mail.value,
+                // Password:event.target.Password.value
 
-            
+            username:"leoni1",
+            nrLeternjoftimit:31232131,
+            email:"dsfsd@dsfsd.com",
+            Password:"asdfasdasdd"
                 // votuesi_id:null,
                 // username:this.state.username,
                 // nrLeternjoftimit:this.state.nrLeternjoftimit,
