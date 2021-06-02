@@ -12,10 +12,18 @@ export class Register extends Component {
         this.handleSubmit=this.handleSubmit.bind(this);
     }
 
+    componentDidMount(){
+        fetch('http://localhost:5000/api/Register')
+        .then(response=>response.json())
+        .then(data=>{
+            this.setState({regs:data});
+        });
+    }
+
     refreshList(){
-        const data = {
-            username : username
-        }
+        // const data = {
+        //     // username : username
+        // }
         fetch('http://localhost:5000/api/Register')
         .then(response=>response.json())
         .then(data=>{
@@ -34,7 +42,7 @@ export class Register extends Component {
     handleSubmit(event){
         
         event.preventDefault();
-        const data={username : "Leon"}
+       
         fetch('http://localhost:5000/api/Register',{
             method:'POST',
             headers:{
@@ -42,22 +50,22 @@ export class Register extends Component {
                 'Content-Type':'application/json'
             }
             ,
-            body:JSON.stringify(
+            body:JSON.stringify({
                
-                // votuesi_id:null,
-                // username:event.target.username.value,
-                // nrLeternjoftimit:event.target.nrLeternjoftimit.value,
-                // email:event.target.email.value,
-                // password:event.target.password.value
+                votuesi_id:null,
+                name:event.target.name.value,
+                nrL:event.target.nrL.value,
+                mail:event.target.mail.value,
+                Password:event.target.Password.value
 
             
-                data
+                // votuesi_id:null,
                 // username:this.state.username,
-                // nrLeternjoftimit:this.state.nrLeternjotimit,
+                // nrLeternjoftimit:this.state.nrLeternjoftimit,
                 // email:this.state.email,
-                // password:this.state.password
+                // Password:this.state.Password
                
-            )
+            })
         })
         .then(res=>res.json())
         .then((result)=>{
@@ -84,20 +92,20 @@ export class Register extends Component {
                     <div className="form-group">
                           <label htmlFor="username">Username</label>
                        
-                        <input className="username" type="text" id="username" name="username"  placeholder="username"  />
+                        <input className="username" type="text" name="name"  id="name"  placeholder="Username"  />
                        
                     </div>
                     <div className="form-group">
                         <label htmlFor="nrleternjoftimit">Numri i Leternjoftimit</label>
-                        <input className="nrLeternjoftimit" type="text" id="nrLeternjoftimit" name="nrleternjoftimit" placeholder="Numri i Leternjoftimit" />
+                        <input className="nrLeternjoftimit" type="text"  name="nrLeternjoftimit" id="nrLeternjoftimit" placeholder="Numri i Leternjoftimit" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
-                        <input  className="email" type="text" id="email" name="email" placeholder="email" />
+                        <input  className="email" type="text"  name="email" id="email" placeholder="email" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="password">Password</label>
-                        <input className="password" type="password" id="password" name="password" placeholder="password" />
+                        <input className="password" type="password"  name="Password" id="Password" placeholder="Password" />
                     </div>
                 </div>
             </div>

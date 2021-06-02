@@ -61,5 +61,11 @@ export const SidebarData = [
     icon: <FaIcons.FaCity />,
     cName: 'nav-text'
   },
+  {
+    title: 'Votuesit',
+    path: '/votuesit',
+    icon: <IoIcons.IoMdPerson />,
+    cName: 'nav-text'
+  },
 
 ];
