@@ -32,15 +32,16 @@ render() {
     const {regs, votuesi_id,username,nrLeter,email}=this.state;
     return (
       <div className="deputetetContent">
+          <div className="votuesitDiv">
         <h1 class="titulliLart">Votuesit</h1>
-        <Table className="mt-4" striped bordered hover size="sm" >
+        <Table className="vot1" >
                     <thead>
                         <tr>
-                            <th>Votuesi_ID</th>
+                            {/* <th>Votuesi_ID</th> */}
                         <th>Username</th>
                         <th>Numri i Leternjoftimit</th>
                         <th>Email</th>
-                        
+                        <th>Edit/Fshij</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -49,7 +50,14 @@ render() {
                                 <td>{reg.username}</td>
                                 <td>{reg.nrLeternjoftimit}</td>
                                 <td>{reg.email}</td>
-                                <td>
+                               <td>  <ButtonToolbar className="butonat">
+          <Button className="editButon">
+            Edit
+          </Button>
+          <Button className="editButon">
+            Fshij
+          </Button>
+        </ButtonToolbar></td>
 
 
         {/* <Button className="mr-2" variant="danger"
@@ -67,12 +75,13 @@ render() {
         /> */}
 {/* </ButtonToolbar> */}
 
-                                </td>
+                                
 
                             </tr>)}
                     </tbody>
 
                 </Table>
+      </div>
       </div>
 
     );
