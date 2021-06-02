@@ -136,12 +136,12 @@ namespace E_VOTING.Controllers
             return new JsonResult("Deleted Successfully");
         }
 
-        /*
+        
         [Route("GetAllShtetet")]
         public JsonResult GetAllShtetet()
         {
             string query = @"
-                    select Shteti from dbo.Shteti
+                    select shtetet_id from dbo.Shtetet
                     ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
@@ -160,6 +160,6 @@ namespace E_VOTING.Controllers
             }
 
             return new JsonResult(table);
-        } */
+        } 
     }
 }

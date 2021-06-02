@@ -13,6 +13,8 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace E_VOTING.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class ShtetetController : Controller
     {
         private readonly IConfiguration _configuration;
