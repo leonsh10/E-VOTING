@@ -39,21 +39,21 @@ export class Register extends Component {
             },
             body:JSON.stringify({
                
-                votuesi_id:null,
-                username:event.target.username.value,
-                nrLeternjoftimit:event.target.nrLeternjoftimit.value,
-                email:event.target.email.value,
-                password:event.target.password.value
+                // votuesi_id:null,
+                // username:event.target.username.value,
+                // nrLeternjoftimit:event.target.nrLeternjoftimit.value,
+                // email:event.target.email.value,
+                // password:event.target.password.value
 
             //    username:"Leon",
             //    nrLeternjoftimit:12312321,
             //    email:"dfsd@hotmail.com",
             //    password:"fsdfsd"
 
-                // username:this.state.username,
-                // nrLeternjoftimit:this.state.nrLeternjotimit,
-                // email:this.state.email,
-                // password:this.state.password,
+                username:this.state.username,
+                nrLeternjoftimit:this.state.nrLeternjotimit,
+                email:this.state.email,
+                password:this.state.password
                
             })
         })
