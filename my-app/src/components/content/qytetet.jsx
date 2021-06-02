@@ -78,7 +78,7 @@ function qytetet() {
           <tr>
             <th className="tabelaHD">IDQyteti</th>
             <th className="tabelaHD">Shteti</th>
-            <th className="tabelaHD">Emri i Qytetit</th>
+            <th className="tabelaHD">EmriQytetit</th>
             <th className="tabelaHD">Opsionet</th>
           </tr>
           <tr>

@@ -68,9 +68,9 @@ function shtetet() {
         </Table> */}
         <table className="tabela">
           <tr>
-            <th className="tabelaHD">IDShteti</th>
+            <th className="tabelaHD">shtetet_id</th>
             
-            <th className="tabelaHD">Emri i Shtetit</th>
+            <th className="tabelaHD">emri_shtetet</th>
             <th className="tabelaHD">Opsionet</th>
           </tr>
           <tr>
