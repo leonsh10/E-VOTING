@@ -12,7 +12,18 @@ export class Register extends Component {
         this.handleSubmit=this.handleSubmit.bind(this);
     }
 
+    componentDidMount(){
+        fetch('http://localhost:5000/api/Register')
+        .then(response=>response.json())
+        .then(data=>{
+            this.setState({regs:data});
+        });
+    }
+
     refreshList(){
+        // const data = {
+        //     // username : username
+        // }
         fetch('http://localhost:5000/api/Register')
         .then(response=>response.json())
         .then(data=>{
@@ -31,29 +42,28 @@ export class Register extends Component {
     handleSubmit(event){
         
         event.preventDefault();
+       
         fetch('http://localhost:5000/api/Register',{
             method:'POST',
             headers:{
                 'Accept':'application/json',
                 'Content-Type':'application/json'
-            },
+            }
+            ,
             body:JSON.stringify({
                
+                votuesi_id:null,
+                name:event.target.name.value,
+                nrL:event.target.nrL.value,
+                mail:event.target.mail.value,
+                Password:event.target.Password.value
+
+            
                 // votuesi_id:null,
-                // username:event.target.username.value,
-                // nrLeternjoftimit:event.target.nrLeternjoftimit.value,
-                // email:event.target.email.value,
-                // password:event.target.password.value
-
-               username:"Leon",
-               nrLeternjoftimit:12312321,
-               email:"dfsd@hotmail.com",
-               Password:"fsdfsd"
-
                 // username:this.state.username,
-                // nrLeternjoftimit:this.state.nrLeternjotimit,
+                // nrLeternjoftimit:this.state.nrLeternjoftimit,
                 // email:this.state.email,
-                // password:this.state.password
+                // Password:this.state.Password
                
             })
         })
@@ -66,9 +76,18 @@ export class Register extends Component {
         })
     }
 
+    deleteUser(votuesi_id){
+       
+            fetch('http://localhost:5000/api/Register/'+votuesi_id,{
+                method:'DELETE',
+                header:{'Accept':'application/json',
+            'Content-Type':'application/json'}
+            })
+        
+    }
 
     render() {
-        // const {regId,username,nrLeternjoftimit,email,Password}=this.state;
+        const {votuesi_id,username,nrLeternjoftimit,email,Password}=this.state;
         // let addModalClose=()=>this.setState({addModalShow:false});
     
         return <div className="base-container" ref={this.props.conatinerRef}>
@@ -82,20 +101,20 @@ export class Register extends Component {
                     <div className="form-group">
                           <label htmlFor="username">Username</label>
                        
-                        <input className="username" type="text" id="username" name="username"  placeholder="username"  />
+                        <input className="username" type="text" name="name"  id="name"  placeholder="Username"  />
                        
                     </div>
                     <div className="form-group">
                         <label htmlFor="nrleternjoftimit">Numri i Leternjoftimit</label>
-                        <input className="nrLeternjoftimit" type="text" id="nrLeternjoftimit" name="nrleternjoftimit" placeholder="Numri i Leternjoftimit" />
+                        <input className="nrLeternjoftimit" type="text"  name="nrLeternjoftimit" id="nrLeternjoftimit" placeholder="Numri i Leternjoftimit" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
-                        <input  className="email" type="text" id="email" name="email" placeholder="email" />
+                        <input  className="email" type="text"  name="email" id="email" placeholder="email" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="password">Password</label>
-                        <input className="password" type="password" id="password" name="password" placeholder="password" />
+                        <input className="password" type="password"  name="Password" id="Password" placeholder="Password" />
                     </div>
                 </div>
             </div>
@@ -109,12 +128,3 @@ export class Register extends Component {
 
 }
 
-  {/* <ButtonToolbar className="btn">
-                    <Button variant='primary'
-                    onClick={this.handleSubmit}>
-                    Register</Button>
-
-                    <AddRegModal show={this.state.addModalShow}
-                   onHide={addModalClose}/>
-                    
-                </ButtonToolbar> */}

@@ -82,5 +82,88 @@ namespace E_VOTING.Controllers
 
             return new JsonResult("Jeni regjistruar me sukses.");
         }
+
+        [HttpPut]
+        public JsonResult Put(Register re)
+        {
+            string query = @"
+               update dbo.Login set
+               username = '" + re.username + @"'
+               ,nrLeternjoftimit = '" + re.nrLeternjoftimit + @"'
+                ,email= '" + re.email + @"'
+                where votuesi_id = " + re.votuesi_id + @"
+                 ";
+            DataTable table = new DataTable();
+            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
+            SqlDataReader myReader;
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (SqlCommand myCommand = new SqlCommand(query, myCon))
+                {
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader); ;
+
+                    myReader.Close();
+                    myCon.Close();
+                }
+
+            }
+            return new JsonResult("Useri u editua me sukses.");
+        }
+        [HttpDelete("{id}")]
+        public JsonResult Delete(int id)
+        {
+            string query = @"
+                    delete from dbo.Login
+                    where votuesi_id = " + id + @" 
+                    ";
+            DataTable table = new DataTable();
+            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
+            SqlDataReader myReader;
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (SqlCommand myCommand = new SqlCommand(query, myCon))
+                {
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader); ;
+
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+
+            return new JsonResult("User-i u fshi me sukses.");
+        }
+
+
+        [Route("GetAllVotuesit")]
+        public JsonResult GetAllVotuesit()
+        {
+            string query = @"
+                    select votuesi_id,username,nrLeternjoftimit,email from dbo.Login
+                    ";
+            DataTable table = new DataTable();
+            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
+            SqlDataReader myReader;
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (SqlCommand myCommand = new SqlCommand(query, myCon))
+                {
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader); ;
+
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+
+            return new JsonResult(table);
+        }
+    }
+}
+
     }
 }

@@ -5798,25 +5798,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\flore\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Leon\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
+      "projectUniqueName": "C:\\Users\\Leon\\Desktop\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
       "projectName": "E-VOTING",
-      "projectPath": "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
-      "packagesPath": "C:\\Users\\flore\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\obj\\",
+      "projectPath": "C:\\Users\\Leon\\Desktop\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
+      "packagesPath": "C:\\Users\\Leon\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Leon\\Desktop\\E-VOTING\\E-VOTING\\E-VOTING\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\flore\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Leon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -5876,8 +5871,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Leon\\Desktop\\E-VOTING\\E-VOTING\\E-VOTING\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
