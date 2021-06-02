@@ -13,6 +13,9 @@ export class Register extends Component {
     }
 
     refreshList(){
+        const data = {
+            username : username
+        }
         fetch('http://localhost:5000/api/Register')
         .then(response=>response.json())
         .then(data=>{
@@ -31,13 +34,15 @@ export class Register extends Component {
     handleSubmit(event){
         
         event.preventDefault();
+        const data={username : "Leon"}
         fetch('http://localhost:5000/api/Register',{
             method:'POST',
             headers:{
                 'Accept':'application/json',
                 'Content-Type':'application/json'
-            },
-            body:JSON.stringify({
+            }
+            ,
+            body:JSON.stringify(
                
                 // votuesi_id:null,
                 // username:event.target.username.value,
@@ -45,17 +50,14 @@ export class Register extends Component {
                 // email:event.target.email.value,
                 // password:event.target.password.value
 
-               username:"Leon",
-               nrLeternjoftimit:12312321,
-               email:"dfsd@hotmail.com",
-               Password:"fsdfsd"
-
+            
+                data
                 // username:this.state.username,
                 // nrLeternjoftimit:this.state.nrLeternjotimit,
                 // email:this.state.email,
                 // password:this.state.password
                
-            })
+            )
         })
         .then(res=>res.json())
         .then((result)=>{
