@@ -54,28 +54,10 @@ render() {
           <Button className="editButon">
             Edit
           </Button>
-          <Button className="editButon">
+          <Button className="editButon" onClick={this.deleteUser(reg.votuesi_id)}>
             Fshij
           </Button>
         </ButtonToolbar></td>
-
-
-        {/* <Button className="mr-2" variant="danger"
-    onClick={()=>this.deleteEmp(emp.EmployeeId)}>
-            Delete
-        </Button> */}
-{/* 
-        <EditEmpModal show={this.state.editModalShow}
-        onHide={editModalClose}
-        empid={empid}
-        empname={empname}
-        depmt={depmt}
-        photofilename={photofilename}
-        doj={doj}
-        /> */}
-{/* </ButtonToolbar> */}
-
-                                
 
                             </tr>)}
                     </tbody>

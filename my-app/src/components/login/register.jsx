@@ -76,9 +76,18 @@ export class Register extends Component {
         })
     }
 
+    deleteUser(votuesi_id){
+       
+            fetch('http://localhost:5000/api/Register/'+votuesi_id,{
+                method:'DELETE',
+                header:{'Accept':'application/json',
+            'Content-Type':'application/json'}
+            })
+        
+    }
 
     render() {
-        // const {regId,username,nrLeternjoftimit,email,Password}=this.state;
+        const {votuesi_id,username,nrLeternjoftimit,email,Password}=this.state;
         // let addModalClose=()=>this.setState({addModalShow:false});
     
         return <div className="base-container" ref={this.props.conatinerRef}>
@@ -119,12 +128,3 @@ export class Register extends Component {
 
 }
 
-  {/* <ButtonToolbar className="btn">
-                    <Button variant='primary'
-                    onClick={this.handleSubmit}>
-                    Register</Button>
-
-                    <AddRegModal show={this.state.addModalShow}
-                   onHide={addModalClose}/>
-                    
-                </ButtonToolbar> */}
