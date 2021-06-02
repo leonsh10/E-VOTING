@@ -35,18 +35,17 @@ function partite() {
               </Form>
             </Form>
           </div>
+          {/* <Table className="mt-4" striped bordered hover size="sm"> */}
           <Table className="tableData">
           <thead>
             <tr>
-              <th>Test</th>
-              <th>Test</th>
-              <th>Test</th>
+              <th>IDPartia</th>
+              <th>Emri Partise</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               Test
-              <td>Test</td>
               <td>Test</td>
               <td>
                 <ButtonToolbar>
