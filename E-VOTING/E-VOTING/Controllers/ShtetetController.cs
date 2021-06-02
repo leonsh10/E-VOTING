@@ -15,13 +15,13 @@ namespace E_VOTING.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class QytetiController : ControllerBase
+    public class ShtetetController : Controller
     {
         private readonly IConfiguration _configuration;
         private readonly IWebHostEnvironment _env;
 
 
-        public QytetiController(IConfiguration configuration, IWebHostEnvironment env)
+        public ShtetetController(IConfiguration configuration, IWebHostEnvironment env)
         {
             _configuration = configuration;
             _env = env;
@@ -31,8 +31,8 @@ namespace E_VOTING.Controllers
         public JsonResult Get()
         {
             string query = @"
-              select IDQyteti, Shteti, EmriQytetit
-                 from dbo.Qyteti
+              select shtetet_id, emri_shtetet
+                 from dbo.Shtetet
                  ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
@@ -54,15 +54,14 @@ namespace E_VOTING.Controllers
 
         }
         [HttpPost]
-        public JsonResult Post(Qyteti qyt)
+        public JsonResult Post(Shtetet sht)
         {
             string query = @"
-              insert into dbo.Qyteti
-               (Shteti, EmriQytetit)
+              insert into dbo.Shtetet
+               (emri_shtetet)
                 values  
                     (
-                    '" + qyt.Shteti + @"'
-                    ,'" + qyt.EmriQytetit + @"'
+                    '" + sht.emri_shtetet + @"'
                     )
                     ";
             DataTable table = new DataTable();
@@ -84,13 +83,12 @@ namespace E_VOTING.Controllers
             return new JsonResult("Added Succesfully");
         }
         [HttpPut]
-        public JsonResult Put(Qyteti qyt)
+        public JsonResult Put(Shtetet sht)
         {
             string query = @"
-               update dbo.Qyteti set
-               Shteti = '" + qyt.Shteti + @"'
-               ,EmriQytetit = '" + qyt.EmriQytetit + @"'
-                where IDQyteti = " + qyt.IDQyteti + @"
+               update dbo.Shtetet set
+               emri_shtetet = '" + sht.emri_shtetet + @"'
+                where shtetet_id = " + sht.shtetet_id + @"
                  ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
@@ -114,8 +112,8 @@ namespace E_VOTING.Controllers
         public JsonResult Delete(int id)
         {
             string query = @"
-                    delete from dbo.Qyteti
-                    where IDQyteti = " + id + @" 
+                    delete from dbo.Shtetet
+                    where shtetet_id = " + id + @" 
                     ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
@@ -137,29 +135,5 @@ namespace E_VOTING.Controllers
         }
 
         
-        [Route("GetAllShtetet")]
-        public JsonResult GetAllShtetet()
-        {
-            string query = @"
-                    select shtetet_id from dbo.Shtetet
-                    ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-            }
-
-            return new JsonResult(table);
-        } 
     }
 }
