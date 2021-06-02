@@ -52,7 +52,7 @@ function deputetet() {
             </Form.Row>
           </Form>
         </div>
-        <Table className="tableData">
+        {/* <Table className="tableData">
           <thead>
             <tr>
               <th>Test</th>
@@ -85,7 +85,306 @@ function deputetet() {
               </td>
             </tr>
           </tbody>
-        </Table>
+        </Table> */}
+        {/* <table className="tabela">
+          <tr>
+            <th className="tabelaHD">IDPartia</th>
+            
+            <th className="tabelaHD">Emri i Partise</th>
+            <th className="tabelaHD">Opsionet</th>
+          </tr>
+          <tr>
+            <td className="tabelaHD">1</td>
+            
+            <td className="tabelaHD">VV</td>
+            <td className="tabelaHD">
+            <ButtonToolbar>
+                  <Button
+                    className="info"
+                    variant="info"
+                  >
+                    Edit
+                  </Button>
+
+                  <Button
+                    className="danger"
+                    variant="danger"
+                  >
+                    Delete
+                  </Button>
+
+                </ButtonToolbar>
+            </td>
+          </tr>
+          <tr>
+            <td className="tabelaHD">2</td>
+            
+            <td className="tabelaHD">PDK</td>
+            <td className="tabelaHD">
+            <ButtonToolbar>
+                  <Button
+                    className="info"
+                    variant="info"
+                  >
+                    Edit
+                  </Button>
+
+                  <Button
+                    className="danger"
+                    variant="danger"
+                  >
+                    Delete
+                  </Button>
+
+                </ButtonToolbar>
+            </td>
+          </tr>
+          <tr>
+            <td className="tabelaHD">3</td>
+            
+            <td className="tabelaHD">LDK</td>
+            <td className="tabelaHD">
+            <ButtonToolbar>
+                  <Button
+                    className="info"
+                    variant="info"
+                  >
+                    Edit
+                  </Button>
+
+                  <Button
+                    className="danger"
+                    variant="danger"
+                  >
+                    Delete
+                  </Button>
+
+                </ButtonToolbar>
+            </td>
+          </tr>
+          <tr>
+            <td className="tabelaHD">4</td>
+            
+            <td className="tabelaHD">AAK</td>
+            <td className="tabelaHD">
+            <ButtonToolbar>
+                  <Button
+                    className="info"
+                    variant="info"
+                  >
+                    Edit
+                  </Button>
+
+                  <Button
+                    className="danger"
+                    variant="danger"
+                  >
+                    Delete
+                  </Button>
+
+                </ButtonToolbar>
+            </td>
+          </tr>
+          <tr>
+            <td className="tabelaHD">5</td>
+            
+            <td className="tabelaHD">AKR</td>
+            <td className="tabelaHD">
+            <ButtonToolbar>
+                  <Button
+                    className="info"
+                    variant="info"
+                  >
+                    Edit
+                  </Button>
+
+                  <Button
+                    className="danger"
+                    variant="danger"
+                  >
+                    Delete
+                  </Button>
+
+                </ButtonToolbar>
+            </td>
+          </tr>
+          <tr>
+            <td className="tabelaHD">6</td>
+            
+            <td className="tabelaHD">NISMA</td>
+            <td className="tabelaHD">
+            <ButtonToolbar>
+                  <Button
+                    className="info"
+                    variant="info"
+                  >
+                    Edit
+                  </Button>
+
+                  <Button
+                    className="danger"
+                    variant="danger"
+                  >
+                    Delete
+                  </Button>
+
+                </ButtonToolbar>
+            </td>
+          </tr>
+        </table> */}
+        <table className="tabela">
+          <tr>
+            <th className="tabelaHD">IDDeputeti</th>
+            <th className="tabelaHD">Partia</th>
+            <th className="tabelaHD">Emri Deputetit</th>
+            <th className="tabelaHD">Numri Deputetit</th>
+            <th className="tabelaHD">Opsionet</th>
+          </tr>
+          <tr>
+            <td className="tabelaHD">1</td>
+            <td className="tabelaHD">VV</td>
+            <td className="tabelaHD">Albin Kurti</td>
+            <td className="tabelaHD">1</td>
+            <td className="tabelaHD">
+            <ButtonToolbar>
+                  <Button
+                    className="info"
+                    variant="info"
+                  >
+                    Edit
+                  </Button>
+
+                  <Button
+                    className="danger"
+                    variant="danger"
+                  >
+                    Delete
+                  </Button>
+
+                </ButtonToolbar>
+            </td>
+          </tr>
+          <tr>
+            <td className="tabelaHD">2</td>
+            <td className="tabelaHD">PDK</td>
+            <td className="tabelaHD">Enver Hoxha</td>
+            <td className="tabelaHD">1</td>
+            <td className="tabelaHD">
+            <ButtonToolbar>
+                  <Button
+                    className="info"
+                    variant="info"
+                  >
+                    Edit
+                  </Button>
+
+                  <Button
+                    className="danger"
+                    variant="danger"
+                  >
+                    Delete
+                  </Button>
+
+                </ButtonToolbar>
+            </td>
+          </tr>
+          <tr>
+            <td className="tabelaHD">3</td>
+            <td className="tabelaHD">LDK</td>
+            <td className="tabelaHD">Lumir Abdixhiku</td>
+            <td className="tabelaHD">1</td>
+            <td className="tabelaHD">
+            <ButtonToolbar>
+                  <Button
+                    className="info"
+                    variant="info"
+                  >
+                    Edit
+                  </Button>
+
+                  <Button
+                    className="danger"
+                    variant="danger"
+                  >
+                    Delete
+                  </Button>
+
+                </ButtonToolbar>
+            </td>
+          </tr>
+          <tr>
+            <td className="tabelaHD">4</td>
+            <td className="tabelaHD">AAK</td>
+            <td className="tabelaHD">Ramush Haradinaj</td>
+            <td className="tabelaHD">1</td>
+            <td className="tabelaHD">
+            <ButtonToolbar>
+                  <Button
+                    className="info"
+                    variant="info"
+                  >
+                    Edit
+                  </Button>
+
+                  <Button
+                    className="danger"
+                    variant="danger"
+                  >
+                    Delete
+                  </Button>
+
+                </ButtonToolbar>
+            </td>
+          </tr>
+          <tr>
+            <td className="tabelaHD">5</td>
+            <td className="tabelaHD">AKR</td>
+            <td className="tabelaHD">Behxhet Pacolli</td>
+            <td className="tabelaHD">1</td>
+            <td className="tabelaHD">
+            <ButtonToolbar>
+                  <Button
+                    className="info"
+                    variant="info"
+                  >
+                    Edit
+                  </Button>
+
+                  <Button
+                    className="danger"
+                    variant="danger"
+                  >
+                    Delete
+                  </Button>
+
+                </ButtonToolbar>
+            </td>
+          </tr>
+          <tr>
+            <td className="tabelaHD">6</td>
+            <td className="tabelaHD">NISMA</td>
+            <td className="tabelaHD">Fatmir Limaj</td>
+            <td className="tabelaHD">1</td>
+            <td className="tabelaHD">
+            <ButtonToolbar>
+                  <Button
+                    className="info"
+                    variant="info"
+                  >
+                    Edit
+                  </Button>
+
+                  <Button
+                    className="danger"
+                    variant="danger"
+                  >
+                    Delete
+                  </Button>
+
+                </ButtonToolbar>
+            </td>
+          </tr>
+        </table>
       </div>
     );
 }

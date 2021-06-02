@@ -437,3 +437,18 @@ padding:10px 24px;
   border-bottom: 2px solid #009879;
 }
 
+.tabela{
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  margin: 65px auto;
+}
+.tabelaHD{
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #9c9797;
+}
