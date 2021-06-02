@@ -1,97 +1,38 @@
-﻿using E_VOTING.Models;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
+using System.Data.SqlClient;
+using System.Data;
+using E_VOTING.Models;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
 namespace E_VOTING.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RegisterController : ControllerBase
+    public class DeputetetController : ControllerBase
     {
         private readonly IConfiguration _configuration;
         private readonly IWebHostEnvironment _env;
 
-        public RegisterController(IConfiguration configuration, IWebHostEnvironment env)
+
+        public DeputetetController(IConfiguration configuration, IWebHostEnvironment env)
         {
             _configuration = configuration;
             _env = env;
         }
+
         [HttpGet]
         public JsonResult Get()
         {
             string query = @"
-                    select votuesi_id, username,nrLeternjoftimit, email,Password               
-                    from dbo.Login
-                    ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-            }
-
-            return new JsonResult(table);
-        }
-
-        [HttpPost]
-        public JsonResult Post(Register reg)
-        {
-            string query = @"
-                    insert into dbo.Login 
-                    (username,nrLeternjoftimit,email,Password)
-                    values 
-                    (
-                    '" + reg.username + @"'
-                    ,'" + reg.nrLeternjoftimit + @"'
-                    ,'" + reg.email + @"'
-                    ,'" + reg.Password + @"'
-                    )
-                    ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-            }
-
-            return new JsonResult("Jeni regjistruar me sukses.");
-        }
-
-        [HttpPut]
-        public JsonResult Put(Register re)
-        {
-            string query = @"
-               update dbo.Login set
-               username = '" + re.username + @"'
-               ,nrLeternjoftimit = '" + re.nrLeternjoftimit + @"'
-                ,email= '" + re.email + @"'
-                where votuesi_id = " + re.votuesi_id + @"
+              select deputetet_id, Partia, Emri
+                 from dbo.Deputetet
                  ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
@@ -109,14 +50,72 @@ namespace E_VOTING.Controllers
                 }
 
             }
-            return new JsonResult("Useri u editua me sukses.");
+            return new JsonResult(table);
+
+        }
+        [HttpPost]
+        public JsonResult Post(Deputetet dep)
+        {
+            string query = @"
+              insert into dbo.Deputetet
+               (Partia, Emri)
+                values  
+                    (
+                    '" + dep.Partia + @"'
+                    ,'" + dep.Emri + @"'
+                    )
+                    ";
+            DataTable table = new DataTable();
+            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
+            SqlDataReader myReader;
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (SqlCommand myCommand = new SqlCommand(query, myCon))
+                {
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader); ;
+
+                    myReader.Close();
+                    myCon.Close();
+                }
+
+            }
+            return new JsonResult("Added Succesfully");
+        }
+        [HttpPut]
+        public JsonResult Put(Deputetet dep)
+        {
+            string query = @"
+               update dbo.Deputetet set
+               Partia = '" + dep.Partia + @"'
+               ,Emri = '" + dep.Emri + @"'
+                where deputetet_id = " + dep.deputetet_id + @"
+                 ";
+            DataTable table = new DataTable();
+            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
+            SqlDataReader myReader;
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (SqlCommand myCommand = new SqlCommand(query, myCon))
+                {
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader); ;
+
+                    myReader.Close();
+                    myCon.Close();
+                }
+
+            }
+            return new JsonResult("Updated Succesfully");
         }
         [HttpDelete("{id}")]
         public JsonResult Delete(int id)
         {
             string query = @"
-                    delete from dbo.Login
-                    where votuesi_id = " + id + @" 
+                    delete from dbo.Deputetet
+                    where deputetet_id = " + id + @" 
                     ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
@@ -134,15 +133,15 @@ namespace E_VOTING.Controllers
                 }
             }
 
-            return new JsonResult("User-i u fshi me sukses.");
+            return new JsonResult("Deleted Successfully");
         }
 
 
-        [Route("GetAllVotuesit")]
-        public JsonResult GetAllVotuesit()
+        [Route("GetAllPartit")]
+        public JsonResult GetAllPartit()
         {
             string query = @"
-                    select votuesi_id,username,nrLeternjoftimit,email from dbo.Login
+                    select Deputetet from dbo.Deputetet
                     ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
@@ -164,5 +163,3 @@ namespace E_VOTING.Controllers
         }
     }
 }
-
- 

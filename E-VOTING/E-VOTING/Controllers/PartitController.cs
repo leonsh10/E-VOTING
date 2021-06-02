@@ -62,8 +62,7 @@ namespace E_VOTING.Controllers
                (partit_id, emri_Partis)
                 values  
                     (
-                    '" + par.partit_id + @"'
-                    ,'" + par.emri_Partis + @"'
+                    '" + par.emri_Partis + @"'
                     )
                     ";
             DataTable table = new DataTable();
@@ -135,31 +134,5 @@ namespace E_VOTING.Controllers
 
             return new JsonResult("Deleted Successfully");
         }
-
-        /*
-        [Route("GetAllShtetet")]
-        public JsonResult GetAllShtetet()
-        {
-            string query = @"
-                    select Shteti from dbo.Shteti
-                    ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-            }
-
-            return new JsonResult(table);
-        } */
     }
 }
