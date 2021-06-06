@@ -454,3 +454,27 @@ padding:10px 24px;
 tr:nth-child(even) {
   background-color: #9c9797;
 }
+
+.modal-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #15181f;
+  color: white;
+}
+.form-control{
+  width:350px;
+  height:30px;
+  background-color:#9dadd8;
+  outline:none;
+  border-radius:5px;
+  margin:10px;
+  padding-left: 3px;
+
+    // appearance: none;
+    border: none;    
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color:rgb(14, 37, 37);
+}
