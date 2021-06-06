@@ -50,9 +50,9 @@ export class EditRegModal extends Component{
 
 <Modal
 {...this.props}
-size="lg"
-aria-labelledby="contained-modal-title-vcenter"
-centered
+// size="lg"
+// aria-labelledby="contained-modal-title-vcenter"
+// centered
 >
     <Modal.Header clooseButton>
         <Modal.Title id="contained-modal-title-vcenter">
@@ -61,8 +61,8 @@ centered
     </Modal.Header>
     <Modal.Body>
 
-        <Row>
-            <Col sm={6}>
+        {/* <Row>
+            <Col sm={6}> */}
                 <Form onSubmit={this.handleSubmit}>
                 <Form.Group controlId="votuesi_id">
                         <Form.Label>Id Votuesi</Form.Label>
@@ -100,9 +100,9 @@ centered
                         </Button>
                     </Form.Group>
                 </Form>
-            </Col>
+            {/* </Col>
 
-        </Row>
+        </Row> */}
     </Modal.Body>
     
     <Modal.Footer>
