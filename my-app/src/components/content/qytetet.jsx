@@ -29,7 +29,7 @@ export class Qytetet extends Component {
 
   deleteQyt(qyid) {
     if (window.confirm("Are you sure?")) {
-      fetch("http://localhost:5000/Qyteti/" + qyid, {
+      fetch("http://localhost:5000/api/Qyteti/" + qyid, {
         method: "DELETE",
         header: {
           Accept: "application/json",
