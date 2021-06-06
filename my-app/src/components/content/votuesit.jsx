@@ -12,6 +12,14 @@ export class votuesit extends Component{
         this.state={regs:[]}
         
     }
+    componentDidMount(){
+        fetch('http://localhost:5000/api/Register')
+        .then(response=>response.json())
+        .then(data=>{
+            this.setState({regs:data});
+        });
+    }
+
     refreshList(){
         fetch('http://localhost:5000/api/Register')
         .then(response=>response.json())
@@ -66,7 +74,7 @@ render() {
           <Button className="editButon">
             Edit
           </Button>
-          <Button className="editButon" onClick={this.deleteUser(votuesi_id)}>
+          <Button className="editButon" onClick={this.deleteUser}>
             Fshij
           </Button>
         </ButtonToolbar></td>
