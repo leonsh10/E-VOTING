@@ -1,40 +1,25 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj": {}
-=======
-    "C:\\Users\\Leon\\Desktop\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj": {}
->>>>>>> 16bfdd299dfd07ece16ffaf7d2d6efe4527d48a8
   },
   "projects": {
-    "C:\\Users\\Leon\\Desktop\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj": {
+    "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Leon\\Desktop\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
+        "projectUniqueName": "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
         "projectName": "E-VOTING",
-<<<<<<< HEAD
         "projectPath": "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
         "packagesPath": "C:\\Users\\flore\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\obj\\",
-=======
-        "projectPath": "C:\\Users\\Leon\\Desktop\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
-        "packagesPath": "C:\\Users\\Leon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Leon\\Desktop\\E-VOTING\\E-VOTING\\E-VOTING\\obj\\",
->>>>>>> 16bfdd299dfd07ece16ffaf7d2d6efe4527d48a8
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\flore\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-=======
-          "C:\\Users\\Leon\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> 16bfdd299dfd07ece16ffaf7d2d6efe4527d48a8
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -94,11 +79,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
->>>>>>> 16bfdd299dfd07ece16ffaf7d2d6efe4527d48a8
         }
       }
     }

@@ -227,7 +227,7 @@ export class Qytetet extends Component {
             <thead>
               <tr>
                 {/* <th></th> */}
-                {/* <th>IDQytet</th> */}
+                <th>IDQytet</th>
                 <th>Shteti</th>
                 <th>Emri Qytetit</th>
                 <th>Edit/Fshij</th>
@@ -236,38 +236,40 @@ export class Qytetet extends Component {
             <tbody>
               {qyts.map((qyt) => (
                 <tr key={qyt.IDQyteti}>
+                  <td>{qyt.IDQyteti}</td>
                   <td>{qyt.Shteti}</td>
                   <td>{qyt.EmriQytetit}</td>
                   <td>
-                    {" "}
+                    {/* {" "} */}
                     <ButtonToolbar className="butonat">
                       <Button
                         className="editButon"
                         variant="info"
-                        // onClick={() =>
-                        //   this.setState({
-                        //     editModalShow: true,
-                        //     qyid: qyt.IDQyteti,
-                        //     qytemri: qyt.EmriQytetit,
-                        //     shteti: qyt.Shteti,
-                        //   })
-                        // }
+                        onClick={() =>
+                          this.setState({
+                            editModalShow: true,
+                            qyid: qyt.IDQyteti,
+                            shteti: qyt.Shteti,
+                            qytemri: qyt.EmriQytetit,
+                          })
+                        }
                       >
                         Edit
                       </Button>
                       <Button
                         className="editButon"
+                        variant="danger"
                         onClick={() => this.deleteQyt(qyt.IDQyteti)}
                       >
                         Fshij
                       </Button>
-                      {/* <EditQytModal
+                      <EditQytModal
                         show={this.state.editModalShow}
                         onHide={editModalClose}
                         qyid={qyid}
-                        qytemri={qytemri}
                         shteti={shteti}
-                      /> */}
+                        qytemri={qytemri}
+                      />
                     </ButtonToolbar>
                   </td>
                 </tr>

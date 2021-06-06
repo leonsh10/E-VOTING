@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Modal, Button, Row, Col, Form, Image } from "react-bootstrap";
+import "../../App.scss";
 
 export class EditQytModal extends Component {
   constructor(props) {
@@ -54,41 +55,48 @@ export class EditQytModal extends Component {
               <Col sm={6}>
                 <Form onSubmit={this.handleSubmit}>
                   <Form.Group controlId="IDQyteti">
-                    <Form.Label>IDQyteti</Form.Label>
+                    {/* <Form.Label>IDQyteti</Form.Label> */}
                     <Form.Control
                       type="text"
                       name="IDQyteti"
                       required
                       placeholder="IDQyteti"
                       disabled
-                      defaultValue={this.props.qytid}
+                      defaultValue={this.props.qyid}
+                      className="form-content2"
                     />
                   </Form.Group>
 
                   <Form.Group controlId="EmriQytetit">
-                    <Form.Label>EmriQytetit</Form.Label>
+                    {/* <Form.Label>EmriQytetit</Form.Label> */}
                     <Form.Control
                       type="text"
                       name="EmriQytetit"
                       required
                       defaultValue={this.props.qytemri}
                       placeholder="EmriQytetit"
+                      className="form-content2"
                     />
                   </Form.Group>
 
                   <Form.Group controlId="Shteti">
-                    <Form.Label>Shteti</Form.Label>
-                    <Form.Control as="select" defaultValue={this.props.shteti}>
+                    {/* <Form.Label>Shteti</Form.Label> */}
+                    <Form.Control as="select" defaultValue={this.props.shteti} className="form-content2">
                       {/* {this.state.deps.map((dep) => (
                         <option key={dep.shtetet_id}>
                           {dep.emri_shtetet}
                         </option>
                       ))} */}
+                      <option>Kosove</option>
+                      <option>Shqiperi</option>
                     </Form.Control>
                   </Form.Group>
                   <Form.Group>
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" type="submit" className="shto-btnD">
                       Update
+                    </Button>
+                    <Button variant="danger" onClick={this.props.onHide}>
+                      Close
                     </Button>
                   </Form.Group>
                 </Form>
@@ -96,11 +104,11 @@ export class EditQytModal extends Component {
             </Row>
           </Modal.Body>
 
-          <Modal.Footer>
+          {/* <Modal.Footer>
             <Button variant="danger" onClick={this.props.onHide}>
               Close
             </Button>
-          </Modal.Footer>
+          </Modal.Footer> */}
         </Modal>
       </div>
     );
