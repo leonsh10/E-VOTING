@@ -3,13 +3,14 @@ import '../../App.scss';
 import {Button, ButtonToolbar, Form, Row, Col, Table} from 'react-bootstrap'
 import {register} from "../login/register";
 import { FaRegSnowflake } from 'react-icons/fa';
-
+import {EditRegModal} from '../login/EditRegModal';
 
 export class votuesit extends Component{
 
     constructor(props){
         super(props);
-        this.state={regs:[]}
+        this.state={regs:[],editModalShow:false}
+        // this.handleSubmit=this.handleSubmit.bind(this);
         
     }
     componentDidMount(){
@@ -48,8 +49,10 @@ export class votuesit extends Component{
 }
 
 
+
 render() {
     const {regs, votuesi_id,username,nrLeternjoftimit,email}=this.state;
+    let editModalClose=()=>this.setState({editModalShow:false});
     return (
       <div className="deputetetContent">
           <div className="votuesitDiv">
@@ -71,12 +74,22 @@ render() {
                                 <td>{reg.nrLeternjoftimit}</td>
                                 <td>{reg.email}</td>
                                <td>  <ButtonToolbar className="butonat">
-          <Button className="editButon">
+                               <Button className="editButton" variant="info"
+    onClick={()=>this.setState({editModalShow:true,
+        votuesi_id:reg.votuesi_id,username:reg.username,nrLeternjoftimit:reg.nrLeternjoftimit,
+        email:reg.email})}>
             Edit
-          </Button>
-          <Button className="editButon" onClick={this.deleteUser}>
+        </Button>
+          <Button className="editButon"onClick={()=>this.deleteUser(reg.votuesi_id)}>
             Fshij
           </Button>
+          <EditRegModal show={this.state.editModalShow}
+        onHide={editModalClose}
+        username={username}
+        nrLeternjoftimit={nrLeternjoftimit}
+        email={email}
+        votuesi_id={votuesi_id}
+        />
         </ButtonToolbar></td>
 
                             </tr>)}
@@ -85,6 +98,8 @@ render() {
                 </Table>
       </div>
       </div>
+
+      
 
     );
 }

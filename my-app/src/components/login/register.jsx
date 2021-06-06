@@ -4,6 +4,7 @@ import loginImg from "../../login.svg";
 import {Button,ButtonToolbar} from 'react-bootstrap';
 import {AddRegModal} from "./AddRegModal";
 import {Modal,Row, Col, Form} from 'react-bootstrap';
+import {EditRegModal} from './EditRegModal';
 export class Register extends Component {
 
     constructor(props) {
@@ -64,20 +65,20 @@ export class Register extends Component {
         })
     }
 
-    deleteUser(votuesi_id){
+    // deleteUser(votuesi_id){
        
-            fetch('http://localhost:5000/api/Register/'+votuesi_id,{
-                method:'DELETE',
-                header:{'Accept':'application/json',
-            'Content-Type':'application/json'}
-            })
+    //         fetch('http://localhost:5000/api/Register/'+votuesi_id,{
+    //             method:'DELETE',
+    //             header:{'Accept':'application/json',
+    //         'Content-Type':'application/json'}
+    //         })
         
-    }
+    // }
 
     render() {
         const {votuesi_id,username,nrLeternjoftimit,email,Password}=this.state;
         // let addModalClose=()=>this.setState({addModalShow:false});
-    
+        let editModalClose=()=>this.setState({editModalShow:false});
         return <div className="base-container" ref={this.props.conatinerRef}>
             <div className="header">Register</div>
             <Form onSubmit={this.handleSubmit}>
