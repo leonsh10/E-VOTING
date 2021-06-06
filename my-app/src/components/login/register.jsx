@@ -58,10 +58,10 @@ export class Register extends Component {
                 // mail:event.target.mail.value,
                 // Password:event.target.Password.value
 
-            username:"leoni1",
-            nrLeternjoftimit:31232131,
-            email:"dsfsd@dsfsd.com",
-            Password:"asdfasdasdd"
+            // username:"leoni1",
+            // nrLeternjoftimit:31232131,
+            // email:"dsfsd@dsfsd.com",
+            // Password:"asdfasdasdd"
                 // votuesi_id:null,
                 // username:this.state.username,
                 // nrLeternjoftimit:this.state.nrLeternjoftimit,
