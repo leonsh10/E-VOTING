@@ -21,9 +21,6 @@ export class Register extends Component {
     }
 
     refreshList(){
-        // const data = {
-        //     // username : username
-        // }
         fetch('http://localhost:5000/api/Register')
         .then(response=>response.json())
         .then(data=>{
@@ -40,7 +37,6 @@ export class Register extends Component {
     }
     
     handleSubmit(event){
-        
         event.preventDefault();
        
         fetch('http://localhost:5000/api/Register',{
@@ -50,22 +46,14 @@ export class Register extends Component {
                 'Content-Type':'application/json'
             }
             ,
-            body:JSON.stringify({
+            body: JSON.stringify({
                
-                votuesi_id:null,
-                name:event.target.name.value,
-                nrL:event.target.nrL.value,
-                mail:event.target.mail.value,
-                Password:event.target.Password.value
-
-            
-                // votuesi_id:null,
-                // username:this.state.username,
-                // nrLeternjoftimit:this.state.nrLeternjoftimit,
-                // email:this.state.email,
-                // Password:this.state.Password
+                username: event.target.username.value,
+                nrLeternjoftimit: event.target.nrLeternjoftimit.value,
+                email: event.target.email.value,
+                Password: event.target.Password.value
                
-            })
+              }),
         })
         .then(res=>res.json())
         .then((result)=>{
@@ -92,21 +80,25 @@ export class Register extends Component {
     
         return <div className="base-container" ref={this.props.conatinerRef}>
             <div className="header">Register</div>
+            <Form onSubmit={this.handleSubmit}>
+                  
             <div className="content">
                 <div className="image">
                     <img src={loginImg} />
                 </div>
+
+                
                
                 <div className="form">
                     <div className="form-group">
                           <label htmlFor="username">Username</label>
                        
-                        <input className="username" type="text" name="name"  id="name"  placeholder="Username"  />
+                        <input className="username" type="text" name="username" id="username" placeholder="username"  />
                        
                     </div>
                     <div className="form-group">
                         <label htmlFor="nrleternjoftimit">Numri i Leternjoftimit</label>
-                        <input className="nrLeternjoftimit" type="text"  name="nrLeternjoftimit" id="nrLeternjoftimit" placeholder="Numri i Leternjoftimit" />
+                        <input className="nrLeternjoftimit" type="text"  name="nrLeternjoftimit" id="nrLeternjoftimit"  placeholder="Numri i Leternjoftimit" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
@@ -114,16 +106,19 @@ export class Register extends Component {
                     </div>
                     <div className="form-group">
                         <label htmlFor="password">Password</label>
-                        <input className="password" type="password"  name="Password" id="Password" placeholder="Password" />
+                        <input className="Password" type="password"  name="Password" id="Password"  placeholder="password" />
                     </div>
                 </div>
             </div>
             <div className="footer">
              <div className="footer">
-<button type="submit" className="btn" onClick={this.handleSubmit}>Register</button>
+<button type="submit" className="btn" >Register</button>
+
 </div> 
             </div>
+            </Form>
         </div>
+        
     }
 
 }
