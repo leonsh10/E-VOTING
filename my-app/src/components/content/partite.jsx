@@ -70,9 +70,9 @@ function partite() {
         </Table> */}
         <table className="tabela">
           <tr>
-            <th className="tabelaHD">IDPartia</th>
+            <th className="tabelaHD">partit_id</th>
             
-            <th className="tabelaHD">Emri i Partise</th>
+            <th className="tabelaHD">emri_Partis</th>
             <th className="tabelaHD">Opsionet</th>
           </tr>
           <tr>
