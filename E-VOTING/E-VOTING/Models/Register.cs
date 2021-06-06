@@ -11,11 +11,11 @@ namespace E_VOTING.Models
     {
         public int votuesi_id { get; set; }
         public string username { get; set; }
-        [Required]
+        
         public int nrLeternjoftimit { get; set; }
-        [Required]
+       
         public string email { get; set; }
-        [Required]
+        
         public string Password { get; set; }
         
     

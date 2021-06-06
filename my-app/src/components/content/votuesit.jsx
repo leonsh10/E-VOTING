@@ -10,6 +10,7 @@ export class votuesit extends Component{
     constructor(props){
         super(props);
         this.state={regs:[]}
+        
     }
     refreshList(){
         fetch('http://localhost:5000/api/Register')
@@ -27,9 +28,20 @@ export class votuesit extends Component{
         this.refreshList();
     }
 
+   
+    deleteUser(votuesi_id){
+       
+        fetch('http://localhost:5000/api/Register/'+votuesi_id,{
+            method:'DELETE',
+            header:{'Accept':'application/json',
+        'Content-Type':'application/json'}
+        })
+    
+}
+
 
 render() {
-    const {regs, votuesi_id,username,nrLeter,email}=this.state;
+    const {regs, votuesi_id,username,nrLeternjoftimit,email}=this.state;
     return (
       <div className="deputetetContent">
           <div className="votuesitDiv">
@@ -54,7 +66,7 @@ render() {
           <Button className="editButon">
             Edit
           </Button>
-          <Button className="editButon" >
+          <Button className="editButon" onClick={this.deleteUser(votuesi_id)}>
             Fshij
           </Button>
         </ButtonToolbar></td>
