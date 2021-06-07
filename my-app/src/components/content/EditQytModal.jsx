@@ -82,13 +82,13 @@ export class EditQytModal extends Component {
                   <Form.Group controlId="Shteti">
                     {/* <Form.Label>Shteti</Form.Label> */}
                     <Form.Control as="select" defaultValue={this.props.shteti} className="form-content2">
-                      {/* {this.state.deps.map((dep) => (
+                      {this.state.deps.map((dep) => (
                         <option key={dep.shtetet_id}>
                           {dep.emri_shtetet}
                         </option>
-                      ))} */}
-                      <option>Kosove</option>
-                      <option>Shqiperi</option>
+                      ))}
+                      {/* <option>Kosove</option>
+                      <option>Shqiperi</option> */}
                     </Form.Control>
                   </Form.Group>
                   <Form.Group>
