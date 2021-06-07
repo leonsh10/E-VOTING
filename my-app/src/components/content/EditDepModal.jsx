@@ -98,16 +98,18 @@ export class EditDepModal extends Component {
                       </Form.Group>
 
                       <Form.Group controlId="Numri">
-                        <Form.Label>Numri</Form.Label>
-                        <Form.Control
-                          type="text"
-                          name="Numri"
-                          required
-                          defaultValue={this.props.Numri}
-                          placeholder="Numri i Deputetit"
-                          className="form-content2"
-                        />
-                      </Form.Group>
+                    <Form.Label>Numri I Deputetit</Form.Label>
+                    <select class="form-content2" name="Numri" >
+                <option >Zgjedh numrin</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                </select>
+
+                </Form.Group>
+                   
     
                   
                       <Form.Group>

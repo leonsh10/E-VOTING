@@ -109,25 +109,20 @@ render() {
                             <option key={par.partit_id}>{par.emri_Partis}</option>)}
                         </Form.Control>
                     </Form.Group>
+                    <Form.Group controlId="Numri">
                     <Form.Label>Numri I Deputetit</Form.Label>
-                    {/* <select name="Numri" class="form-content2" >
+                    <select class="form-content2" name="Numri" >
                 <option >Zgjedh numrin</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
                 <option>4</option>
                 <option>5</option>
-                </select> */}
+                </select>
 
-
-                    <Form.Control
-                      type="number"
-                      name="Numri"
-                      
-                      required
-                      placeholder="Numri"
-                      className="form-content2"
-                    />
+                </Form.Group>
+                   
+              
 
               <div className="buton-div">
                 <Button variant="primary" type="submit" className="shto-btnD">
