@@ -75,4 +75,11 @@ export const SidebarData = [
     cName: 'nav-text'
   },
 
+  {
+    title: 'Statistikat',
+    path: '/statistikat',
+    icon: <IoIcons.IoMdPerson />,
+    cName: 'nav-text'
+  }
+
 ];

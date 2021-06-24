@@ -1,19 +1,14 @@
 import React,{Component} from 'react';
 import '../../App.scss';
-<<<<<<< HEAD
 import './stiliTabel.scss';
 import {Button, ButtonToolbar, Form, Row, Col, Table} from 'react-bootstrap';
 import  {Colgroup}  from 'react-bootstrap';
 import { EditDepModal } from "./EditDepModal";
-=======
-
->>>>>>> 16ad03a97b44c151bfdbababcab8b0bd65e9bd6d
 export class votimi extends Component{
 
 
 render(){
     return(
-<<<<<<< HEAD
 
 <div id="votimi" >
   <h1>Forma e Votimit</h1>
@@ -82,15 +77,6 @@ render(){
 
 
 
-=======
-    <div class="componentsHome">
-        <div class="homeContent">
-            <h1>PER CFARE ARSYJE PERDORET E-VOTING</h1>
-            <p>E-Voting perdoret per arsyje se eshte menyra me e mire dhe me e sigurte per votim ne tere boten. Qe nga viti 2021 kjo menyre e votimit perdoret edhe ne Kosove</p>
-            <button class="home-btn">SI TE VOTONI</button>
-        </div>
-    </div>
->>>>>>> 16ad03a97b44c151bfdbababcab8b0bd65e9bd6d
     )
 }
 
