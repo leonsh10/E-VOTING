@@ -2,7 +2,7 @@ import React from "react";
 import "../../App.scss";
 import  {Login} from "./index";
 import  {Register} from "./index";
-
+import Nav from '../navigation/nav';
 
 class App2 extends React.Component {
     constructor(props) {
@@ -36,7 +36,9 @@ class App2 extends React.Component {
       const currentActive = isLogginActive ? "login" : "register";
       
       return (
+       
          <div className="App">
+           {/* <Nav /> */}
        <div className="login">
             <div className="container" ref={ref => (this.container = ref)}>
               
