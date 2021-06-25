@@ -2,6 +2,9 @@ import React,{Component} from 'react';
 import FusionCharts from "fusioncharts";
 import charts from "fusioncharts/fusioncharts.charts";
 import ReactFusioncharts from "react-fusioncharts";
+import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+
+
 
 
 charts(FusionCharts);
@@ -10,11 +13,11 @@ const dataSource = {
     chart: {
       caption: "Votat e Numeruara",
       subcaption: "2021",
-      xaxisname: "Emri i partise",
+      xaxisname: "Partite",
       yaxisname: "Numri i votave",
       formatnumberscale: "1",
       plottooltext:
-        "<b>$dataValue</b> vota ka <b>$seriesName</b> ne $label",
+        "<b>$dataValue</b> vota ka <b>$seriesName</b> ",
       theme: "fusion"
     },
     categories: [
@@ -78,11 +81,16 @@ const dataSource = {
 
   
 
+
+
+  
+
 export class statistikat extends React.Component{
 
 
     render() {
         return (
+          <div>
           <ReactFusioncharts
             type="mscolumn3d"
             width="100%"
@@ -90,6 +98,10 @@ export class statistikat extends React.Component{
             dataFormat="JSON"
             dataSource={dataSource}
           />
+     
+     
+         </div>
+         
         );
       }
 }
