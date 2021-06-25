@@ -80,6 +80,11 @@ export const SidebarData = [
     path: '/statistikat',
     icon: <IoIcons.IoMdPerson />,
     cName: 'nav-text'
+  },
+  {
+    title: 'Home',
+    path: '/home',
+    icon: <IoIcons.IoMdPerson />,
+    cName: 'nav-text'
   }
-
 ];

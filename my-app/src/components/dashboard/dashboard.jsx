@@ -9,6 +9,7 @@ import  {Qytetet} from "../content/qytetet";
 import Votuesit from "../content/votuesit";
 import Votimi from "../content/votimi";
 import Statistikat from "../content/statistikat";
+import Home from "../content/home";
 import Navbar from '../navigation/navBar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 function Dashboard(){
@@ -34,6 +35,7 @@ function Dashboard(){
               <Route path='/votuesit' component={Votuesit} />
               <Route path='/votimi' component={Votimi} />
               <Route path='/statistikat' component={Statistikat} />
+              <Route path='/home' component={Home} />
             </Switch>
           </Router>
         </>
