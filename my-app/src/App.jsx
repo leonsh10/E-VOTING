@@ -8,12 +8,11 @@ import Nav from './components/navigation/nav';
 import dashboard from "./components/dashboard/dashboard";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import App2 from "./components/login/App2";
-
+import otherData from "./components/login/otherData";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-   
   }
   
 
@@ -31,11 +30,12 @@ class App extends React.Component {
                {/* <Route path="/login" component={Login} /> */}
                {/* <Route path="/register" component={Register} /> */}
                <Route path="/App2" component={App2} />
+
+               <Route path="/otherData" component={otherData} />
              </Switch>
            </div>
          </Router>
-   );
-    
+   ); 
   }
 }
 

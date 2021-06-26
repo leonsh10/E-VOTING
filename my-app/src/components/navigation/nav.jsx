@@ -21,6 +21,10 @@ function Nav(){
                 <Link style={navStyle} to="/app2">
                     <li>Login</li>
                 </Link>
+
+                <Link style={navStyle} to="/otherData">
+                    <li>Te dhenat</li>
+                </Link>
             </ul>
         </nav>
     )
