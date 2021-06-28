@@ -12,11 +12,11 @@
 
 nav{
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
-  min-height: 10vh;
+  min-height: 5vh;
   width:initial;
-  background-color: #191c24;
+  background-color: rgb(13, 13, 129);
   color: white;
   // margin-bottom: 500%;
   // margin-right: 40%;
@@ -210,7 +210,7 @@ nav{
 .deputetetContent{
   color: white;
   width: 100%;
-  height: 789px;
+  height: 822px;
   background-color: #060b26;
   // margin: auto auto;
 }
@@ -459,7 +459,7 @@ tr:nth-child(even) {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: #15181f;
+  background-color: #060b26;
   color: white;
   bottom:100px;
 }
@@ -510,7 +510,7 @@ tr:nth-child(even) {
 }
 .homeContent{
   margin: auto 0;
-  width: 400px;
+  width: 470px;
   padding: 70px;
 }
 .home-btn{
@@ -539,10 +539,12 @@ tr:nth-child(even) {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  padding-top: 500px;
 }
 .voteOption{
   width: 200px;
   text-align: center;
+  background-color:rgb(230, 230, 223) !important;
 }
 .vote-btn{
   margin-top: 43px;
@@ -555,3 +557,6 @@ tr:nth-child(even) {
 .form-group{
   padding-right: 15px;
 }
+// .votoStyle{
+//   border: 1px solid white;border-radius: 15px; padding-left: 15px;padding-right: 15px;padding-bottom: 2px;
+// }

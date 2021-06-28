@@ -6,11 +6,21 @@ function Nav(){
     const navStyle = {
         color: 'white'
     };
+    const votoStyle = {
+        border: '1px solid white',
+        borderRadius: '15px',
+        paddingLeft: '15px',
+        paddingRight: '15px',
+        paddingBottom: '2px',
+    };
     return (
         <nav>
             <ul className="nav-links">
                 <Link style={navStyle} to="/home">
-                    <li>Home</li>
+                    <li>Kryefaqja</li>
+                </Link>
+                <Link style={navStyle} to="/statistikat">
+                    <li>Statistikat</li>
                 </Link>
                 <Link style={navStyle} to="/dashboard">
                     <li>Dashboard</li>
@@ -29,7 +39,7 @@ function Nav(){
                     <li>Te dhenat</li>
                 </Link>
                 <Link style={navStyle} to="/votimi">
-                    <li>Voto</li>
+                    <li style={votoStyle}>Voto</li>
                 </Link>
             </ul>
         </nav>
