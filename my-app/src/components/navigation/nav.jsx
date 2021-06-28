@@ -9,6 +9,9 @@ function Nav(){
     return (
         <nav>
             <ul className="nav-links">
+                <Link style={navStyle} to="/home">
+                    <li>Home</li>
+                </Link>
                 <Link style={navStyle} to="/dashboard">
                     <li>Dashboard</li>
                 </Link>
@@ -24,6 +27,9 @@ function Nav(){
 
                 <Link style={navStyle} to="/otherData">
                     <li>Te dhenat</li>
+                </Link>
+                <Link style={navStyle} to="/votimi">
+                    <li>Voto</li>
                 </Link>
             </ul>
         </nav>

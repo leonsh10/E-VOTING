@@ -523,3 +523,35 @@ tr:nth-child(even) {
   margin-top: 30px;
   font-size: 16px;
 }
+
+.votePage{
+  background-image: url('../src/components/images/header.png');
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 1000px;
+  background-size: 1910px;
+  margin: 0;
+  padding: 0;
+}
+
+.voteForm{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.voteOption{
+  width: 200px;
+  text-align: center;
+}
+.vote-btn{
+  margin-top: 43px;
+}
+.formLabels{
+  font-size: 19px;
+  padding: 5px;
+  text-align: center;
+}
+.form-group{
+  padding-right: 15px;
+}

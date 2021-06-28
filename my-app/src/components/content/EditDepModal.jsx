@@ -34,10 +34,10 @@ export class EditDepModal extends Component {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-     deputetet_id: event.target.deputetet_id.value,
-     Partia: event.target.Partia.value,
-     Emri: event.target.Emri.value,
-     Numri: event.target.Numri.value
+          deputetet_id: event.target.deputetet_id.value,
+          Partia: event.target.Partia.value,
+          Emri: event.target.Emri.value,
+          Numri: event.target.Numri.value
           }),
         })
           .then((res) => res.json())
