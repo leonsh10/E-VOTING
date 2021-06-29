@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import '../../App.scss';
 import video1 from "../videos/video1.mp4";
 import {Button} from 'react-bootstrap';
-import ScrollButton from 'react-scroll-button'
+// import ScrollButton from 'react-scroll-button'
 
 
 // export class home extends Component{
@@ -32,7 +32,7 @@ function home() {
                 </div>
                 <div class="videoDiv">
                     <div class="rainbow">
-                <video src={video1} width="600" height="300" class="vid" controls="controls" autoplay="false" />
+                <video src={video1} width="600" height="300" class="vid" controls="controls" autoplay={false} />
                 </div>
                 <div class="pershkrimi">
                 <h1>Si te votoni?</h1>
@@ -40,8 +40,6 @@ function home() {
                 <button class="home-btn" >Contact Us</button>
                 </div>
                 </div>
-
-            
             </div>
         )
     // }

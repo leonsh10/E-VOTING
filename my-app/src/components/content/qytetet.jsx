@@ -99,8 +99,22 @@ export class Qytetet extends Component {
               ))}
             </tbody>
           </Table>
-          <ButtonToolbar>
-            <Button
+          {/* <ButtonToolbar>
+            <Button class="qytBtn"
+              variant="primary"
+              onClick={() => this.setState({ addModalShow: true })}
+            >
+              Shto Qytetin
+            </Button>
+
+            <AddQytModal
+              show={this.state.addModalShow}
+              onHide={addModalClose}
+            />
+          </ButtonToolbar> */}
+        </div>
+        <ButtonToolbar>
+            <Button class="qytBtn"
               variant="primary"
               onClick={() => this.setState({ addModalShow: true })}
             >
@@ -112,7 +126,6 @@ export class Qytetet extends Component {
               onHide={addModalClose}
             />
           </ButtonToolbar>
-        </div>
       </div>
     );
   }
