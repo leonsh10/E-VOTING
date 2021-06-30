@@ -442,7 +442,8 @@ margin-right: 30px;
 
 .vot1 tbody tr:nth-of-type(even) {
   // background-color: #ee5a5a;
-  background-color: rgb(250, 247, 88);
+  // background-color: rgb(250, 247, 88);
+  background-color: rgb(243, 240, 39);
 }
 
 .vot1 tbody tr:last-of-type {
@@ -662,6 +663,7 @@ tr:nth-child(even) {
   height: 53px;
   position:absolute;
   margin-top: 73.6%;
+  top: 100px;
   width: 100%;
   padding-bottom: 0;
   // margin-bottom: 0;

@@ -87,7 +87,7 @@ export class deputetet extends Component {
           <Form className="forma1" onSubmit={this.handleSubmit}>
             <Form.Group controlId="Emri">
               {/* <Form.Label>EmriQytetit</Form.Label> */}
-              <Form.Label>Emri</Form.Label>
+              {/* <Form.Label>Emri</Form.Label> */}
               <Form.Control
                 type="text"
                 name="Emri"
@@ -97,7 +97,7 @@ export class deputetet extends Component {
               />
             </Form.Group>
             <Form.Group controlId="Partit">
-              <Form.Label>Partite</Form.Label>
+              {/* <Form.Label>Partite</Form.Label> */}
               <Form.Control as="select" name="Partia">
                 {this.state.part.map((par) => (
                   <option key={par.partit_id}>{par.emri_Partis}</option>
@@ -105,7 +105,7 @@ export class deputetet extends Component {
               </Form.Control>
             </Form.Group>
             <Form.Group controlId="Numri">
-              <Form.Label>Numri I Deputetit</Form.Label>
+              {/* <Form.Label>Numri I Deputetit</Form.Label> */}
               <select class="form-content2" name="Numri">
                 <option>Zgjedh numrin</option>
                 <option>1</option>
