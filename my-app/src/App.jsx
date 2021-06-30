@@ -29,7 +29,8 @@ class App extends React.Component {
            <div className="App1">
              <Nav />
              <Switch>
-              <Route path="/home" component={home} />
+              <Route path="/" exact component={home} />
+              <Route path="/home" exact component={home} />
               <Route path="/statistikat" component={statistikat} />
               <Route path="/contactus" component={contactUs} />
                <Route path="/dashboard" component={dashboard} />

@@ -33,9 +33,9 @@ function Dashboard(){
               <Route path='/shtetet' component={Shtetet} />
               <Route path='/qytetet' component={Qytetet} />
               <Route path='/votuesit' component={Votuesit} />
-              <Route path='/votimi' component={Votimi} />
+              {/* <Route path='/votimi' component={Votimi} />
               <Route path='/statistikat' component={Statistikat} />
-              <Route path='/home' component={Home} />
+              <Route path='/home' component={Home} /> */}
             </Switch>
           </Router>
         </>

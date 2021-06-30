@@ -55,8 +55,9 @@ render() {
     let editModalClose=()=>this.setState({editModalShow:false});
     return (
       <div className="deputetetContent">
-          <div className="votuesitDiv">
         <h1 class="titulliLart">Votuesit</h1>
+          <div className="votuesitDiv">
+        {/* <h1 class="titulliLart">Votuesit</h1> */}
         <Table className="vot1" >
                     <thead>
                         <tr>
@@ -74,7 +75,7 @@ render() {
                                 <td>{reg.nrLeternjoftimit}</td>
                                 <td>{reg.email}</td>
                                <td>  <ButtonToolbar className="butonat">
-                               <Button className="editButton" variant="info"
+                               <Button className="editButon" variant="info"
     onClick={()=>this.setState({editModalShow:true,
         votuesi_id:reg.votuesi_id,username:reg.username,nrLeternjoftimit:reg.nrLeternjoftimit,
         email:reg.email})}>
