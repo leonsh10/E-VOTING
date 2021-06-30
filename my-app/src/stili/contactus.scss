@@ -116,18 +116,20 @@ box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
   .contactMajte{
       width:40%;
       height:445px;
-      border:1px solid green;
+      // border:1px solid green;
       position:absolute;
       left:702px;
-      background-color:rgb(45, 68, 133);
+      background-color:transparent;
   }
  
  
   .llogot{
-    width:50px;
-    height:50px;
+    width:35px;
+    height:35px;
     position:absolute;
-
+    top:65px;
+    left:70px;
+    color:white;
   }
 
   .dyshi{
@@ -135,6 +137,74 @@ box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
     flex-direction:column !important;
     margin:0px !important;
     position: absolute;
-    top:50px;
-    left:100px;
+    top:45px;
+    left:300px;
+  }
+
+  p{
+    margin-top:-17px;
+    color:white;
+  }
+
+  .h42{
+    color:white;
+  }
+
+  .dysh{
+    display: flex;
+    flex-direction:column !important;
+    margin:0px !important;
+    position: absolute;
+    top:80px;
+    // left:300px;
+  }
+
+  .tresh{
+    display: flex;
+    flex-direction:column !important;
+    margin:0px !important;
+    position: absolute;
+    top:150px;
+    // left:300px;
+  }
+
+
+  .vija{
+    width:70%;
+    height:1px;
+    background-color: white;
+    position:absolute;
+    top:320px;
+    left:75px;
+  }
+
+  .llogotSocial{
+    width:fit-content;
+    height:fit-content;
+    position:absolute;
+    top:350px;
+    left:200px;
+    color:white;
+    display:flex;
+    flex-direction: row;
+   
+  }
+
+  // .llogotDesign {
+  //   width:30px;
+  //   height:30px;
+  //   padding:20px;
+  // }
+
+  .llogot1{
+    color:white;
+    width:35px;
+    height:35px;
+    padding:5px;
+  }
+
+  #posht{
+    position:absolute;
+    top:410px;
+    left:200px;
   }

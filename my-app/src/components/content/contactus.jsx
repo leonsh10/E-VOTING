@@ -5,6 +5,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Segment from 'react-bootstrap/Button';
 import * as IoIcons from 'react-icons/io';
+import * as AiIcons from 'react-icons/ai';
+import * as FaIcons from 'react-icons/fa';
 class contactus extends React.Component {
     constructor(props) {
         super(props);
@@ -47,10 +49,47 @@ class contactus extends React.Component {
 <div class="njeshi">
 <IoIcons.IoMdLocate class="llogot"/>
 <div class="dyshi">
-<h4>E-VOTING</h4>
+<h4 class="h42">E-VOTING</h4>
 <p>KOSOVA,XK</p>
 </div>
 </div>
+
+<div class="dysh">
+<IoIcons.IoMdCall class="llogot"/>
+<div class="dyshi">
+<h4 class="h42">+38345121212</h4>
+</div>
+</div>
+
+<div class="tresh">
+<IoIcons.IoMdMail class="llogot"/>
+<div class="dyshi">
+<h4 class="h42">e_voting@outlook.com</h4>
+</div>
+</div>
+
+
+<div class="vija"></div>
+
+<div class="llogotSocial">
+  <div class="llogotDesign">
+<FaIcons.FaFacebookF class="llogot1"/>
+</div>
+<div class="llogotDesign">
+<FaIcons.FaInstagram class="llogot1"/>
+</div>
+<div class="llogotDesign">
+<FaIcons.FaTwitter class="llogot1"/>
+</div>
+<div class="llogotDesign">
+<FaIcons.FaGooglePlusG class="llogot1"/>
+</div>
+
+</div>
+
+
+<p id="posht">E-VOTING KOSOVA</p>
+
 </div>
 
 </div>

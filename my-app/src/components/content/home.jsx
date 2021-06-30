@@ -1,12 +1,8 @@
 import React, { Component } from "react";
 import "../../App.scss";
 import video1 from "../videos/video1.mp4";
-<<<<<<< HEAD
 import {Button} from 'react-bootstrap';
 
-=======
-import { Button } from "react-bootstrap";
->>>>>>> c691057b567d3691b0cf70adfc83b388c48fb7c6
 
 // export class home extends Component{
 function home() {
