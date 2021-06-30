@@ -63,7 +63,4 @@ class contactus extends React.Component {
     }
 }
 
-    export default contactus
-
-
-  
+export default contactus;
