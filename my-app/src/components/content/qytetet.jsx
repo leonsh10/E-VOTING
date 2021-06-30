@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import "../../App.scss";
 import { Button, ButtonToolbar, Form, Row, Col, Table } from "react-bootstrap";
 import shtetet from "./shtetet";
-import { AddQytModal } from "./AddQytModal";
+// import { AddQytModal } from "./AddQytModal";
 import { EditQytModal } from "./EditQytModal";
 
 export class Qytetet extends Component {
   constructor(props) {
     super(props);
-    this.state = { qyts: [], addModalShow: false, editModalShow: false };
+    this.state = { qyts: [], deps: [],editModalShow: false };
   }
 
   refreshList() {
@@ -38,13 +38,75 @@ export class Qytetet extends Component {
       });
     }
   }
+  /* ========================= */
+  componentDidMount() {
+    // event.preventDefault();
+    fetch("http://localhost:5000/api/Shtetet")
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ deps: data });
+      });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    fetch("http://localhost:5000/api/Qyteti", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // IDQyteti:null,
+        EmriQytetit: event.target.EmriQytetit.value,
+        Shteti: event.target.Shteti.value,
+      }),
+    })
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          alert(result);
+        },
+        (error) => {
+          alert("Failed");
+        }
+      );
+  }
+  /* ============================== */
   render() {
     const { qyts, qyid, qytemri, shteti } = this.state;
-    let addModalClose=()=>this.setState({addModalShow:false});
-    let editModalClose=()=>this.setState({editModalShow:false});
+    let addModalClose = () => this.setState({ addModalShow: false });
+    let editModalClose = () => this.setState({ editModalShow: false });
     return (
       <div className="deputetetContent">
         <h1 class="titulliLart">Qytetet</h1>
+        <div>
+          <Form className="forma1" onSubmit={this.handleSubmit}>
+            <Form.Group controlId="EmriQytetit">
+              {/* <Form.Label>EmriQytetit</Form.Label> */}
+              <Form.Control
+                type="text"
+                name="EmriQytetit"
+                required
+                placeholder="Emri i Qytetit"
+                className="form-content2"
+              />
+            </Form.Group>
+            <Form.Group controlId="Shteti">
+              {/* <Form.Label>Shteti</Form.Label> */}
+              <Form.Control as="select" className="form-content2">
+                {this.state.deps.map((dep) => (
+                  <option key={dep.shtetet_id}>{dep.emri_shtetet}</option>
+                ))}
+              </Form.Control>
+            </Form.Group>
+            <div className="buton-div">
+              <Button variant="primary" type="submit" className="shto-btnD">
+                Shto
+              </Button>
+            </div>
+          </Form>
+        </div>
         <div className="votuesitDiv">
           <Table className="vot1">
             <thead>
@@ -99,33 +161,7 @@ export class Qytetet extends Component {
               ))}
             </tbody>
           </Table>
-          {/* <ButtonToolbar>
-            <Button class="qytBtn"
-              variant="primary"
-              onClick={() => this.setState({ addModalShow: true })}
-            >
-              Shto Qytetin
-            </Button>
-
-            <AddQytModal
-              show={this.state.addModalShow}
-              onHide={addModalClose}
-            />
-          </ButtonToolbar> */}
         </div>
-        <ButtonToolbar>
-            <Button class="qytBtn"
-              variant="primary"
-              onClick={() => this.setState({ addModalShow: true })}
-            >
-              Shto Qytetin
-            </Button>
-
-            <AddQytModal
-              show={this.state.addModalShow}
-              onHide={addModalClose}
-            />
-          </ButtonToolbar>
       </div>
     );
   }
