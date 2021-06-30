@@ -4,7 +4,7 @@ import '../../stili/contactus.scss'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Segment from 'react-bootstrap/Button';
-
+import * as IoIcons from 'react-icons/io';
 class contactus extends React.Component {
     constructor(props) {
         super(props);
@@ -15,38 +15,42 @@ class contactus extends React.Component {
             <div class="divForma">
 
 <div class="formm">
-<h4>CONTACT US</h4>
-<Form className="forma1">
+<h4 id="epara">CONTACT US </h4>
+<form className="forma1">
  
-<Form.Group>
+
     {/* <Form.Label>Shkruaj Emrin:</Form.Label> */}
-    <Form.Control type="text" 
+    <input type="text" class="inputi" size="30"
                   placeholder="Emri" />
-  </Form.Group>
-  <Form.Group>
+ 
+ 
     {/* <Form.Label>Shkruaj Email-in</Form.Label> */}
-    <Form.Control type="email" 
+    <input type="email" class="inputi" size="30"
                   placeholder="Email" />
-  </Form.Group>
-  <Form.Group>
+ 
     {/* <Form.Label>Shkruaj Numrin e Telefonit</Form.Label> */}
-    <Form.Control type="text" 
+    <input type="text" class="inputi" size="30"
                   placeholder="Nr.Telefonit" />
-  </Form.Group>
-  <Form.Group>
+ 
     {/* <Form.Label>Shkruaj Paqartesite</Form.Label> */}
     <textarea  rows="7" cols="60" placeholder="Mesazhi.."></textarea>
-  </Form.Group>
+ 
   
-  <Button variant="primary" type="submit">
+  <button  type="submit" class="butoni">  
     Dergo Mesazhin
-  </Button>
-</Form>
+  </button>
+</form>
 </div>
 
 
 <div class="contactMajte">
-
+<div class="njeshi">
+<IoIcons.IoMdLocate class="llogot"/>
+<div class="dyshi">
+<h4>E-VOTING</h4>
+<p>KOSOVA,XK</p>
+</div>
+</div>
 </div>
 
 </div>

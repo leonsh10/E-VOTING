@@ -2,11 +2,6 @@ import React,{Component} from 'react';
 import '../../App.scss';
 import video1 from "../videos/video1.mp4";
 import {Button} from 'react-bootstrap';
-<<<<<<< HEAD
-
-=======
-// import ScrollButton from 'react-scroll-button'
->>>>>>> 84aa2ea0196dc2060ab22292386d458eeadff6e9
 
 
 // export class home extends Component{
