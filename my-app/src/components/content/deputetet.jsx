@@ -1,149 +1,135 @@
-import React,{Component} from 'react';
-import '../../App.scss';
-import {Button, ButtonToolbar, Form, Row, Col, Table} from 'react-bootstrap';
+import React, { Component } from "react";
+import "../../App.scss";
+import { Button, ButtonToolbar, Form, Row, Col, Table } from "react-bootstrap";
 import { EditDepModal } from "./EditDepModal";
-export class deputetet extends Component{
-
-  constructor(props){
-      super(props);
-      this.state={depu:[],part:[],editModalShow:false}
-      this.handleSubmit=this.handleSubmit.bind(this);
-      
+export class deputetet extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { depu: [], part: [], editModalShow: false };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-componentDidMount(){
-  fetch('http://localhost:5000/api/Partit')
-  .then(response=>response.json())
-  .then(data=>{
-      this.setState({part:data});
-  });
-}
+  componentDidMount() {
+    fetch("http://localhost:5000/api/Partit")
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ part: data });
+      });
+  }
 
+  // componentDidMount(){
+  //   fetch('http://localhost:5000/api/Deputetet')
+  //   .then(response=>response.json())
+  //   .then(data2=>{
+  //       this.setState({depu:data2});
+  //   });
+  // }
 
-// componentDidMount(){
-//   fetch('http://localhost:5000/api/Deputetet')
-//   .then(response=>response.json())
-//   .then(data2=>{
-//       this.setState({depu:data2});
-//   });
-// }
+  refreshList() {
+    fetch("http://localhost:5000/api/Deputetet")
+      .then((response) => response.json())
+      .then((data2) => {
+        this.setState({ depu: data2 });
+      });
+  }
 
-refreshList(){
-  fetch('http://localhost:5000/api/Deputetet')
-  .then(response=>response.json())
-  .then(data2=>{
-      this.setState({depu:data2});
-  });
-}
+  // componentDidMount(){
+  //   this.refreshList();
+  // }
 
-// componentDidMount(){
-//   this.refreshList();
-// }
+  componentDidUpdate() {
+    this.refreshList();
+  }
 
-componentDidUpdate(){
-  this.refreshList();
-}
+  handleSubmit(event) {
+    event.preventDefault();
+    fetch("http://localhost:5000/api/Deputetet", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // deputetet_id: event.target.deputetet_id.value,
+        Partia: event.target.Partia.value,
+        Emri: event.target.Emri.value,
+        Numri: event.target.Numri.value,
+      }),
+    })
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          alert(result);
+        },
+        (error) => {
+          alert("Failed");
+        }
+      );
+  }
 
-handleSubmit(event) {
-event.preventDefault();
-fetch("http://localhost:5000/api/Deputetet", {
-  method: "POST",
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-  
-    // deputetet_id: event.target.deputetet_id.value,
-    Partia: event.target.Partia.value,
-    Emri: event.target.Emri.value,
-    Numri: event.target.Numri.value
-  }),
-})
-  .then((res) => res.json())
-  .then(
-    (result) => {
-      alert(result);
-    },
-    (error) => {
-      alert("Failed");
-    }
-  );
-}
+  deleteDeputetin(deputetet_id) {
+    fetch("http://localhost:5000/api/Deputetet/" + deputetet_id, {
+      method: "DELETE",
+      header: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+  }
 
-deleteDeputetin(deputetet_id){
-     
-fetch('http://localhost:5000/api/Deputetet/'+deputetet_id,{
-    method:'DELETE',
-    header:{'Accept':'application/json',
-'Content-Type':'application/json'}
-})
-
-}
-
-
-render() {
-  const {depu, deputetet_id,Partia,Emri,Numri}=this.state;
-  let editModalClose=()=>this.setState({editModalShow:false});
+  render() {
+    const { depu, deputetet_id, Partia, Emri, Numri } = this.state;
+    let editModalClose = () => this.setState({ editModalShow: false });
     return (
       <div className="deputetetContent">
         <h1 class="titulliLart">Deputetet</h1>
-      
+
         <div>
-        <Form className="forma1" onSubmit={this.handleSubmit}>
-        <Form.Group controlId="Emri">
-                    {/* <Form.Label>EmriQytetit</Form.Label> */}
-                    <Form.Label>Emri</Form.Label>
-                    <Form.Control
-                      type="text"
-                      name="Emri"
-                      
-                      required
-                      placeholder="Emri dhe Mbiemri..."
-                      className="form-content2"
-                    />
-                  </Form.Group>
-        <Form.Group controlId="Partit">
-                        <Form.Label>Partite</Form.Label>
-                        <Form.Control as="select" name="Partia">
-                        {this.state.part.map(par=>
-                            <option key={par.partit_id}>{par.emri_Partis}</option>)}
-                        </Form.Control>
-                    </Form.Group>
-                    <Form.Group controlId="Numri">
-                    <Form.Label>Numri I Deputetit</Form.Label>
-                    <select class="form-content2" name="Numri" >
-                <option >Zgjedh numrin</option>
+          <Form className="forma1" onSubmit={this.handleSubmit}>
+            <Form.Group controlId="Emri">
+              {/* <Form.Label>EmriQytetit</Form.Label> */}
+              <Form.Label>Emri</Form.Label>
+              <Form.Control
+                type="text"
+                name="Emri"
+                required
+                placeholder="Emri dhe Mbiemri..."
+                className="form-content2"
+              />
+            </Form.Group>
+            <Form.Group controlId="Partit">
+              <Form.Label>Partite</Form.Label>
+              <Form.Control as="select" name="Partia">
+                {this.state.part.map((par) => (
+                  <option key={par.partit_id}>{par.emri_Partis}</option>
+                ))}
+              </Form.Control>
+            </Form.Group>
+            <Form.Group controlId="Numri">
+              <Form.Label>Numri I Deputetit</Form.Label>
+              <select class="form-content2" name="Numri">
+                <option>Zgjedh numrin</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
                 <option>4</option>
                 <option>5</option>
-                </select>
+              </select>
+            </Form.Group>
 
-                </Form.Group>
-                   
-              
-
-              <div className="buton-div">
-                <Button variant="primary" type="submit" className="shto-btnD">
-                  Shto
-                </Button>
-              </div>
-          
+            <div className="buton-div">
+              <Button variant="primary" type="submit" className="shto-btnD">
+                Shto
+              </Button>
+            </div>
           </Form>
-            
-              {/* <Form.Control as="select" size="lg" className="form-content"> */}
-            
-            
-         
+
+          {/* <Form.Control as="select" size="lg" className="form-content"> */}
         </div>
-        
+
         <div className="votuesitDiv">
-          
-       <Table className="vot1">
+          <Table className="vot1">
             <thead>
               <tr>
-              
                 <th>ID_Deputeti</th>
                 <th>Emri Dhe Mbiemri</th>
                 <th>Partia</th>
@@ -159,7 +145,7 @@ render() {
                   <td>{dep.Emri}</td>
                   <td>{dep.Numri}</td>
                   <td>
-                  <ButtonToolbar className="butonat">
+                    <ButtonToolbar className="butonat">
                       <Button
                         className="editButon"
                         variant="info"
@@ -169,15 +155,18 @@ render() {
                             deputetet_id: dep.deputetet_id,
                             Partia: dep.Partia,
                             Emri: dep.Emri,
-                            Numri:dep.Numri
+                            Numri: dep.Numri,
                           })
                         }
                       >
                         Edit
                       </Button>
-                      <Button className="editButon"onClick={()=>this.deleteDeputetin(dep.deputetet_id)}>
-            Fshij
-          </Button>
+                      <Button
+                        className="editButon"
+                        onClick={() => this.deleteDeputetin(dep.deputetet_id)}
+                      >
+                        Fshij
+                      </Button>
                       <EditDepModal
                         show={this.state.editModalShow}
                         onHide={editModalClose}
@@ -187,14 +176,14 @@ render() {
                         Numri={Numri}
                       />
                     </ButtonToolbar>
-                    </td>
+                  </td>
                 </tr>
               ))}
             </tbody>
           </Table>
-       </div>
+        </div>
       </div>
     );
+  }
 }
-}
-export default deputetet
+export default deputetet;

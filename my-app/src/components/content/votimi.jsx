@@ -71,6 +71,9 @@ render(){
             </Form.Group>
           </Form>
         </Row>
+        <div class="footerV">
+            <p>All rights reserved</p>
+        </div>
       </div>
     )
 }

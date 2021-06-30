@@ -655,14 +655,36 @@ tr:nth-child(even) {
 //   border: 1px solid white;border-radius: 15px; padding-left: 15px;padding-right: 15px;padding-bottom: 2px;
 // }
 
-// .footer{
-//   text-align: center;
-//   background-color: rgb(13, 13, 129);
-//   color: white;
-//   height: 40px;
-//   margin-top: 332px;
-//   margin-bottom: 0;
-// }
+.footerH{
+  text-align: center;
+  background-color: rgb(13, 13, 129);
+  color: white;
+  height: 53px;
+  position:absolute;
+  margin-top: 73.6%;
+  width: 100%;
+  padding-bottom: 0;
+  // margin-bottom: 0;
+}
+.footerS{
+  background-color: rgb(13, 13, 129);
+  width: 100%;
+  color: white;
+  text-align: center;
+  height: 53px;
+  margin-top: 18%;
+  position:absolute;
+}
+.footerV{
+  text-align: center;
+  background-color: rgb(13, 13, 129);
+  color: white;
+  height: 53px;
+  position:absolute;
+  margin-top: 19%;
+  width: 100%;
+  padding-bottom: 0;
+}
 // .footerContent{
 //   padding: 8px;
 // }
