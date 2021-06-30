@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.divForma{
+    width:100%;
+    height:500px;
+    border:4px solid black;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+    text-align:center;
+    align-content: center;
+    font-family: "Inter", sans-serif;
+    background-color: rgb(151, 152, 255);
+}
+
+
+
+.formm{
+    width:fit-content;
+    height: fit-content;
+    border:1px solid red;
+    background-color: azure;
+    padding:10px;
+    position:absolute;
+    left:50px;
+}
+
+textarea{
+    outline:none;
+    resize:none;
+    font-size: 15px;
+    overflow: auto;
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+input[type=text] {
+    padding: 6px 6px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+  }
+
+ 
+  
+
+  input[type=email] {
+    padding: 6px 6px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+  }
+
+  input[type=text]:focus {
+    border:2px solid rgb(196, 156, 196);
+  }
+
+  input[type=email]:focus {
+    border:2px solid rgb(196, 156, 196);
+  }
+
+  textarea:focus{
+      border:2px solid rgb(196, 156, 196);
+  }
+
+
+
+  .contactMajte{
+      width:40%;
+      height:421px;
+      border:1px solid green;
+      position:absolute;
+      left:628px;
+      background-color:rgb(0, 0, 155);
+  }
+ 
+ 

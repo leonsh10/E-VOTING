@@ -22,6 +22,9 @@ function Nav(){
                 <Link style={navStyle} to="/statistikat">
                     <li>Statistikat</li>
                 </Link>
+                <Link style={navStyle} to="/contactus">
+                    <li>Contact Us</li>
+                </Link>
                 <Link style={navStyle} to="/dashboard">
                     <li>Dashboard</li>
                 </Link>

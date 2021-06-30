@@ -11,6 +11,8 @@
     "canvasjs": "^1.8.3",
     "canvasjs-react-charts": "^1.0.5",
     "fusioncharts": "^3.17.0",
+    "mdb-react-ui-kit": "^1.0.0-beta7",
+    "mdbreact": "^5.0.2",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",

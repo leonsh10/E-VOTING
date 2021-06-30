@@ -12,7 +12,7 @@ import otherData from "./components/login/otherData";
 import votimi from "./components/content/votimi";
 import home from "./components/content/home";
 import statistikat from "./components/content/statistikat";
-
+import contactUs from "./components/content/contactus";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -31,6 +31,7 @@ class App extends React.Component {
              <Switch>
               <Route path="/home" component={home} />
               <Route path="/statistikat" component={statistikat} />
+              <Route path="/contactus" component={contactUs} />
                <Route path="/dashboard" component={dashboard} />
                {/* <Route path="/login" component={Login} /> */}
                {/* <Route path="/register" component={Register} /> */}
