@@ -3,7 +3,7 @@ import FusionCharts from "fusioncharts";
 import charts from "fusioncharts/fusioncharts.charts";
 import ReactFusioncharts from "react-fusioncharts";
 import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
-
+import logo from '.././images/logo.png';
 charts(FusionCharts);
 
 const dataSource = {
@@ -81,8 +81,10 @@ export class statistikat extends React.Component {
           dataSource={dataSource}
         />
 
-        <div class="footerS">
-          <p>All rights reserved</p>
+<div class="footerS">
+          <img src={logo} class="image"></img>
+            <i>&copy;</i>
+          <p>Te gjitha te drejtat e rezervuara</p>
         </div>
       </div>
     );
