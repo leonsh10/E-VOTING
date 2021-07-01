@@ -82,9 +82,9 @@ export class Register extends Component {
                
                 <div className="form">
                     <div className="form-group">
-                          <label htmlFor="username">Username</label>
+                          <label htmlFor="username">Emri Dhe Mbiemri</label>
                        
-                        <input className="username" type="text" name="username" id="username" placeholder="username"  />
+                        <input className="username" type="text" name="username" id="username" placeholder="Emri dhe Mbiemri"  />
                        
                     </div>
                     <div className="form-group">
