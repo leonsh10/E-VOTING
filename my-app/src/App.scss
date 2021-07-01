@@ -723,8 +723,8 @@ tr:nth-child(even) {
 // }
 
 .imageH{
-  width: 80px;
-  height: 50px;
+  // width: 80px;
+  // height: 50px;
   padding-top: 3px;
   padding-right: 10px;
   margin-right: 850px;
@@ -732,3 +732,12 @@ tr:nth-child(even) {
 }
 /* Edit */
 
+#vijaL{
+  width:2px;
+  height:153px;
+  background-color: #00157f;
+  border:1px solid #00157f;
+  position:absolute;
+  bottom:415px;
+  left:0px;
+}

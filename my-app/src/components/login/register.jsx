@@ -84,20 +84,20 @@ export class Register extends Component {
                     <div className="form-group">
                           <label htmlFor="username">Emri Dhe Mbiemri</label>
                        
-                        <input className="username" type="text" name="username" id="username" placeholder="username"  />
+                        <input className="username" type="text" name="username" class="inputt" id="username" placeholder="Username"  />
                        
                     </div>
                     <div className="form-group">
                         <label htmlFor="nrleternjoftimit">Numri i Leternjoftimit</label>
-                        <input className="nrLeternjoftimit" type="text"  name="nrLeternjoftimit" id="nrLeternjoftimit"  placeholder="Numri i Leternjoftimit" />
+                        <input className="nrLeternjoftimit" type="text"  name="nrLeternjoftimit" class="inputt"id="nrLeternjoftimit"  placeholder="Numri i Leternjoftimit" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
-                        <input  className="email" type="text"  name="email" id="email" placeholder="email" />
+                        <input  className="email" type="text"  name="email" id="email" class="inputt" placeholder="Email" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="password">Password</label>
-                        <input className="Password" type="password"  name="Password" id="Password"  placeholder="password" />
+                        <input className="Password" type="password"  name="Password" id="Password" class="inputt" placeholder="Password" />
                     </div>
                 </div>
             </div>

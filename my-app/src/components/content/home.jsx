@@ -17,6 +17,7 @@ function home() {
   return (
     <div class="componentsHome">
       <div class="homeContent">
+        <div id="vijaL"></div>
         <h1>PER CFARE ARSYJE PERDORET E-VOTING</h1>
         <p>
           E-Voting perdoret per arsyje se eshte menyra me e mire dhe me e
@@ -52,7 +53,8 @@ function home() {
             ku tregojme hap pas hapi se si duhet te votoni.Per qdo paqartesi
             klikoni butonin me poshte qe te kontaktoni me ne.
           </p>
-          <button class="home-btn">Contact Us</button>
+          <a href="contactus">
+          <button class="home-btn">Contact Us</button></a>
         </div>
       </div>
       <div class="footerH">

@@ -40,9 +40,9 @@ function Nav(){
                     <li>Login</li>
                 </Link>
 
-                <Link style={navStyle} to="/otherData">
+                {/* <Link style={navStyle} to="/otherData">
                     <li>Te dhenat</li>
-                </Link>
+                </Link> */}
                 <Link style={navStyle} to="/votimi">
                     <li style={votoStyle}>Voto</li>
                 </Link>
