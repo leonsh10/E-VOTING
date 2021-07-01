@@ -1,0 +1,125 @@
+{
+  "format": 1,
+  "restore": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+    "C:\\Users\\User\\OneDrive\\Desktop\\BESIM\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\User\\OneDrive\\Desktop\\BESIM\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\OneDrive\\Desktop\\BESIM\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
+        "projectName": "E-VOTING",
+        "projectPath": "C:\\Users\\User\\OneDrive\\Desktop\\BESIM\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\OneDrive\\Desktop\\BESIM\\E-VOTING\\E-VOTING\\E-VOTING\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
+        "projectName": "E-VOTING",
+        "projectPath": "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
+        "packagesPath": "C:\\Users\\flore\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\flore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> ac9572b5e62a274923cc6869805ec6ffafe4e008
+=======
+    "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
+        "projectName": "E-VOTING",
+        "projectPath": "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
+        "packagesPath": "C:\\Users\\flore\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\flore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> ac9572b5e62a274923cc6869805ec6ffafe4e008
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+<<<<<<< HEAD
+<<<<<<< HEAD
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.204\\RuntimeIdentifierGraph.json"
+>>>>>>> ac9572b5e62a274923cc6869805ec6ffafe4e008
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.204\\RuntimeIdentifierGraph.json"
+>>>>>>> ac9572b5e62a274923cc6869805ec6ffafe4e008
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+  }
+  
+#forma{
+
+    width:70%;
+    height:600px;
+    margin:0 auto;
+    
+    
+}
+
+#forma1{
+    width:100%;
+    height:fit-content;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    position: absolute;
+    top:100px;
+    right:0px;
+}
+
+
+
+input, label {
+    display:block;
+   
+}
+
+input,select{
+    background-color: #f7f7f7 !important;
+    // border: 1px solid #009879 !important;
+    border: 1px solid black !important;
+}
+
+//@at-root
