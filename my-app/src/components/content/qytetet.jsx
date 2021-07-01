@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import "../../App.scss";
 import { Button, ButtonToolbar, Form, Row, Col, Table } from "react-bootstrap";
 import shtetet from "./shtetet";
-// import { AddQytModal } from "./AddQytModal";
+import { AddQytModal } from "./AddQytModal";
 import { EditQytModal } from "./EditQytModal";
 
 export class Qytetet extends Component {
   constructor(props) {
     super(props);
-    this.state = { qyts: [], deps: [],editModalShow: false };
+    this.state = { qyts: [], addModalShow: false, editModalShow: false };
   }
 
   refreshList() {
@@ -38,75 +38,190 @@ export class Qytetet extends Component {
       });
     }
   }
-  /* ========================= */
-  componentDidMount() {
-    // event.preventDefault();
-    fetch("http://localhost:5000/api/Shtetet")
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({ deps: data });
-      });
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    fetch("http://localhost:5000/api/Qyteti", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // IDQyteti:null,
-        EmriQytetit: event.target.EmriQytetit.value,
-        Shteti: event.target.Shteti.value,
-      }),
-    })
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          alert(result);
-        },
-        (error) => {
-          alert("Failed");
-        }
-      );
-  }
-  /* ============================== */
   render() {
     const { qyts, qyid, qytemri, shteti } = this.state;
-    let addModalClose = () => this.setState({ addModalShow: false });
-    let editModalClose = () => this.setState({ editModalShow: false });
+    let addModalClose=()=>this.setState({addModalShow:false});
+    let editModalClose=()=>this.setState({editModalShow:false});
     return (
       <div className="deputetetContent">
         <h1 class="titulliLart">Qytetet</h1>
-        <div>
-          <Form className="forma1" onSubmit={this.handleSubmit}>
-            <Form.Group controlId="EmriQytetit">
-              {/* <Form.Label>EmriQytetit</Form.Label> */}
+        {/* <ButtonToolbar>
+            <Button className="mb-2" variant="secondary" size="lg">
+              +SHTO QYTET
+            </Button>
+            <Button className="mb-2" variant="secondary" size="lg">
+              -FSHIJ QYTET
+            </Button>
+          </ButtonToolbar> */}
+        {/* ================================= */}
+        {/* <div className="forma">
+          <Form onSubmit={this.handleSubmit}>
+            <Form.Row>
+              <Form.Control as="select" size="lg" className="form-content2"> */}
+        {/* {this.state.regs.map((sht) => (
+                  <option key={sht.shtetet_id}>{sht.emri_shtetet}</option>
+                ))} */}
+        {/* <option>Kosove</option>
+              </Form.Control>
               <Form.Control
+                size="lg"
                 type="text"
-                name="EmriQytetit"
-                required
-                placeholder="Emri i Qytetit"
+                name="EmriMbiemri"
+                placeholder="Emri Qytetit..."
                 className="form-content2"
               />
-            </Form.Group>
-            <Form.Group controlId="Shteti">
-              {/* <Form.Label>Shteti</Form.Label> */}
-              <Form.Control as="select" className="form-content2">
-                {this.state.deps.map((dep) => (
-                  <option key={dep.shtetet_id}>{dep.emri_shtetet}</option>
-                ))}
-              </Form.Control>
-            </Form.Group>
-            <div className="buton-div">
-              <Button variant="primary" type="submit" className="shto-btnD">
-                Shto
-              </Button>
-            </div>
+              <div className="buton-div">
+                <Button
+                  variant="primary"
+                  type="submit"
+                  className="shto-btnD"
+                  onClick={this.handleSubmit}
+                >
+                  Shto
+                </Button>
+              </div>
+            </Form.Row>
           </Form>
-        </div>
+        </div> */}
+        {/* ================================= */}
+        {/* <Table className="tableData">
+          <thead>
+            <tr>
+              <th>Test</th>
+              <th>Test</th>
+              <th>Test</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              Test
+              <td>Test</td>
+              <td>Test</td>
+              <td>
+                <ButtonToolbar>
+                  <Button
+                    className="info"
+                    variant="info"
+                  >
+                    Edit
+                  </Button>
+
+                  <Button
+                    className="danger"
+                    variant="danger"
+                  >
+                    Delete
+                  </Button>
+
+                </ButtonToolbar>
+              </td>
+            </tr>
+          </tbody>
+        </Table> */}
+        {/* <table className="tabela">
+          <tr>
+            <th className="tabelaHD">IDQyteti</th>
+            <th className="tabelaHD">Shteti</th>
+            <th className="tabelaHD">EmriQytetit</th>
+            <th className="tabelaHD">Opsionet</th>
+          </tr>
+          <tr>
+            <td className="tabelaHD">1</td>
+            <td className="tabelaHD">Kosove</td>
+            <td className="tabelaHD">Prishtine</td>
+            <td className="tabelaHD">
+              <ButtonToolbar>
+                <Button className="info" variant="info">
+                  Edit
+                </Button>
+
+                <Button className="danger" variant="danger">
+                  Delete
+                </Button>
+              </ButtonToolbar>
+            </td>
+          </tr>
+          <tr>
+            <td className="tabelaHD">2</td>
+            <td className="tabelaHD">Angli</td>
+            <td className="tabelaHD">Londer</td>
+            <td className="tabelaHD">
+              <ButtonToolbar>
+                <Button className="info" variant="info">
+                  Edit
+                </Button>
+
+                <Button className="danger" variant="danger">
+                  Delete
+                </Button>
+              </ButtonToolbar>
+            </td>
+          </tr>
+          <tr>
+            <td className="tabelaHD">3</td>
+            <td className="tabelaHD">Austri</td>
+            <td className="tabelaHD">Viena</td>
+            <td className="tabelaHD">
+              <ButtonToolbar>
+                <Button className="info" variant="info">
+                  Edit
+                </Button>
+
+                <Button className="danger" variant="danger">
+                  Delete
+                </Button>
+              </ButtonToolbar>
+            </td>
+          </tr>
+          <tr>
+            <td className="tabelaHD">4</td>
+            <td className="tabelaHD">Amerike</td>
+            <td className="tabelaHD">New York</td>
+            <td className="tabelaHD">
+              <ButtonToolbar>
+                <Button className="info" variant="info">
+                  Edit
+                </Button>
+
+                <Button className="danger" variant="danger">
+                  Delete
+                </Button>
+              </ButtonToolbar>
+            </td>
+          </tr>
+          <tr>
+            <td className="tabelaHD">5</td>
+            <td className="tabelaHD">France</td>
+            <td className="tabelaHD">Paris</td>
+            <td className="tabelaHD">
+              <ButtonToolbar>
+                <Button className="info" variant="info">
+                  Edit
+                </Button>
+
+                <Button className="danger" variant="danger">
+                  Delete
+                </Button>
+              </ButtonToolbar>
+            </td>
+          </tr>
+          <tr>
+            <td className="tabelaHD">6</td>
+            <td className="tabelaHD">Gjermani</td>
+            <td className="tabelaHD">Munich</td>
+            <td className="tabelaHD">
+              <ButtonToolbar>
+                <Button className="info" variant="info">
+                  Edit
+                </Button>
+
+                <Button className="danger" variant="danger">
+                  Delete
+                </Button>
+              </ButtonToolbar>
+            </td>
+          </tr>
+        </table> */}
         <div className="votuesitDiv">
           <Table className="vot1">
             <thead>
@@ -161,6 +276,19 @@ export class Qytetet extends Component {
               ))}
             </tbody>
           </Table>
+          <ButtonToolbar>
+            <Button
+              variant="primary"
+              onClick={() => this.setState({ addModalShow: true })}
+            >
+              Shto Qytetin
+            </Button>
+
+            <AddQytModal
+              show={this.state.addModalShow}
+              onHide={addModalClose}
+            />
+          </ButtonToolbar>
         </div>
       </div>
     );
