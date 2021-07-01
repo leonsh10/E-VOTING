@@ -16,7 +16,7 @@ function Nav(){
     };
     return (
         <nav>
-            <img src={logo} class="imageH"/>
+            {/* <img src={logo} class="imageH"/> */}
             <ul className="nav-links">
                 <Link style={navStyle} to="/home">
                     <li>Kryefaqja</li>

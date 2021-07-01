@@ -3,10 +3,6 @@ import FusionCharts from "fusioncharts";
 import charts from "fusioncharts/fusioncharts.charts";
 import ReactFusioncharts from "react-fusioncharts";
 import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
-<<<<<<< HEAD
-=======
-import logo from '.././images/logo.png';
->>>>>>> 76307f3b3920b32408d693ab746221774bcecf8c
 
 charts(FusionCharts);
 
@@ -86,13 +82,7 @@ export class statistikat extends React.Component {
         />
 
         <div class="footerS">
-<<<<<<< HEAD
           <p>All rights reserved</p>
-=======
-          <img src={logo} class="image"></img>
-            <i>&copy;</i>
-          <p>Te gjitha te drejtat e rezervuara</p>
->>>>>>> 76307f3b3920b32408d693ab746221774bcecf8c
         </div>
       </div>
     );

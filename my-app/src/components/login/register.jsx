@@ -84,11 +84,7 @@ export class Register extends Component {
                     <div className="form-group">
                           <label htmlFor="username">Emri Dhe Mbiemri</label>
                        
-<<<<<<< HEAD
                         <input className="username" type="text" name="username" id="username" placeholder="username"  />
-=======
-                        <input className="username" type="text" name="username" id="username" placeholder="Emri dhe Mbiemri"  />
->>>>>>> 76307f3b3920b32408d693ab746221774bcecf8c
                        
                     </div>
                     <div className="form-group">

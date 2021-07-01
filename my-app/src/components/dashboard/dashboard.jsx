@@ -8,11 +8,6 @@ import Shtetet from "../content/shtetet";
 import  {Qytetet} from "../content/qytetet";
 import Votuesit from "../content/votuesit";
 import Votimi from "../content/votimi";
-<<<<<<< HEAD
-=======
-import Statistikat from "../content/statistikat";
-import Home from "../content/home";
->>>>>>> 76307f3b3920b32408d693ab746221774bcecf8c
 import Navbar from '../navigation/navBar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 function Dashboard(){
@@ -36,13 +31,7 @@ function Dashboard(){
               <Route path='/shtetet' component={Shtetet} />
               <Route path='/qytetet' component={Qytetet} />
               <Route path='/votuesit' component={Votuesit} />
-<<<<<<< HEAD
               <Route path='/votimi' component={Votimi} />
-=======
-              {/* <Route path='/votimi' component={Votimi} />
-              <Route path='/statistikat' component={Statistikat} />
-              <Route path='/home' component={Home} /> */}
->>>>>>> 76307f3b3920b32408d693ab746221774bcecf8c
             </Switch>
           </Router>
         </>
