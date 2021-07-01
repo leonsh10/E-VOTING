@@ -1,6 +1,7 @@
 {
   "version": 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
   "dgSpecHash": "yXYIDgcuh8rugmBxV6RtiuFlmMCXdaKoRs4UbVjtBPhklURVgtO6XFRJzShbm7G6fLswlqv1Y51kRFY1o+BXLA==",
   "success": true,
   "projectFilePath": "C:\\Users\\User\\OneDrive\\Desktop\\BESIM\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
@@ -114,6 +115,12 @@
   "success": true,
   "projectFilePath": "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
   "expectedPackageFiles": [
+=======
+  "dgSpecHash": "FVHKMgicLrBdDb0ne8SetsPMddQGtd93j7/Ju/aONBwP9xnQdplaWAkkwp75G3OL6s76zrCc451/2zs+/b7AxA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
+  "expectedPackageFiles": [
+>>>>>>> ac9572b5e62a274923cc6869805ec6ffafe4e008
     "C:\\Users\\flore\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.6\\microsoft.aspnetcore.jsonpatch.5.0.6.nupkg.sha512",
     "C:\\Users\\flore\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.6\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.6.nupkg.sha512",
     "C:\\Users\\flore\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -218,6 +225,9 @@
     "C:\\Users\\flore\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\flore\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\flore\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+<<<<<<< HEAD
+>>>>>>> ac9572b5e62a274923cc6869805ec6ffafe4e008
+=======
 >>>>>>> ac9572b5e62a274923cc6869805ec6ffafe4e008
   ],
   "logs": [

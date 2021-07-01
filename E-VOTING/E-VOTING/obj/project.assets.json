@@ -5799,7 +5799,11 @@
   },
   "packageFolders": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "C:\\Users\\User\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\flore\\.nuget\\packages\\": {}
+>>>>>>> ac9572b5e62a274923cc6869805ec6ffafe4e008
 =======
     "C:\\Users\\flore\\.nuget\\packages\\": {}
 >>>>>>> ac9572b5e62a274923cc6869805ec6ffafe4e008
@@ -5807,6 +5811,7 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
 <<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\User\\OneDrive\\Desktop\\BESIM\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
       "projectName": "E-VOTING",
@@ -5816,6 +5821,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
+      "projectName": "E-VOTING",
+      "projectPath": "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
+      "packagesPath": "C:\\Users\\flore\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\flore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> ac9572b5e62a274923cc6869805ec6ffafe4e008
 =======
       "projectUniqueName": "C:\\Users\\flore\\Desktop\\lab\\E-VOTING\\E-VOTING\\E-VOTING\\E-VOTING.csproj",
       "projectName": "E-VOTING",
@@ -5887,7 +5902,11 @@
           }
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.204\\RuntimeIdentifierGraph.json"
+>>>>>>> ac9572b5e62a274923cc6869805ec6ffafe4e008
 =======
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.204\\RuntimeIdentifierGraph.json"
 >>>>>>> ac9572b5e62a274923cc6869805ec6ffafe4e008
