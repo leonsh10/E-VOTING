@@ -82,7 +82,7 @@ export class statistikat extends React.Component {
         />
 
 <div class="footerS">
-          <img src={logo} class="image"></img>
+          <img src={logo} class="imageF"></img>
             <i>&copy;</i>
           <p>Te gjitha te drejtat e rezervuara</p>
         </div>
