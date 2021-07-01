@@ -142,8 +142,8 @@ box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
   }
 
   p{
-    margin-top:-17px;
-    color:white;
+    // margin-top:-17px;
+    // color:white;
   }
 
   .h42{
@@ -207,4 +207,9 @@ box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
     position:absolute;
     top:410px;
     left:200px;
+  }
+
+  .posht{
+    color:white;
+    margin-top:-17px;
   }

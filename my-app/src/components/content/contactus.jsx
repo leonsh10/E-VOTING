@@ -50,7 +50,7 @@ class contactus extends React.Component {
 <IoIcons.IoMdLocate class="llogot"/>
 <div class="dyshi">
 <h4 class="h42">E-VOTING</h4>
-<p>KOSOVA,XK</p>
+<p class="posht">KOSOVA,XK</p>
 </div>
 </div>
 
@@ -88,7 +88,7 @@ class contactus extends React.Component {
 </div>
 
 
-<p id="posht">E-VOTING KOSOVA</p>
+<p id="posht" class="posht">E-VOTING KOSOVA</p>
 
 </div>
 
