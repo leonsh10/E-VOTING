@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import '../../App.scss';
+import logo from '../images/logo.png';
 
 function Nav(){
     const navStyle = {
@@ -15,6 +16,7 @@ function Nav(){
     };
     return (
         <nav>
+            <img src={logo} class="imageH"/>
             <ul className="nav-links">
                 <Link style={navStyle} to="/home">
                     <li>Kryefaqja</li>
