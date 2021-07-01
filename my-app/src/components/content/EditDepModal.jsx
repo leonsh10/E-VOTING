@@ -8,7 +8,7 @@ export class EditDepModal extends Component {
       this.state = { depu: [] ,part:[]};
       this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+//
     componentDidMount() {
         fetch("http://localhost:5000/api/Deputetet")
           .then((response) => response.json())
