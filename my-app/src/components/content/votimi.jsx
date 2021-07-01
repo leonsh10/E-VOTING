@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import '../../App.scss';
 import {Button, ButtonToolbar, Form, Row, Col, Table} from 'react-bootstrap';
 // import {Link} from 'react-router-dom';
+import logo from '.././images/logo.png';
 
 export class votimi extends Component{
 
@@ -72,7 +73,9 @@ render(){
           </Form>
         </Row>
         <div class="footerV">
-            <p>All rights reserved</p>
+          <img src={logo} class="image"></img>
+            <i>&copy;</i>
+          <p>Te gjitha te drejtat e rezervuara</p>
         </div>
       </div>
     )

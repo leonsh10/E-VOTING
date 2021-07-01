@@ -405,6 +405,7 @@ width:137px;
   text-align:center;
   left:100px;
   border:1px solid brown;
+  // border:1px solid rgb(243, 240, 39);
 }
 .vot1{
   width:80%;
@@ -447,8 +448,9 @@ margin-right: 30px;
 }
 
 .vot1 tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
-  // border-bottom: 2px solid rgb(13, 13, 129);
+  // border-bottom: 2px solid #009879;
+  border-bottom: 2px solid rgb(13, 13, 129);
+  // border-bottom: 2px solid rgb(243, 240, 39);
 }
 
 .tabela{
@@ -666,7 +668,20 @@ tr:nth-child(even) {
   top: 100px;
   width: 100%;
   padding-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   // margin-bottom: 0;
+}
+.footerH i{
+  padding-top: 12px;
+  font-size: 16px;
+}
+.image{
+  width: 80px;
+  height: 50px;
+  padding-top: 3px;
+  padding-right: 10px;
 }
 .footerS{
   background-color: rgb(13, 13, 129);
@@ -676,6 +691,14 @@ tr:nth-child(even) {
   height: 53px;
   margin-top: 18%;
   position:absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.footerS i{
+  padding-top: 12px;
+  font-size: 16px;
+  padding-right: 2px;
 }
 .footerV{
   text-align: center;
@@ -686,7 +709,23 @@ tr:nth-child(even) {
   margin-top: 19%;
   width: 100%;
   padding-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.footerV i{
+  padding-top: 12px;
+  font-size: 16px;
+  padding-right: 2px;
 }
 // .footerContent{
 //   padding: 8px;
 // }
+
+.imageH{
+  width: 80px;
+  height: 50px;
+  padding-top: 3px;
+  padding-right: 10px;
+  margin-right: 850px;
+}

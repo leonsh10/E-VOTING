@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../../App.scss";
 import video1 from "../videos/video1.mp4";
 import {Button} from 'react-bootstrap';
-
+import logo from '.././images/logo.png';
 
 // export class home extends Component{
 function home() {
@@ -57,7 +57,9 @@ function home() {
         </div>
       </div>
       <div class="footerH">
-            <p>All rights reserved</p>
+          <img src={logo} class="image"></img>
+          <i>&copy;</i>
+          <p>Te gjitha te drejtat e rezervuara</p>
       </div>
     </div>
   );
