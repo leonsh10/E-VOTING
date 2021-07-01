@@ -1,392 +1,200 @@
-import React from 'react';
+import React,{Component} from 'react';
 import '../../App.scss';
 import {Button, ButtonToolbar, Form, Row, Col, Table} from 'react-bootstrap';
+import { EditDepModal } from "./EditDepModal";
+export class deputetet extends Component{
+
+  constructor(props){
+      super(props);
+      this.state={depu:[],part:[],editModalShow:false}
+      this.handleSubmit=this.handleSubmit.bind(this);
+      
+  }
+componentDidMount(){
+  fetch('http://localhost:5000/api/Partit')
+  .then(response=>response.json())
+  .then(data=>{
+      this.setState({part:data});
+  });
+}
 
 
-function deputetet() {
+// componentDidMount(){
+//   fetch('http://localhost:5000/api/Deputetet')
+//   .then(response=>response.json())
+//   .then(data2=>{
+//       this.setState({depu:data2});
+//   });
+// }
+
+refreshList(){
+  fetch('http://localhost:5000/api/Deputetet')
+  .then(response=>response.json())
+  .then(data2=>{
+      this.setState({depu:data2});
+  });
+}
+
+// componentDidMount(){
+//   this.refreshList();
+// }
+
+componentDidUpdate(){
+  this.refreshList();
+}
+
+handleSubmit(event) {
+event.preventDefault();
+fetch("http://localhost:5000/api/Deputetet", {
+  method: "POST",
+  headers: {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+  
+    // deputetet_id: event.target.deputetet_id.value,
+    Partia: event.target.Partia.value,
+    Emri: event.target.Emri.value,
+    Numri: event.target.Numri.value
+  }),
+})
+  .then((res) => res.json())
+  .then(
+    (result) => {
+      alert(result);
+    },
+    (error) => {
+      alert("Failed");
+    }
+  );
+}
+
+deleteDeputetin(deputetet_id){
+     
+fetch('http://localhost:5000/api/Deputetet/'+deputetet_id,{
+    method:'DELETE',
+    header:{'Accept':'application/json',
+'Content-Type':'application/json'}
+})
+
+}
+
+
+render() {
+  const {depu, deputetet_id,Partia,Emri,Numri}=this.state;
+  let editModalClose=()=>this.setState({editModalShow:false});
     return (
       <div className="deputetetContent">
         <h1 class="titulliLart">Deputetet</h1>
-        {/* <ButtonToolbar>
-          <Button className="mb-2 shtoBtn" variant="secondary" size="lg">
-            +SHTO DEPUTET
-          </Button>
-          <Button className="mb-2 shtoBtn" variant="secondary" size="lg">
-            -FSHIJ DEPUTET
-          </Button>
-        </ButtonToolbar> */}
-        <div className="forma">
-          <Form>
-            <Form.Row>
-              {/* <Form.Control as="select" size="lg" className="form-content"> */}
-              <Form className="forma1">
-              <select class="form-content2">
-                <option>Zgjedh Partine </option>
-                <option>VV</option>
-                <option>PDK</option>
-                <option>LDK</option>
-                <option>AAK</option>
-                <option>AKR</option>
-                </select>
-              {/* </Form.Control> */}
-
-              <input type="text" id="inputi" class="form-content2" placeholder="Emri dhe Mbiemri..."></input>
-
-              <select class="form-content2">
-                <option>Zgjedh numrin</option>
+      
+        <div>
+        <Form className="forma1" onSubmit={this.handleSubmit}>
+        <Form.Group controlId="Emri">
+                    {/* <Form.Label>EmriQytetit</Form.Label> */}
+                    <Form.Label>Emri</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="Emri"
+                      
+                      required
+                      placeholder="Emri dhe Mbiemri..."
+                      className="form-content2"
+                    />
+                  </Form.Group>
+        <Form.Group controlId="Partit">
+                        <Form.Label>Partite</Form.Label>
+                        <Form.Control as="select" name="Partia">
+                        {this.state.part.map(par=>
+                            <option key={par.partit_id}>{par.emri_Partis}</option>)}
+                        </Form.Control>
+                    </Form.Group>
+                    <Form.Group controlId="Numri">
+                    <Form.Label>Numri I Deputetit</Form.Label>
+                    <select class="form-content2" name="Numri" >
+                <option >Zgjedh numrin</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
                 <option>4</option>
                 <option>5</option>
                 </select>
-           
-              <div className="buton-div1">
+
+                </Form.Group>
+                   
               
+
+              <div className="buton-div">
                 <Button variant="primary" type="submit" className="shto-btnD">
-                  Shto 
+                  Shto
                 </Button>
-                
               </div>
-              </Form>
-            </Form.Row>
+          
           </Form>
+            
+              {/* <Form.Control as="select" size="lg" className="form-content"> */}
+            
+            
+         
         </div>
-        {/* <Table className="tableData">
-          <thead>
-            <tr>
-              <th>Test</th>
-              <th>Test</th>
-              <th>Test</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              Test
-              <td>Test</td>
-              <td>Test</td>
-              <td>
-                <ButtonToolbar>
-                  <Button
-                    className="info"
-                    variant="info"
-                  >
-                    Edit
-                  </Button>
-
-                  <Button
-                    className="danger"
-                    variant="danger"
-                  >
-                    Delete
-                  </Button>
-
-                </ButtonToolbar>
-              </td>
-            </tr>
-          </tbody>
-        </Table> */}
-        {/* <table className="tabela">
-          <tr>
-            <th className="tabelaHD">IDPartia</th>
-            
-            <th className="tabelaHD">Emri i Partise</th>
-            <th className="tabelaHD">Opsionet</th>
-          </tr>
-          <tr>
-            <td className="tabelaHD">1</td>
-            
-            <td className="tabelaHD">VV</td>
-            <td className="tabelaHD">
-            <ButtonToolbar>
-                  <Button
-                    className="info"
-                    variant="info"
-                  >
-                    Edit
-                  </Button>
-
-                  <Button
-                    className="danger"
-                    variant="danger"
-                  >
-                    Delete
-                  </Button>
-
-                </ButtonToolbar>
-            </td>
-          </tr>
-          <tr>
-            <td className="tabelaHD">2</td>
-            
-            <td className="tabelaHD">PDK</td>
-            <td className="tabelaHD">
-            <ButtonToolbar>
-                  <Button
-                    className="info"
-                    variant="info"
-                  >
-                    Edit
-                  </Button>
-
-                  <Button
-                    className="danger"
-                    variant="danger"
-                  >
-                    Delete
-                  </Button>
-
-                </ButtonToolbar>
-            </td>
-          </tr>
-          <tr>
-            <td className="tabelaHD">3</td>
-            
-            <td className="tabelaHD">LDK</td>
-            <td className="tabelaHD">
-            <ButtonToolbar>
-                  <Button
-                    className="info"
-                    variant="info"
-                  >
-                    Edit
-                  </Button>
-
-                  <Button
-                    className="danger"
-                    variant="danger"
-                  >
-                    Delete
-                  </Button>
-
-                </ButtonToolbar>
-            </td>
-          </tr>
-          <tr>
-            <td className="tabelaHD">4</td>
-            
-            <td className="tabelaHD">AAK</td>
-            <td className="tabelaHD">
-            <ButtonToolbar>
-                  <Button
-                    className="info"
-                    variant="info"
-                  >
-                    Edit
-                  </Button>
-
-                  <Button
-                    className="danger"
-                    variant="danger"
-                  >
-                    Delete
-                  </Button>
-
-                </ButtonToolbar>
-            </td>
-          </tr>
-          <tr>
-            <td className="tabelaHD">5</td>
-            
-            <td className="tabelaHD">AKR</td>
-            <td className="tabelaHD">
-            <ButtonToolbar>
-                  <Button
-                    className="info"
-                    variant="info"
-                  >
-                    Edit
-                  </Button>
-
-                  <Button
-                    className="danger"
-                    variant="danger"
-                  >
-                    Delete
-                  </Button>
-
-                </ButtonToolbar>
-            </td>
-          </tr>
-          <tr>
-            <td className="tabelaHD">6</td>
-            
-            <td className="tabelaHD">NISMA</td>
-            <td className="tabelaHD">
-            <ButtonToolbar>
-                  <Button
-                    className="info"
-                    variant="info"
-                  >
-                    Edit
-                  </Button>
-
-                  <Button
-                    className="danger"
-                    variant="danger"
-                  >
-                    Delete
-                  </Button>
-
-                </ButtonToolbar>
-            </td>
-          </tr>
-        </table> */}
-        <table className="tabela">
-          <tr>
-            <th className="tabelaHD">IDDeputeti</th>
-            <th className="tabelaHD">Partia</th>
-            <th className="tabelaHD">Emri Deputetit</th>
-            <th className="tabelaHD">Numri Deputetit</th>
-            <th className="tabelaHD">Opsionet</th>
-          </tr>
-          <tr>
-            <td className="tabelaHD">1</td>
-            <td className="tabelaHD">VV</td>
-            <td className="tabelaHD">Albin Kurti</td>
-            <td className="tabelaHD">1</td>
-            <td className="tabelaHD">
-            <ButtonToolbar>
-                  <Button
-                    className="info"
-                    variant="info"
-                  >
-                    Edit
-                  </Button>
-
-                  <Button
-                    className="danger"
-                    variant="danger"
-                  >
-                    Delete
-                  </Button>
-
-                </ButtonToolbar>
-            </td>
-          </tr>
-          <tr>
-            <td className="tabelaHD">2</td>
-            <td className="tabelaHD">PDK</td>
-            <td className="tabelaHD">Enver Hoxha</td>
-            <td className="tabelaHD">1</td>
-            <td className="tabelaHD">
-            <ButtonToolbar>
-                  <Button
-                    className="info"
-                    variant="info"
-                  >
-                    Edit
-                  </Button>
-
-                  <Button
-                    className="danger"
-                    variant="danger"
-                  >
-                    Delete
-                  </Button>
-
-                </ButtonToolbar>
-            </td>
-          </tr>
-          <tr>
-            <td className="tabelaHD">3</td>
-            <td className="tabelaHD">LDK</td>
-            <td className="tabelaHD">Lumir Abdixhiku</td>
-            <td className="tabelaHD">1</td>
-            <td className="tabelaHD">
-            <ButtonToolbar>
-                  <Button
-                    className="info"
-                    variant="info"
-                  >
-                    Edit
-                  </Button>
-
-                  <Button
-                    className="danger"
-                    variant="danger"
-                  >
-                    Delete
-                  </Button>
-
-                </ButtonToolbar>
-            </td>
-          </tr>
-          <tr>
-            <td className="tabelaHD">4</td>
-            <td className="tabelaHD">AAK</td>
-            <td className="tabelaHD">Ramush Haradinaj</td>
-            <td className="tabelaHD">1</td>
-            <td className="tabelaHD">
-            <ButtonToolbar>
-                  <Button
-                    className="info"
-                    variant="info"
-                  >
-                    Edit
-                  </Button>
-
-                  <Button
-                    className="danger"
-                    variant="danger"
-                  >
-                    Delete
-                  </Button>
-
-                </ButtonToolbar>
-            </td>
-          </tr>
-          <tr>
-            <td className="tabelaHD">5</td>
-            <td className="tabelaHD">AKR</td>
-            <td className="tabelaHD">Behxhet Pacolli</td>
-            <td className="tabelaHD">1</td>
-            <td className="tabelaHD">
-            <ButtonToolbar>
-                  <Button
-                    className="info"
-                    variant="info"
-                  >
-                    Edit
-                  </Button>
-
-                  <Button
-                    className="danger"
-                    variant="danger"
-                  >
-                    Delete
-                  </Button>
-
-                </ButtonToolbar>
-            </td>
-          </tr>
-          <tr>
-            <td className="tabelaHD">6</td>
-            <td className="tabelaHD">NISMA</td>
-            <td className="tabelaHD">Fatmir Limaj</td>
-            <td className="tabelaHD">1</td>
-            <td className="tabelaHD">
-            <ButtonToolbar>
-                  <Button
-                    className="info"
-                    variant="info"
-                  >
-                    Edit
-                  </Button>
-
-                  <Button
-                    className="danger"
-                    variant="danger"
-                  >
-                    Delete
-                  </Button>
-
-                </ButtonToolbar>
-            </td>
-          </tr>
-        </table>
+        
+        <div className="votuesitDiv">
+          
+       <Table className="vot1">
+            <thead>
+              <tr>
+              
+                <th>ID_Deputeti</th>
+                <th>Emri Dhe Mbiemri</th>
+                <th>Partia</th>
+                <th>Numri</th>
+                <th>Edit/Fshij</th>
+              </tr>
+            </thead>
+            <tbody>
+              {depu.map((dep) => (
+                <tr key={dep.deputetet_id}>
+                  <td>{dep.deputetet_id}</td>
+                  <td>{dep.Partia}</td>
+                  <td>{dep.Emri}</td>
+                  <td>{dep.Numri}</td>
+                  <td>
+                  <ButtonToolbar className="butonat">
+                      <Button
+                        className="editButon"
+                        variant="info"
+                        onClick={() =>
+                          this.setState({
+                            editModalShow: true,
+                            deputetet_id: dep.deputetet_id,
+                            Partia: dep.Partia,
+                            Emri: dep.Emri,
+                            Numri:dep.Numri
+                          })
+                        }
+                      >
+                        Edit
+                      </Button>
+                      <Button className="editButon"onClick={()=>this.deleteDeputetin(dep.deputetet_id)}>
+            Fshij
+          </Button>
+                      <EditDepModal
+                        show={this.state.editModalShow}
+                        onHide={editModalClose}
+                        deputetet_id={deputetet_id}
+                        Partia={Partia}
+                        Emri={Emri}
+                        Numri={Numri}
+                      />
+                    </ButtonToolbar>
+                    </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+       </div>
       </div>
     );
 }
-
+}
 export default deputetet

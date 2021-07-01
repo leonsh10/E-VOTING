@@ -59,7 +59,7 @@ namespace E_VOTING.Controllers
         {
             string query = @"
               insert into dbo.Partit
-               (partit_id, emri_Partis)
+               (emri_Partis)
                 values  
                     (
                     '" + par.emri_Partis + @"'

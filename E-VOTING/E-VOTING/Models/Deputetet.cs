@@ -13,5 +13,7 @@ namespace E_VOTING.Models
 
         public string Emri { get; set; }
 
+        public int Numri { get; set; }
+
     }
 }

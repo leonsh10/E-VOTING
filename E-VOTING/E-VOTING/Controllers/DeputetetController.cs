@@ -31,7 +31,7 @@ namespace E_VOTING.Controllers
         public JsonResult Get()
         {
             string query = @"
-              select deputetet_id, Partia, Emri
+              select deputetet_id, Partia, Emri , Numri
                  from dbo.Deputetet
                  ";
             DataTable table = new DataTable();
@@ -58,11 +58,12 @@ namespace E_VOTING.Controllers
         {
             string query = @"
               insert into dbo.Deputetet
-               (Partia, Emri)
+               (Partia, Emri, Numri)
                 values  
                     (
                     '" + dep.Partia + @"'
                     ,'" + dep.Emri + @"'
+                 ,'" + dep.Numri + @"'
                     )
                     ";
             DataTable table = new DataTable();
@@ -90,6 +91,7 @@ namespace E_VOTING.Controllers
                update dbo.Deputetet set
                Partia = '" + dep.Partia + @"'
                ,Emri = '" + dep.Emri + @"'
+ ,Numri = '" + dep.Numri + @"'
                 where deputetet_id = " + dep.deputetet_id + @"
                  ";
             DataTable table = new DataTable();
