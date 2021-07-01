@@ -7,29 +7,32 @@
 //         this.handleSubmit=this.handleSubmit.bind(this);
 //     }
     
-    // render = ()=> { return <p></p>}
-    //     handleSubmit(event){
-    //         event.preventDefault();
-    //         fetch('http://localhost:5000/api/Register',{
-    //             method:'POST',
-    //             headers:{
-    //                 'Accept':'application/json',
-    //                 'Content-Type':'application/json'
-    //             },
-    //             body:JSON.stringify({
+//     render = ()=> { return <p></p>}
+//         handleSubmit(event){
+//             event.preventDefault();
+//             fetch('http://localhost:5000/api/Register',{
+//                 method:'POST',
+//                 headers:{
+//                     'Accept':'application/json',
+//                     'Content-Type':'application/json'
+//                 },
+//                 body:JSON.stringify({
                   
-    //                 username:event.target.username.value
-    //             })
-    //         })
-    //         .then(res=>res.json())
-    //         .then((result)=>{
-    //             alert(result);
-    //         },
-    //         (error)=>{
-    //             alert('Failed');
-    //         })
-    //     }
+//                     username:event.target.username.value,
+//                 nrLeternjoftimit:event.target.nrLeternjoftimit.value, 
+//                 email:event.target.email.value,
+//                 password:event.target.password.value
+//                 })
+//             })
+//             .then(res=>res.json())
+//             .then((result)=>{
+//                 alert(result);
+//             },
+//             (error)=>{
+//                 alert('Failed');
+//             })
+//         }
 
     
             
-        // }
+//         }

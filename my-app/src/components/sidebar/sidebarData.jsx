@@ -68,4 +68,11 @@ export const SidebarData = [
     cName: 'nav-text'
   },
 
+  {
+    title: 'Votimi',
+    path: '/votimi',
+    icon: <IoIcons.IoMdPerson />,
+    cName: 'nav-text'
+  },
+
 ];
