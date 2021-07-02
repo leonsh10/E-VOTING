@@ -81,7 +81,7 @@ export class deputetet extends Component {
     let editModalClose = () => this.setState({ editModalShow: false });
     return (
       <div className="deputetetContent">
-        <h1 class="titulliLart">Deputetet</h1>
+        <h1 class="titulliLart">Deputetët</h1>
 
         <div>
           <Form className="forma1" onSubmit={this.handleSubmit}>

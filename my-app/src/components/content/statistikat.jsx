@@ -8,7 +8,7 @@ charts(FusionCharts);
 
 const dataSource = {
   chart: {
-    caption: "Votat e Numeruara",
+    caption: "Votat e Numëruara",
     subcaption: "2021",
     xaxisname: "Partite",
     yaxisname: "Numri i votave",
@@ -84,7 +84,7 @@ export class statistikat extends React.Component {
 <div class="footerS">
           <img src={logo} class="imageF"></img>
             <i>&copy;</i>
-          <p>Te gjitha te drejtat e rezervuara</p>
+          <p>Të gjitha të drejtat e rezervuara</p>
         </div>
       </div>
     );

@@ -73,7 +73,7 @@ export class partite extends Component {
     let editModalClose = () => this.setState({ editModalShow: false });
     return (
       <div className="deputetetContent">
-        <h1 class="titulliLart">Partite</h1>
+        <h1 class="titulliLart">Partitë</h1>
         {/* <ButtonToolbar>
             <Button className="mb-2" variant="secondary" size="lg">
               +SHTO SUBJEKT

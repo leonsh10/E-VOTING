@@ -16,7 +16,7 @@ function Nav(){
     };
     return (
         <nav>
-            {/* <img src={logo} class="imageH"/> */}
+            <img src={logo} class="imageH"/>
             <ul className="nav-links">
                 <Link style={navStyle} to="/home">
                     <li>Kryefaqja</li>
@@ -25,7 +25,7 @@ function Nav(){
                     <li>Statistikat</li>
                 </Link>
                 <Link style={navStyle} to="/contactus">
-                    <li>Contact Us</li>
+                    <li>Kontakti</li>
                 </Link>
                 <Link style={navStyle} to="/dashboard">
                     <li>Dashboard</li>
@@ -37,7 +37,7 @@ function Nav(){
                     <li>Register</li>
                 </Link> */}
                 <Link style={navStyle} to="/app2">
-                    <li>Login</li>
+                    <li>Kyçu</li>
                 </Link>
 
                 {/* <Link style={navStyle} to="/otherData">
