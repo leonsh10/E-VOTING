@@ -18,11 +18,11 @@ function home() {
     <div class="componentsHome">
       <div class="homeContent">
         <div id="vijaL"></div>
-        <h1>PER CFARE ARSYJE PERDORET E-VOTING</h1>
+        <h1>PER CFARE PERDORET E-VOTING</h1>
         <p>
-          E-Voting perdoret per arsyje se eshte menyra me e mire dhe me e
-          sigurte per votim ne tere boten. Qe nga viti 2021 kjo menyre e votimit
-          perdoret edhe ne Kosove
+          E-Voting përdoret për arsyje se është mënyra më e mire dhe më e
+          sigurtë për votim në tërë botën. Qe nga viti 2021 kjo menyrë e votimit
+          përdoret edhe në Kosovë
         </p>
         <button class="home-btn" onClick={handleScroll}>
           SI TE VOTONI
@@ -49,12 +49,12 @@ function home() {
         <div class="pershkrimi">
           <h1>Si te votoni?</h1>
           <p>
-            Qe te kryeni votimin me sukses ne kemi pergatitur nje video tutorial
-            ku tregojme hap pas hapi se si duhet te votoni.Per qdo paqartesi
-            klikoni butonin me poshte qe te kontaktoni me ne.
+            Që të kryeni votimin me sukses ne kemi përgaditur nje video tutorial
+            ku tregojme hap pas hapi se si duhet të votoni. Për çdo paqartësi
+            klikoni butonin më poshtë që të kontaktoni me ne.
           </p>
           <a href="contactus">
-          <button class="home-btn">Contact Us</button></a>
+          <button class="home-btn">Na Kontaktoni</button></a>
         </div>
       </div>
       <div class="footerH">
