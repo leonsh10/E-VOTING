@@ -50,7 +50,7 @@ class contactus extends React.Component {
 <IoIcons.IoMdLocate class="llogot"/>
 <div class="dyshi">
 <h4 class="h42">E-VOTING</h4>
-<p class="poshti">KOSOVA,XK</p>
+<p id="paraLart" class="poshti">KOSOVA,XK</p>
 </div>
 </div>
 
@@ -73,16 +73,20 @@ class contactus extends React.Component {
 
 <div class="llogotSocial">
   <div class="llogotDesign">
-<FaIcons.FaFacebookF class="llogot1"/>
+  <a href="https://www.facebook.com/">
+<FaIcons.FaFacebookF class="llogot1"/></a>
 </div>
 <div class="llogotDesign">
-<FaIcons.FaInstagram class="llogot1"/>
+<a href="https://www.instagram.com/">
+<FaIcons.FaInstagram class="llogot1"/></a>
 </div>
 <div class="llogotDesign">
-<FaIcons.FaTwitter class="llogot1"/>
+<a href="https://www.twitter.com/">
+<FaIcons.FaTwitter class="llogot1"/></a>
 </div>
 <div class="llogotDesign">
-<FaIcons.FaGooglePlusG class="llogot1"/>
+  <a href="https://www.google.com/">
+<FaIcons.FaGooglePlusG class="llogot1"/></a>
 </div>
 
 </div>
