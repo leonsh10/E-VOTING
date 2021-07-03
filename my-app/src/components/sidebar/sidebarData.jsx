@@ -67,6 +67,12 @@ export const SidebarData = [
     icon: <IoIcons.IoMdPerson />,
     cName: 'nav-text'
   },
+  {
+    title: 'Home',
+    path: '/homeDashboard',
+    icon: <IoIcons.IoMdHome />,
+    cName: 'nav-text'
+  },
 
   // {
   //   title: 'Home',

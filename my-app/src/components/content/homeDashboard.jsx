@@ -3,19 +3,19 @@ import "../../App.scss";
 import { Button, ButtonToolbar, Form, Row, Col, Table } from "react-bootstrap";
 import shtetet from "./shtetet";
 // import { AddQytModal } from "./AddQytModal";
-import { EditQytModal } from "./EditQytModal";
+import { EditHomModal } from "./EditHomModal";
 
-export class Qytetet extends Component {
+export class HomeDashboard extends Component {
   constructor(props) {
     super(props);
-    this.state = { qyts: [], deps: [],editModalShow: false };
+    this.state = { homs: [], editModalShow: false };
   }
 
   refreshList() {
-    fetch("http://localhost:5000/api/Qyteti")
+    fetch("http://localhost:5000/api/Home")
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ qyts: data });
+        this.setState({ homs: data });
       });
   }
 
@@ -27,9 +27,9 @@ export class Qytetet extends Component {
     this.refreshList();
   }
 
-  deleteQyt(qyid) {
+  deleteHom(homid) {
     if (window.confirm("Are you sure?")) {
-      fetch("http://localhost:5000/api/Qyteti/" + qyid, {
+      fetch("http://localhost:5000/api/Home/" + homid, {
         method: "DELETE",
         header: {
           Accept: "application/json",
@@ -39,27 +39,19 @@ export class Qytetet extends Component {
     }
   }
   /* ========================= */
-  componentDidMount() {
-    // event.preventDefault();
-    fetch("http://localhost:5000/api/Shtetet")
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({ deps: data });
-      });
-  }
 
   handleSubmit(event) {
     event.preventDefault();
-    fetch("http://localhost:5000/api/Qyteti", {
+    fetch("http://localhost:5000/api/Home", {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // IDQyteti:null,
-        EmriQytetit: event.target.EmriQytetit.value,
-        Shteti: event.target.Shteti.value,
+        // idHome:null,
+        Titulli: event.target.Titulli.value,
+        Content: event.target.Content.value,
       }),
     })
       .then((res) => res.json())
@@ -74,30 +66,32 @@ export class Qytetet extends Component {
   }
   /* ============================== */
   render() {
-    const { qyts, qyid, qytemri, shteti } = this.state;
+    const { homs, homid, titulli, content } = this.state;
     let editModalClose = () => this.setState({ editModalShow: false });
     return (
       <div className="deputetetContent">
-        <h1 class="titulliLart">Qytetet</h1>
+        <h1 class="titulliLart">Kryefaqja</h1>
         <div>
           <Form className="forma1" onSubmit={this.handleSubmit}>
-            <Form.Group controlId="EmriQytetit">
+            <Form.Group controlId="Titulli">
               {/* <Form.Label>EmriQytetit</Form.Label> */}
               <Form.Control
                 type="text"
-                name="EmriQytetit"
+                name="Titulli"
                 required
-                placeholder="Emri i Qytetit"
+                placeholder="Titulli"
                 className="form-content2"
               />
             </Form.Group>
-            <Form.Group controlId="Shteti">
-              {/* <Form.Label>Shteti</Form.Label> */}
-              <Form.Control as="select" className="form-content2">
-                {this.state.deps.map((dep) => (
-                  <option key={dep.shtetet_id}>{dep.emri_shtetet}</option>
-                ))}
-              </Form.Control>
+            <Form.Group controlId="Content">
+              {/* <Form.Label>EmriQytetit</Form.Label> */}
+              <Form.Control
+                type="text"
+                name="Content"
+                required
+                placeholder="Permbajtja"
+                className="form-content2"
+              />
             </Form.Group>
             <div className="buton-div">
               <Button variant="primary" type="submit" className="shto-btnD">
@@ -111,18 +105,18 @@ export class Qytetet extends Component {
             <thead>
               <tr>
                 {/* <th></th> */}
-                <th>IDQytet</th>
-                <th>Shteti</th>
-                <th>Emri Qytetit</th>
+                <th>ID</th>
+                <th>Titulli</th>
+                <th>Permbajtja</th>
                 <th>Edit/Fshij</th>
               </tr>
             </thead>
             <tbody>
-              {qyts.map((qyt) => (
-                <tr key={qyt.IDQyteti}>
-                  <td>{qyt.IDQyteti}</td>
-                  <td>{qyt.Shteti}</td>
-                  <td>{qyt.EmriQytetit}</td>
+              {homs.map((hom) => (
+                <tr key={hom.idHome}>
+                  <td>{hom.idHome}</td>
+                  <td>{hom.Titulli}</td>
+                  <td>{hom.Content}</td>
                   <td>
                     {/* {" "} */}
                     <ButtonToolbar className="butonat">
@@ -132,9 +126,9 @@ export class Qytetet extends Component {
                         onClick={() =>
                           this.setState({
                             editModalShow: true,
-                            qyid: qyt.IDQyteti,
-                            shteti: qyt.Shteti,
-                            qytemri: qyt.EmriQytetit,
+                            homid: hom.idHome,
+                            titulli: hom.Titulli,
+                            content: hom.Content,
                           })
                         }
                       >
@@ -143,16 +137,16 @@ export class Qytetet extends Component {
                       <Button
                         className="editButon"
                         variant="danger"
-                        onClick={() => this.deleteQyt(qyt.IDQyteti)}
+                        onClick={() => this.deleteHom(hom.idHome)}
                       >
                         Fshij
                       </Button>
-                      <EditQytModal
+                      <EditHomModal
                         show={this.state.editModalShow}
                         onHide={editModalClose}
-                        qyid={qyid}
-                        shteti={shteti}
-                        qytemri={qytemri}
+                        homid={homid}
+                        titulli={titulli}
+                        content={content}
                       />
                     </ButtonToolbar>
                   </td>
