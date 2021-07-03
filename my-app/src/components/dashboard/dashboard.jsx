@@ -7,6 +7,7 @@ import Shtetet from "../content/shtetet";
 // import Qytetet from "../content/qytetet";
 import  {Qytetet} from "../content/qytetet";
 import Votuesit from "../content/votuesit";
+import Votat from "../content/votat";
 import Votimi from "../content/votimi";
 import  {HomeDashboard} from "../content/homeDashboard";
 import Navbar from '../navigation/navBar';
@@ -34,6 +35,7 @@ function Dashboard(){
               <Route path='/votuesit' component={Votuesit} />
               <Route path='/votimi' component={Votimi} />
               <Route path='/homeDashboard' component={HomeDashboard} />
+              <Route path='/votat' component={Votat} />
             </Switch>
           </Router>
         </>
