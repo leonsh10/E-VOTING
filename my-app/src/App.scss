@@ -310,7 +310,11 @@ width:137px;
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
-    color:rgb(14, 37, 37);
+    color:black;
+}
+.form-content2::placeholder{
+  color: black;
+  opacity: 1;
 }
 
 #inputi::placeholder{

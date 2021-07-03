@@ -35,7 +35,7 @@ class contactus extends React.Component {
                   placeholder="Nr.Telefonit" />
  
     {/* <Form.Label>Shkruaj Paqartesite</Form.Label> */}
-    <textarea  rows="7" cols="60" placeholder="Mesazhi.."></textarea>
+    <textarea  rows="7" cols="60" placeholder="Mesazhi.." id="mesazhi"></textarea>
  
   
   <button  type="submit" class="butoni">  
