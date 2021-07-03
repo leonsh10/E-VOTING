@@ -141,8 +141,8 @@ export class deputetet extends Component {
               {depu.map((dep) => (
                 <tr key={dep.deputetet_id}>
                   <td>{dep.deputetet_id}</td>
-                  <td>{dep.Partia}</td>
                   <td>{dep.Emri}</td>
+                  <td>{dep.Partia}</td>
                   <td>{dep.Numri}</td>
                   <td>
                     <ButtonToolbar className="butonat">
