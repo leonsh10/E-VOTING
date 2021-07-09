@@ -70,7 +70,7 @@ export class Register extends Component {
     render() {
         const {votuesi_id,username,nrLeternjoftimit,email,Password}=this.state;
         return <div className="base-container" ref={this.props.conatinerRef}>
-            <div className="header">Register</div>
+            <div className="header">Regjistrohu</div>
             <Form onSubmit={this.handleSubmit}>
                   
             <div className="content">
@@ -103,7 +103,7 @@ export class Register extends Component {
             </div>
             <div className="footer">
              <div className="footer">
-<button type="submit" className="btn" >Register</button>
+<button type="submit" className="btn" >Regjistrohu</button>
 
 </div> 
             </div>

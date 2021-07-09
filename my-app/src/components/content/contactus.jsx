@@ -10,7 +10,61 @@ import * as FaIcons from 'react-icons/fa';
 class contactus extends React.Component {
     constructor(props) {
         super(props);
+        this.state={cont:[]};
+        this.handleSubmit=this.handleSubmit.bind(this);
       }
+
+      componentDidMount(){
+        fetch('http://localhost:5000/api/Contact')
+        .then(response=>response.json())
+        .then(data=>{
+            this.setState({regs:data});
+        });
+    }
+
+    refreshList(){
+        fetch('http://localhost:5000/api/Contact')
+        .then(response=>response.json())
+        .then(data=>{
+            this.setState({regs:data});
+        });
+    }
+
+    componentDidMount(){
+        this.refreshList();
+    }
+
+    componentDidUpdate(){
+        this.refreshList();
+    }
+    
+    handleSubmit(event){
+        event.preventDefault();
+       
+        fetch('http://localhost:5000/api/Contact',{
+            method:'POST',
+            headers:{
+                'Accept':'application/json',
+                'Content-Type':'application/json'
+            }
+            ,
+            body: JSON.stringify({
+               
+                emri: event.target.emri.value,
+                email: event.target.email.value,
+                nrtelefonit: event.target.nrtelefonit.value,
+                mesazhi: event.target.mesazhi.value
+               
+              }),
+        })
+        .then(res=>res.json())
+        .then((result)=>{
+            alert(result);
+        },
+        (error)=>{
+            alert('Failed');
+        })
+    }
 
     render(){
         return(
@@ -18,24 +72,24 @@ class contactus extends React.Component {
 
 <div class="formm">
 <h4 id="epara">CONTACT US </h4>
-<form className="forma1">
+<form className="forma1" onSubmit={this.handleSubmit}>
  
 
     {/* <Form.Label>Shkruaj Emrin:</Form.Label> */}
-    <input type="text" class="inputi" size="30"
+    <input type="text" class="inputi" name="emri" size="30"
                   placeholder="Emri" />
  
  
     {/* <Form.Label>Shkruaj Email-in</Form.Label> */}
-    <input type="email" class="inputi" size="30"
+    <input type="email"  class="inputi"  name="email" size="30"
                   placeholder="Email" />
  
     {/* <Form.Label>Shkruaj Numrin e Telefonit</Form.Label> */}
-    <input type="text" class="inputi" size="30"
+    <input type="text"   class="inputi" name="nrtelefonit" size="30"
                   placeholder="Nr.Telefonit" />
  
     {/* <Form.Label>Shkruaj Paqartesite</Form.Label> */}
-    <textarea  rows="7" cols="60" placeholder="Mesazhi.." id="mesazhi"></textarea>
+    <textarea name="mesazhi" rows="7" cols="60" placeholder="Mesazhi.."  id="mesazhi"></textarea>
  
   
   <button  type="submit" class="butoni">  
@@ -50,7 +104,7 @@ class contactus extends React.Component {
 <IoIcons.IoMdLocate class="llogot"/>
 <div class="dyshi">
 <h4 class="h42">E-VOTING</h4>
-<p class="poshti">KOSOVA,XK</p>
+<p id="paraLart" class="poshti">KOSOVA,XK</p>
 </div>
 </div>
 
@@ -73,16 +127,20 @@ class contactus extends React.Component {
 
 <div class="llogotSocial">
   <div class="llogotDesign">
-<FaIcons.FaFacebookF class="llogot1"/>
+  <a href="https://www.facebook.com/">
+<FaIcons.FaFacebookF class="llogot1"/></a>
 </div>
 <div class="llogotDesign">
-<FaIcons.FaInstagram class="llogot1"/>
+<a href="https://www.instagram.com/">
+<FaIcons.FaInstagram class="llogot1"/></a>
 </div>
 <div class="llogotDesign">
-<FaIcons.FaTwitter class="llogot1"/>
+<a href="https://www.twitter.com/">
+<FaIcons.FaTwitter class="llogot1"/></a>
 </div>
 <div class="llogotDesign">
-<FaIcons.FaGooglePlusG class="llogot1"/>
+  <a href="https://www.google.com/">
+<FaIcons.FaGooglePlusG class="llogot1"/></a>
 </div>
 
 </div>

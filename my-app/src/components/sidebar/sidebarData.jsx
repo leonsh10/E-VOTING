@@ -78,6 +78,12 @@ export const SidebarData = [
     path: '/votat',
     icon: <IoIcons.IoMdPaper />,
     cName: 'nav-text'
+  },
+  {
+    title: 'Contact',
+    path: '/contactDashboard',
+    icon: <IoIcons.IoMdPaper />,
+    cName: 'nav-text'
   }
 
   // {
