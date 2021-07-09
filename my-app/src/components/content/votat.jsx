@@ -6,47 +6,47 @@ import { FaRegSnowflake } from "react-icons/fa";
 // import { EditVotModal } from "../login/EditVotModal";
 
 export class votuesit extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = { regs: [], editModalShow: false };
-//     // this.handleSubmit=this.handleSubmit.bind(this);
-//   }
-//   componentDidMount() {
-//     fetch("http://localhost:5000/api/Register")
-//       .then((response) => response.json())
-//       .then((data) => {
-//         this.setState({ regs: data });
-//       });
-//   }
+  constructor(props) {
+    super(props);
+    this.state = { regs: [], editModalShow: false };
+    // this.handleSubmit=this.handleSubmit.bind(this);
+  }
+  componentDidMount() {
+    fetch("http://localhost:5000/api/Votimi")
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ regs: data });
+      });
+  }
 
-//   refreshList() {
-//     fetch("http://localhost:5000/api/Register")
-//       .then((response) => response.json())
-//       .then((data) => {
-//         this.setState({ regs: data });
-//       });
-//   }
+  refreshList() {
+    fetch("http://localhost:5000/api/Votimi")
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ regs: data });
+      });
+  }
 
-//   componentDidMount() {
-//     this.refreshList();
-//   }
+  componentDidMount() {
+    this.refreshList();
+  }
 
-//   componentDidUpdate() {
-//     this.refreshList();
-//   }
+  componentDidUpdate() {
+    this.refreshList();
+  }
 
-//   deleteUser(votuesi_id) {
-//     fetch("http://localhost:5000/api/Register/" + votuesi_id, {
-//       method: "DELETE",
-//       header: {
-//         Accept: "application/json",
-//         "Content-Type": "application/json",
-//       },
-//     });
-//   }
+  deleteVota(IDVota) {
+    fetch("http://localhost:5000/api/Votimi/" + IDVota, {
+      method: "DELETE",
+      header: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+  }
 
   render() {
-    // const { regs, votuesi_id, username, nrLeternjoftimit, email } = this.state;
+    const { regs, IDVota, Partia, DeputetiPare, DeputetiDyte, DeputetiTrete, DeputetiKatert, DeputetiPeste} = this.state;
     // let editModalClose = () => this.setState({ editModalShow: false });
     return (
       <div className="deputetetContent">
@@ -57,7 +57,7 @@ export class votuesit extends Component {
             <thead>
               <tr>
                 {/* <th>Votuesi_ID</th> */}
-                <th>ID</th>
+                {/* <th>ID</th> */}
                 <th>Partia</th>
                 <th>Deputeti 1</th>
                 <th>Deputeti 2</th>
@@ -68,19 +68,21 @@ export class votuesit extends Component {
               </tr>
             </thead>
             <tbody>
-              {/* {regs.map((reg) => ( */}
-                {/* <tr key={reg.votuesi_id}> */}
-                <tr>
-                  {/* <td>{reg.username}</td>
-                  <td>{reg.nrLeternjoftimit}</td>
-                  <td>{reg.email}</td> */}
-                  <td>1</td>
+              {regs.map((reg) => (
+                <tr key={reg.IDVota}>
+                  <td>{reg.Partia}</td>
+                  <td>{reg.DeputetiPare}</td>
+                  <td>{reg.DeputetiDyte}</td>
+                  <td>{reg.DeputetiTrete}</td> 
+                  <td>{reg.DeputetiKatert}</td> 
+                  <td>{reg.DeputetiPeste}</td>  
+                  {/* <td>1</td>
                   <td>VV</td>
                   <td>1</td>
                   <td>2</td>
                   <td>3</td>
                   <td>4</td>
-                  <td>5</td>
+                  <td>5</td> */}
                   <td>
                     {" "}
                     <ButtonToolbar className="butonat">
@@ -101,7 +103,7 @@ export class votuesit extends Component {
                       </Button>
                       <Button
                         className="editButon"
-                        //onClick={() => this.deleteUser(reg.votuesi_id)}
+                        onClick={() => this.deleteVota(reg.IDVota)}
                       >
                         Fshij
                       </Button>
@@ -116,7 +118,7 @@ export class votuesit extends Component {
                     </ButtonToolbar>
                   </td>
                 </tr>
-              {/* ))} */}
+               ))} 
             </tbody>
           </Table>
         </div>
