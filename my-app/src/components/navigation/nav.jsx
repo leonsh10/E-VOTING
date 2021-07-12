@@ -27,6 +27,9 @@ function Nav(){
                 <Link style={navStyle} to="/contactus">
                     <li>Kontakti</li>
                 </Link>
+                <Link style={navStyle} to="/DeputetetBio">
+                    <li>Deputetet</li>
+                </Link>
                 <Link style={navStyle} to="/dashboard">
                     <li>Dashboard</li>
                 </Link>

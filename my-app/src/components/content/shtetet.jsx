@@ -122,7 +122,7 @@ export class shtetet extends Component {
                         Edit
                       </Button>
                       <Button
-                        className="editButon"
+                        className="fshijButon"
                         onClick={() => this.deleteShtetin(shte.shtetet_id)}
                       >
                         Fshij

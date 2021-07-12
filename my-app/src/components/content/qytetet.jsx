@@ -141,7 +141,7 @@ export class Qytetet extends Component {
                         Edit
                       </Button>
                       <Button
-                        className="editButon"
+                        className="fshijButon"
                         variant="danger"
                         onClick={() => this.deleteQyt(qyt.IDQyteti)}
                       >

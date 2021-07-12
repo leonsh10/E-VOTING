@@ -11,6 +11,7 @@ import Votat from "../content/votat";
 import Votimi from "../content/votimi";
 import Contacti from "../content/contactDashboard";
 import  {HomeDashboard} from "../content/homeDashboard";
+import biografiDep from '../content/biografiDep';
 import Navbar from '../navigation/navBar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 function Dashboard(){
@@ -38,6 +39,7 @@ function Dashboard(){
               <Route path='/homeDashboard' component={HomeDashboard} />
               <Route path='/votat' component={Votat} />
               <Route path='/contactDashboard' component={Contacti} />
+              <Route path='/biografiDep' component={biografiDep} />
             </Switch>
           </Router>
         </>

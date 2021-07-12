@@ -13,6 +13,7 @@ import votimi from "./components/content/votimi";
 import home from "./components/content/home";
 import statistikat from "./components/content/statistikat";
 import contactUs from "./components/content/contactus";
+import DeputetetBio from "./components/content/DeputetetBio";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -33,11 +34,11 @@ class App extends React.Component {
               <Route path="/home" exact component={home} />
               <Route path="/statistikat" component={statistikat} />
               <Route path="/contactus" component={contactUs} />
+              <Route path="/DeputetetBio" component={DeputetetBio} />
                <Route path="/dashboard" component={dashboard} />
                {/* <Route path="/login" component={Login} /> */}
                {/* <Route path="/register" component={Register} /> */}
                <Route path="/App2" component={App2} />
-
                <Route path="/otherData" component={otherData} />
                <Route path="/votimi" component={votimi} />
              </Switch>
