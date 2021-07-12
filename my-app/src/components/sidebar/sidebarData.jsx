@@ -82,7 +82,7 @@ export const SidebarData = [
   {
     title: 'Contact',
     path: '/contactDashboard',
-    icon: <IoIcons.IoMdPaper />,
+    icon: <IoIcons.IoMdContact />,
     cName: 'nav-text'
   },
   {
