@@ -66,7 +66,7 @@ render() {
                         <th>Email</th>
                         <th>Numri Telefonit</th>
                         <th>Mesazhi</th>
-                        <th >Edit/Fshij</th>
+                        <th >Fshij</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -75,15 +75,14 @@ render() {
                                 <td>{con.emri}</td>
                                 <td>{con.email}</td>
                                 <td>{con.nrtelefonit}</td>
-                               
                                 <td>{con.mesazhi}</td>
                                <td>  <ButtonToolbar className="butonat">
-                               <Button className="editButon" variant="info"
+                               {/* <Button className="editButon" variant="info"
     onClick={()=>this.setState({editModalShow:true,
         id_contact:con.id_contact,emri:con.emri,email:con.email,
         nrtelefonit:con.nrtelefonit,mesazhi:con.mesazhi})}>
             Edit
-        </Button>
+        </Button> */}
           <Button className="editButon"onClick={()=>this.deleteUser(con.id_contact)}>
             Fshij
           </Button>
