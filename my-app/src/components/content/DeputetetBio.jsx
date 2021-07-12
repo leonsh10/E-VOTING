@@ -45,9 +45,10 @@ export class DeputetetBio extends Component {
         return (
           <div className="deputetetContent">
             <h1 class="titulliLart">Deputetët e Kosovës</h1>
-            <div className="votuesitDiv">
+            {/* <div className="votuesitDiv"> */}
+            <div>
               
-              <Table className="vot1">
+              <Table className="dep">
                 <thead>
                   <tr>
                     
