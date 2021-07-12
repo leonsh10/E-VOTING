@@ -88,7 +88,7 @@ export class votuesit extends Component {
                         Edit
                       </Button>
                       <Button
-                        className="editButon"
+                        className="fshijButon"
                         onClick={() => this.deleteUser(reg.votuesi_id)}
                       >
                         Fshij

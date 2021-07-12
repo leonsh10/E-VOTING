@@ -64,6 +64,7 @@ export class votimi extends Component {
   render() {
     return (
       <div class="votePage">
+        <div id="vijaL"></div>
         <Row>
           <Form className="voteForm" onSubmit={this.handleSubmit}>
             <Form.Group controlId="Partia">

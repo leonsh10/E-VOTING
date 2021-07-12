@@ -68,7 +68,7 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Home',
+    title: 'Kryefaqja',
     path: '/homeDashboard',
     icon: <IoIcons.IoMdHome />,
     cName: 'nav-text'
@@ -82,6 +82,12 @@ export const SidebarData = [
   {
     title: 'Contact',
     path: '/contactDashboard',
+    icon: <IoIcons.IoMdContact />,
+    cName: 'nav-text'
+  },
+  {
+    title: 'Biografi',
+    path: '/biografiDep',
     icon: <IoIcons.IoMdPaper />,
     cName: 'nav-text'
   }
