@@ -1,6 +1,11 @@
 import React, { Component } from "react";
-import { Modal, Button, Row, Col, Form, Image } from "react-bootstrap";
+import {Modal,Button, Row, Col, Form} from "react-bootstrap";
 import "../../App.scss";
+
+// import {Modal} from "react-bootstrap/Modal";
+// import Modal from 'react-bootstrap/Modal'
+// import {Button} from "react-bootstrap";
+
 
 export class EditDepModal extends Component {
     constructor(props) {
@@ -59,17 +64,19 @@ export class EditDepModal extends Component {
               size="lg"
               aria-labelledby="contained-modal-title-vcenter"
               centered
+              // style={{opacity:1}}
+              fade={false}
             >
               <Modal.Body>
                 <Row>
                   <Col sm={6}>
                     <Form onSubmit={this.handleSubmit}>
-                      <Form.Group controlId="ID_Deputeti">
+                      <Form.Group controlId="deputetet_id">
                         {/* <Form.Label>IDQyteti</Form.Label> */}
                         <Form.Control
                           type="text"
                           name="deputetet_id"
-                          required
+                          // required
                           placeholder="Deputeti Id"
                           disabled
                           defaultValue={this.props.deputetet_id}
@@ -82,6 +89,7 @@ export class EditDepModal extends Component {
                         <Form.Control as="select" name="Partia">
                         {this.state.part.map(par=>
                             <option key={par.partit_id}>{par.emri_Partis}</option>)}
+                          
                         </Form.Control>
                     </Form.Group>
 
