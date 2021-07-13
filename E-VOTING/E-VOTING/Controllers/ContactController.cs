@@ -118,7 +118,7 @@ namespace E_VOTING.Controllers
         public JsonResult Delete(int id)
         {
             string query = @"
-                    delete from dbo.contact
+                    delete from dbo.contactus
                     where id_contact = " + id + @" 
                     ";
             DataTable table = new DataTable();

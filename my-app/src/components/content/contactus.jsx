@@ -7,6 +7,8 @@ import Segment from 'react-bootstrap/Button';
 import * as IoIcons from 'react-icons/io';
 import * as AiIcons from 'react-icons/ai';
 import * as FaIcons from 'react-icons/fa';
+// import { Alert } from 'reactstrap';
+// import {Alert} from 'react-bootstrap/Alert';
 class contactus extends React.Component {
     constructor(props) {
         super(props);
@@ -71,25 +73,25 @@ class contactus extends React.Component {
             <div class="divForma">
 
 <div class="formm">
-<h4 id="epara">CONTACT US </h4>
+<h4 id="epara">CONTACT US</h4>
 <form className="forma1" onSubmit={this.handleSubmit}>
  
 
     {/* <Form.Label>Shkruaj Emrin:</Form.Label> */}
-    <input type="text" class="inputi" name="emri" size="30"
-                  placeholder="Emri" />
+    <input type="text" id="inputat"  class="inputi" name="emri" size="30"
+                  placeholder="Emri" required/>
  
  
     {/* <Form.Label>Shkruaj Email-in</Form.Label> */}
-    <input type="email"  class="inputi"  name="email" size="30"
-                  placeholder="Email" />
+    <input type="email" id="inputat"  class="inputi"  name="email" size="30"
+                  placeholder="Email" required />
  
     {/* <Form.Label>Shkruaj Numrin e Telefonit</Form.Label> */}
-    <input type="text"   class="inputi" name="nrtelefonit" size="30"
-                  placeholder="Nr.Telefonit" />
+    <input type="text"  id="inputat"  class="inputi" name="nrtelefonit" size="30"
+                  placeholder="Nr.Telefonit" required/>
  
     {/* <Form.Label>Shkruaj Paqartesite</Form.Label> */}
-    <textarea name="mesazhi" rows="7" cols="60" placeholder="Mesazhi.."  id="mesazhi"></textarea>
+    <textarea name="mesazhi" rows="7" cols="60" placeholder="Mesazhi.."  id="mesazhi" required></textarea>
  
   
   <button  type="submit" class="butoni">  
