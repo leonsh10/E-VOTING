@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Modal, Button, Row, Col, Form, Image } from "react-bootstrap";
 import "../../App.scss";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 export class EditQytModal extends Component {
   constructor(props) {
