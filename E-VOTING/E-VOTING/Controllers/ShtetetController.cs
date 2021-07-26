@@ -1,139 +1,53 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
-using System.Data.SqlClient;
-using System.Data;
+using MediatR;
 using E_VOTING.Models;
-using System.IO;
-using Microsoft.AspNetCore.Hosting;
+using E_VOTING.Models.Shtetet;
 
-namespace E_VOTING.Controllers
+
+namespace E_VOTING.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ShtetetController : Controller
+    public class ShtetetController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
-        private readonly IWebHostEnvironment _env;
 
-
-        public ShtetetController(IConfiguration configuration, IWebHostEnvironment env)
+        private readonly IMediator _mediator;
+        public ShtetetController(IMediator mediator)
         {
-            _configuration = configuration;
-            _env = env;
+            _mediator = mediator;
         }
 
         [HttpGet]
-        public JsonResult Get()
+        public async Task<ActionResult<List<Shtete>>> List()
         {
-            string query = @"
-              select shtetet_id, emri_shtetet
-                 from dbo.Shtetet
-                 ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-
-            }
-            return new JsonResult(table);
-
+            return await _mediator.Send(new List.Query());
         }
+
+
         [HttpPost]
-        public JsonResult Post(Shtetet sht)
+        public async Task<ActionResult<Unit>> Create(Create.Command command)
         {
-            string query = @"
-              insert into dbo.Shtetet
-               (emri_shtetet)
-                values  
-                    (
-                    '" + sht.emri_shtetet + @"'
-                    )
-                    ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-
-            }
-            return new JsonResult("Added Succesfully");
+            return await _mediator.Send(command);
         }
-        [HttpPut]
-        public JsonResult Put(Shtetet sht)
+
+        [HttpPut("{id}")]
+
+        public async Task<ActionResult<Unit>> Edit(int id, Edit.Command command)
         {
-            string query = @"
-               update dbo.Shtetet set
-               emri_shtetet = '" + sht.emri_shtetet + @"'
-                where shtetet_id = " + sht.shtetet_id + @"
-                 ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-
-            }
-            return new JsonResult("Updated Succesfully");
+            command.shtetet_id = id;
+            return await _mediator.Send(command);
         }
+
         [HttpDelete("{id}")]
-        public JsonResult Delete(int id)
+
+        public async Task<ActionResult<Unit>> Delete(int id)
         {
-            string query = @"
-                    delete from dbo.Shtetet
-                    where shtetet_id = " + id + @" 
-                    ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-            }
-
-            return new JsonResult("Deleted Successfully");
+            return await _mediator.Send(new Delete.Command { shtetet_id = id });
         }
 
-        
     }
 }

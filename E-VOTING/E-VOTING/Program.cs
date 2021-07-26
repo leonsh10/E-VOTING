@@ -16,6 +16,8 @@ namespace E_VOTING
             CreateHostBuilder(args).Build().Run();
         }
 
+       
+
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>

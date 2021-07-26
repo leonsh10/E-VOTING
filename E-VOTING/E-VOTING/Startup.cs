@@ -14,6 +14,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
 using Microsoft.Extensions.FileProviders;
+using E_VOTING.Persistence;
+using Microsoft.EntityFrameworkCore;
+using MediatR;
+using E_VOTING.Models.Activities;
 
 namespace E_VOTING
 {
@@ -29,6 +33,10 @@ namespace E_VOTING
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<DataContext>(opt =>
+           {
+               opt.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"));
+           });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -41,6 +49,8 @@ namespace E_VOTING
                 c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod()
                  .AllowAnyHeader());
             });
+
+            services.AddMediatR(typeof(List.Handler).Assembly);
 
             services.AddControllersWithViews()
                 .AddNewtonsoftJson(options =>

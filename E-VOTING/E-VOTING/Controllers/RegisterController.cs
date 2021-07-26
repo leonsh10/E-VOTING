@@ -1,168 +1,53 @@
-﻿using E_VOTING.Models;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
+using MediatR;
+using E_VOTING.Models;
+using E_VOTING.Models.Register;
 
-namespace E_VOTING.Controllers
+namespace E_VOTING.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
     public class RegisterController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
-        private readonly IWebHostEnvironment _env;
 
-        public RegisterController(IConfiguration configuration, IWebHostEnvironment env)
+        private readonly IMediator _mediator;
+        public RegisterController(IMediator mediator)
         {
-            _configuration = configuration;
-            _env = env;
+            _mediator = mediator;
         }
+
         [HttpGet]
-        public JsonResult Get()
+        public async Task<ActionResult<List<Votuesit>>> List()
         {
-            string query = @"
-                    select votuesi_id, username,nrLeternjoftimit, email,Password               
-                    from dbo.Login
-                    ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-            }
-
-            return new JsonResult(table);
+            return await _mediator.Send(new List.Query());
         }
+
 
         [HttpPost]
-        public JsonResult Post(Register reg)
+        public async Task<ActionResult<Unit>> Create(Create.Command command)
         {
-            string query = @"
-                    insert into dbo.Login 
-                    (username,nrLeternjoftimit,email,Password)
-                    values 
-                    (
-                    '" + reg.username + @"'
-                    ,'" + reg.nrLeternjoftimit + @"'
-                    ,'" + reg.email + @"'
-                    ,'" + reg.Password + @"'
-                    )
-                    ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-            }
-
-            return new JsonResult("Jeni regjistruar me sukses.");
+            return await _mediator.Send(command);
         }
 
-        [HttpPut]
-        public JsonResult Put(Register re)
+        [HttpPut("{id}")]
+
+        public async Task<ActionResult<Unit>> Edit(int id, Edit.Command command)
         {
-            string query = @"
-               update dbo.Login set
-               username = '" + re.username + @"'
-               ,nrLeternjoftimit = '" + re.nrLeternjoftimit + @"'
-                ,email= '" + re.email + @"'
-                where votuesi_id = " + re.votuesi_id + @"
-                 ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-
-            }
-            return new JsonResult("Useri u editua me sukses.");
+            command.votuesi_id = id;
+            return await _mediator.Send(command);
         }
+
         [HttpDelete("{id}")]
-        public JsonResult Delete(int id)
+
+        public async Task<ActionResult<Unit>> Delete(int id)
         {
-            string query = @"
-                    delete from dbo.Login
-                    where votuesi_id = " + id + @" 
-                    ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-            }
-
-            return new JsonResult("User-i u fshi me sukses.");
+            return await _mediator.Send(new Delete.Command { votuesi_id = id });
         }
 
-
-        [Route("GetAllVotuesit")]
-        public JsonResult GetAllVotuesit()
-        {
-            string query = @"
-                    select votuesi_id,username,nrLeternjoftimit,email from dbo.Login
-                    ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-            }
-
-            return new JsonResult(table);
-        }
     }
 }
 
- 
