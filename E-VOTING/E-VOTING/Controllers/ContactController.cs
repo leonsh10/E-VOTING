@@ -1,15 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
-using System.Data.SqlClient;
-using System.Data;
+using MediatR;
 using E_VOTING.Models;
-using System.IO;
-using Microsoft.AspNetCore.Hosting;
+using E_VOTING.Models.Kontakti;
 
 namespace E_VOTING.Controllers
 {
@@ -17,129 +13,40 @@ namespace E_VOTING.Controllers
     [ApiController]
     public class ContactController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
-        private readonly IWebHostEnvironment _env;
 
-
-        public ContactController(IConfiguration configuration, IWebHostEnvironment env)
+        private readonly IMediator _mediator;
+        public ContactController(IMediator mediator)
         {
-            _configuration = configuration;
-            _env = env;
+            _mediator = mediator;
         }
 
         [HttpGet]
-        public JsonResult Get()
+        public async Task<ActionResult<List<Contact>>> List()
         {
-            string query = @"
-              select id_contact, emri, email, nrtelefonit, mesazhi
-                 from dbo.contactus
-                 ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-
-            }
-            return new JsonResult(table);
-
+            return await _mediator.Send(new List.Query());
         }
+
+
         [HttpPost]
-        public JsonResult Post(Contact con)
+        public async Task<ActionResult<Unit>> Create(Create.Command command)
         {
-            string query = @"
-              insert into dbo.contactus
-               (emri, email, nrtelefonit,mesazhi)
-                values  
-                    (
-                    '" + con.emri + @"'
-                    ,'" + con.email + @"'
-                    ,'" + con.nrtelefonit + @"'
-                    ,'" + con.mesazhi + @"'
-                    )
-                    ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-
-            }
-            return new JsonResult("Mesazhi u dergua me sukses!");
+            return await _mediator.Send(command);
         }
-        [HttpPut]
-        public JsonResult Put(Contact con)
+
+        [HttpPut("{id}")]
+
+        public async Task<ActionResult<Unit>> Edit(int id, Edit.Command command)
         {
-            string query = @"
-               update dbo.contactus set
-               Titulli = '" + con.emri + @"'
-               ,Content = '" + con.email + @"'
-                ,Content = '" + con.nrtelefonit + @"'
-                ,Content = '" + con.mesazhi + @"'
-                where id_contact = " + con.id_contact + @"
-                 ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-
-            }
-            return new JsonResult("Updated Succesfully");
+            command.id_contact = id;
+            return await _mediator.Send(command);
         }
+
         [HttpDelete("{id}")]
-        public JsonResult Delete(int id)
+
+        public async Task<ActionResult<Unit>> Delete(int id)
         {
-            string query = @"
-                    delete from dbo.contactus
-                    where id_contact = " + id + @" 
-                    ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-            }
-
-            return new JsonResult("Mesazhi u fshi me sukses.");
+            return await _mediator.Send(new Delete.Command { id_contact = id });
         }
 
     }
 }
-

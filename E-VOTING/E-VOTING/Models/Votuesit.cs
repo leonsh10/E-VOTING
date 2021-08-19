@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-
+using System.ComponentModel.DataAnnotations;
 namespace E_VOTING.Models
 {
-    public class Register
+    public class Votuesit
     {
+
+        [Key]
         public int votuesi_id { get; set; }
         public string username { get; set; }
         

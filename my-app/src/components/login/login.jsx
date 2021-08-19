@@ -1,6 +1,7 @@
 import React from "react";
 import loginImg from "../../login.svg";
-
+import { Formik } from 'formik';
+import { Form,  Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 export class Login extends React.Component {
 
     constructor(props) {
@@ -31,5 +32,21 @@ export class Login extends React.Component {
             </div>
         </div>
     }
+
+    // render(){
+
+    //     return <Formik>
+    //             initialValues={{nrLeternjoftimit : '', password: ''}}
+    //             onSubmit={values => console.log(values)}
+    //         {({handleSubmit}) => (
+    //             <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
+    //                 <input name='nrLeternjoftimit' placeholder='NrLeternjoftimit' />
+    //                 <input name='email' placeholder='Password' type='password' />
+    //             </Form>
+    //         )}
+
+
+    //     </Formik>
+    // }
 
 }
