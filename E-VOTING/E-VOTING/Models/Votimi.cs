@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace E_VOTING.Models
 {
     public class Votimi
     {
+        [Key]
         public int IDVota { get; set; }
 
         public string Partia { get; set; }
