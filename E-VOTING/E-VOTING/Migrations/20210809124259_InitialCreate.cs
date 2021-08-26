@@ -148,6 +148,20 @@ namespace E_VOTING.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Home",
+                columns: table => new
+                {
+                    idHome = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Titulli = table.Column<string>(type: "TEXT", nullable: true),
+                    Content = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Deputet", x => x.idHome);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -328,6 +342,9 @@ namespace E_VOTING.Migrations
 
             migrationBuilder.DropTable(
                 name: "Votuesit");
+
+            migrationBuilder.DropTable(
+                name: "Home");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

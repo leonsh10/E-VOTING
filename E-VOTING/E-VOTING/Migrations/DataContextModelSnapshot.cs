@@ -208,6 +208,23 @@ namespace E_VOTING.Migrations
                     b.ToTable("Values");
                 });
 
+            modelBuilder.Entity("E_VOTING.Models.Home", b =>
+            {
+                b.Property<int>("idHome")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("INTEGER");
+
+                b.Property<string>("Titulli")
+                    .HasColumnType("TEXT");
+
+                b.Property<string>("Content")
+                    .HasColumnType("TEXT");
+
+                b.HasKey("idHome");
+
+                b.ToTable("Home");
+            });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")

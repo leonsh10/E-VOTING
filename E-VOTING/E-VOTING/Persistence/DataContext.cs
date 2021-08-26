@@ -28,5 +28,7 @@ namespace E_VOTING.Persistence
        public DbSet<Votuesit> Votuesit { get; set; }
 
         public DbSet<Shtete> Shtete { get; set; }
+
+        public DbSet<Home> Home { get; set; }
     }
 }

@@ -1,141 +1,54 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
-using System.Data.SqlClient;
-using System.Data;
+using MediatR;
 using E_VOTING.Models;
-using System.IO;
-using Microsoft.AspNetCore.Hosting;
+using E_VOTING.Models.Homee;
+using Microsoft.AspNetCore.Authorization;
 
-namespace E_VOTING.Controllers
+namespace E_VOTING.Controller
 {
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class HomeController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
-        private readonly IWebHostEnvironment _env;
 
-
-        public HomeController(IConfiguration configuration, IWebHostEnvironment env)
+        private readonly IMediator _mediator;
+        public HomeController(IMediator mediator)
         {
-            _configuration = configuration;
-            _env = env;
+            _mediator = mediator;
         }
 
         [HttpGet]
-        public JsonResult Get()
+        public async Task<ActionResult<List<Home>>> List()
         {
-            string query = @"
-              select idHome, Titulli, Content
-                 from dbo.Home
-                 ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-
-            }
-            return new JsonResult(table);
-
+            return await _mediator.Send(new List.Query());
         }
+
+
         [HttpPost]
-        public JsonResult Post(Home hom)
+        public async Task<ActionResult<Unit>> Create(Create.Command command)
         {
-            string query = @"
-              insert into dbo.Home
-               (Titulli, Content)
-                values  
-                    (
-                    '" + hom.Titulli + @"'
-                    ,'" + hom.Content + @"'
-                    )
-                    ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-
-            }
-            return new JsonResult("Added Succesfully");
+            return await _mediator.Send(command);
         }
-        [HttpPut]
-        public JsonResult Put(Home hom)
+
+        [HttpPut("{id}")]
+
+        public async Task<ActionResult<Unit>> Edit(int id, Edit.Command command)
         {
-            string query = @"
-               update dbo.Home set
-               Titulli = '" + hom.Titulli + @"'
-               ,Content = '" + hom.Content + @"'
-                where idHome = " + hom.idHome + @"
-                 ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-
-            }
-            return new JsonResult("Updated Succesfully");
+            command.idHome = id;
+            return await _mediator.Send(command);
         }
+
         [HttpDelete("{id}")]
-        public JsonResult Delete(int id)
+
+        public async Task<ActionResult<Unit>> Delete(int id)
         {
-            string query = @"
-                    delete from dbo.Home
-                    where idHome = " + id + @" 
-                    ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-            }
-
-            return new JsonResult("Deleted Successfully");
+            return await _mediator.Send(new Delete.Command { idHome = id });
         }
 
     }
 }
-
