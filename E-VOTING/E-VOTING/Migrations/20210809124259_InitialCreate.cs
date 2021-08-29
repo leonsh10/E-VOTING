@@ -158,7 +158,37 @@ namespace E_VOTING.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Deputet", x => x.idHome);
+                    table.PrimaryKey("PK_Home", x => x.idHome);
+                });
+            migrationBuilder.CreateTable(
+                name: "Qyteti",
+                columns: table => new
+                {
+                    IDQyteti = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Shteti = table.Column<string>(type: "TEXT", nullable: true),
+                    EmriQytetit = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Qyteti", x => x.IDQyteti);
+                });
+            migrationBuilder.CreateTable(
+                name: "Votimi",
+                columns: table => new
+                {
+                    IDVota = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Partia = table.Column<string>(type: "TEXT", nullable: true),
+                    DeputetiPare = table.Column<string>(type: "TEXT", nullable: true),
+                    DeputetiDyte = table.Column<string>(type: "TEXT", nullable: true),
+                    DeputetiTrete = table.Column<string>(type: "TEXT", nullable: true),
+                    DeputetiKatert = table.Column<string>(type: "TEXT", nullable: true),
+                    DeputetiPeste = table.Column<string>(type: "TEXT", nullable: true),
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Votimi", x => x.IDVota);
                 });
 
             migrationBuilder.CreateTable(
@@ -345,6 +375,10 @@ namespace E_VOTING.Migrations
 
             migrationBuilder.DropTable(
                 name: "Home");
+            migrationBuilder.DropTable(
+                name: "Qyteti");
+            migrationBuilder.DropTable(
+                name: "Votimi");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

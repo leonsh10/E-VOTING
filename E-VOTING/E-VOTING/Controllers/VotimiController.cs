@@ -1,198 +1,54 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
-using System.Data.SqlClient;
-using System.Data;
+using MediatR;
 using E_VOTING.Models;
-using System.IO;
-using Microsoft.AspNetCore.Hosting;
+using E_VOTING.Models.Votimet;
+using Microsoft.AspNetCore.Authorization;
 
-namespace E_VOTING.Controllers
+namespace E_VOTING.Controller
 {
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class VotimiController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
-        private readonly IWebHostEnvironment _env;
 
-
-        public VotimiController(IConfiguration configuration, IWebHostEnvironment env)
+        private readonly IMediator _mediator;
+        public VotimiController(IMediator mediator)
         {
-            _configuration = configuration;
-            _env = env;
+            _mediator = mediator;
         }
 
         [HttpGet]
-        public JsonResult Get()
+        public async Task<ActionResult<List<Votimi>>> List()
         {
-            string query = @"
-              select IDVota, Partia, DeputetiPare, DeputetiDyte, DeputetiTrete, DeputetiKatert, DeputetiPeste
-                 from dbo.Votimi
-                 ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-
-            }
-            return new JsonResult(table);
-
+            return await _mediator.Send(new List.Query());
         }
+
+
         [HttpPost]
-        public JsonResult Post(Votimi vot)
+        public async Task<ActionResult<Unit>> Create(Create.Command command)
         {
-            string query = @"
-              insert into dbo.Votimi
-               (Partia, DeputetiPare, DeputetiDyte, DeputetiTrete, DeputetiKatert, DeputetiPeste)
-                values  
-                    (
-                    '" + vot.Partia + @"'
-                    ,'" + vot.DeputetiPare + @"'
-                    ,'" + vot.DeputetiDyte + @"'
-                    ,'" + vot.DeputetiTrete + @"'
-                    ,'" + vot.DeputetiKatert + @"'
-                    ,'" + vot.DeputetiPeste + @"'
-                    )
-                    ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-
-            }
-            return new JsonResult("Added Succesfully");
+            return await _mediator.Send(command);
         }
-        [HttpPut]
-        public JsonResult Put(Votimi vot)
+
+        [HttpPut("{id}")]
+
+        public async Task<ActionResult<Unit>> Edit(int id, Edit.Command command)
         {
-            string query = @"
-               update dbo.Votimi set
-               Partia = '" + vot.Partia + @"'
-               ,DeputetiPare = '" + vot.DeputetiPare + @"'
-                ,DeputetiDyte = '" + vot.DeputetiDyte + @"'
-                ,DeputetiTrete = '" + vot.DeputetiTrete + @"'
-                ,DeputetiKatert = '" + vot.DeputetiKatert + @"'
-                ,DeputetiPeste = '" + vot.DeputetiPeste + @"'
-                where IDVota = " + vot.IDVota + @"
-                 ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-
-            }
-            return new JsonResult("Updated Succesfully");
+            command.IDVota = id;
+            return await _mediator.Send(command);
         }
+
         [HttpDelete("{id}")]
-        public JsonResult Delete(int id)
+
+        public async Task<ActionResult<Unit>> Delete(int id)
         {
-            string query = @"
-                    delete from dbo.Votimi
-                    where IDVota = " + id + @" 
-                    ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-            }
-
-            return new JsonResult("Deleted Successfully");
+            return await _mediator.Send(new Delete.Command { IDVota = id });
         }
 
-
-        [Route("GetAllPartite")]
-        public JsonResult GetAllPartite()
-        {
-            string query = @"
-                    select emri_Partis from dbo.Partit
-                    ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-            }
-
-            return new JsonResult(table);
-        }
-
-        [Route("GetAllDeputetet")]
-        public JsonResult GetAllDeputetet()
-        {
-            string query = @"
-                    select deputetet_id from dbo.Deputetet
-                    ";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("IdentityConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader); ;
-
-                    myReader.Close();
-                    myCon.Close();
-                }
-            }
-
-            return new JsonResult(table);
-        }
     }
 }

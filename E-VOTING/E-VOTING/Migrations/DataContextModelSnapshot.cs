@@ -225,6 +225,46 @@ namespace E_VOTING.Migrations
                 b.ToTable("Home");
             });
 
+            modelBuilder.Entity("E_VOTING.Models.Qyteti", b =>
+            {
+                b.Property<int>("IDQyteti")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("INTEGER");
+
+                b.Property<string>("Shteti")
+                    .HasColumnType("TEXT");
+                b.Property<string>("EmriQytetit")
+                    .HasColumnType("TEXT");
+
+                b.HasKey("IDQyteti");
+
+                b.ToTable("Qyteti");
+            });
+
+            modelBuilder.Entity("E_VOTING.Models.Votimi", b =>
+            {
+                b.Property<int>("IDVota")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("INTEGER");
+
+                b.Property<string>("Partia")
+                    .HasColumnType("TEXT");
+                b.Property<string>("DeputetiPare")
+                    .HasColumnType("TEXT");
+                b.Property<string>("DeputetiDyte")
+                    .HasColumnType("TEXT");
+                b.Property<string>("DeputetiTrete")
+                    .HasColumnType("TEXT");
+                b.Property<string>("DeputetiKatert")
+                    .HasColumnType("TEXT");
+                b.Property<string>("DeputetiPeste")
+                    .HasColumnType("TEXT");
+
+                b.HasKey("IDVota");
+
+                b.ToTable("Votimi");
+            });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
