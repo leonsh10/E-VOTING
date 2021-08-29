@@ -1,13 +1,16 @@
 import React from "react";
+// import Component from "react";
 import loginImg from "../../login.svg";
-import { Formik } from 'formik';
-import { Form,  Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Formik,Form } from 'formik';
+import {  Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import MyTextInput from "./MyTextInput";
+// import initialValues from 'react-form-values';
+
 export class Login extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
 
     // render() {
@@ -36,13 +39,14 @@ export class Login extends React.Component {
 
     render(){
 
-        return <Formik>
+        return <Formik
                 initialValues={{nrLeternjoftimit : '', password: ''}}
                 onSubmit={values => console.log(values)}
+                >
             {({handleSubmit}) => (
                 <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
                     <MyTextInput name='nrLeternjoftimit' placeholder='NrLeternjoftimit' />
-                    <MyTextInput name='email' placeholder='Password' type='password' />
+                    <MyTextInput name='password' placeholder='Password' type='password' />
                     <Button positive content='Login' type='submit' fluid />
                 </Form>
             )}
