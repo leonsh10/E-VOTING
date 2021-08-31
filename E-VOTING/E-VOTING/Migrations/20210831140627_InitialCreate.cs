@@ -39,9 +39,9 @@ namespace E_VOTING.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
-                    displayName = table.Column<string>(type: "TEXT", nullable: true),
-                    bio = table.Column<string>(type: "TEXT", nullable: true),
-                    UserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
+                    nrLeternjofimit = table.Column<string>(type: "TEXT", nullable: true),
+                    username = table.Column<string>(type: "TEXT", nullable: true),
+                    //UserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
                     NormalizedEmail = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
@@ -93,6 +93,20 @@ namespace E_VOTING.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Home",
+                columns: table => new
+                {
+                    idHome = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Titulli = table.Column<string>(type: "TEXT", nullable: true),
+                    Content = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Home", x => x.idHome);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Partit",
                 columns: table => new
                 {
@@ -103,6 +117,20 @@ namespace E_VOTING.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Partit", x => x.partit_id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Qyteti",
+                columns: table => new
+                {
+                    IDQyteti = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Shteti = table.Column<string>(type: "TEXT", nullable: true),
+                    EmriQytetit = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Qyteti", x => x.IDQyteti);
                 });
 
             migrationBuilder.CreateTable(
@@ -132,6 +160,24 @@ namespace E_VOTING.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Votimi",
+                columns: table => new
+                {
+                    IDVota = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Partia = table.Column<string>(type: "TEXT", nullable: true),
+                    DeputetiPare = table.Column<string>(type: "TEXT", nullable: true),
+                    DeputetiDyte = table.Column<string>(type: "TEXT", nullable: true),
+                    DeputetiTrete = table.Column<string>(type: "TEXT", nullable: true),
+                    DeputetiKatert = table.Column<string>(type: "TEXT", nullable: true),
+                    DeputetiPeste = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Votimi", x => x.IDVota);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Votuesit",
                 columns: table => new
                 {
@@ -145,50 +191,6 @@ namespace E_VOTING.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Votuesit", x => x.votuesi_id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Home",
-                columns: table => new
-                {
-                    idHome = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Titulli = table.Column<string>(type: "TEXT", nullable: true),
-                    Content = table.Column<string>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Home", x => x.idHome);
-                });
-            migrationBuilder.CreateTable(
-                name: "Qyteti",
-                columns: table => new
-                {
-                    IDQyteti = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Shteti = table.Column<string>(type: "TEXT", nullable: true),
-                    EmriQytetit = table.Column<string>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Qyteti", x => x.IDQyteti);
-                });
-            migrationBuilder.CreateTable(
-                name: "Votimi",
-                columns: table => new
-                {
-                    IDVota = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Partia = table.Column<string>(type: "TEXT", nullable: true),
-                    DeputetiPare = table.Column<string>(type: "TEXT", nullable: true),
-                    DeputetiDyte = table.Column<string>(type: "TEXT", nullable: true),
-                    DeputetiTrete = table.Column<string>(type: "TEXT", nullable: true),
-                    DeputetiKatert = table.Column<string>(type: "TEXT", nullable: true),
-                    DeputetiPeste = table.Column<string>(type: "TEXT", nullable: true),
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Votimi", x => x.IDVota);
                 });
 
             migrationBuilder.CreateTable(
@@ -362,7 +364,13 @@ namespace E_VOTING.Migrations
                 name: "Deputet");
 
             migrationBuilder.DropTable(
+                name: "Home");
+
+            migrationBuilder.DropTable(
                 name: "Partit");
+
+            migrationBuilder.DropTable(
+                name: "Qyteti");
 
             migrationBuilder.DropTable(
                 name: "Shtete");
@@ -371,14 +379,10 @@ namespace E_VOTING.Migrations
                 name: "Values");
 
             migrationBuilder.DropTable(
-                name: "Votuesit");
+                name: "Votimi");
 
             migrationBuilder.DropTable(
-                name: "Home");
-            migrationBuilder.DropTable(
-                name: "Qyteti");
-            migrationBuilder.DropTable(
-                name: "Votimi");
+                name: "Votuesit");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

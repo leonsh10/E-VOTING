@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_VOTING.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210809124259_InitialCreate")]
+    [Migration("20210831140627_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -70,10 +70,10 @@ namespace E_VOTING.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("bio")
+                    b.Property<string>("nrLeternjofimit")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("displayName")
+                    b.Property<string>("username")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -145,6 +145,23 @@ namespace E_VOTING.Migrations
                     b.ToTable("Deputet");
                 });
 
+            modelBuilder.Entity("E_VOTING.Models.Home", b =>
+                {
+                    b.Property<int>("idHome")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Content")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Titulli")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("idHome");
+
+                    b.ToTable("Home");
+                });
+
             modelBuilder.Entity("E_VOTING.Models.Partit", b =>
                 {
                     b.Property<int>("partit_id")
@@ -159,6 +176,23 @@ namespace E_VOTING.Migrations
                     b.ToTable("Partit");
                 });
 
+            modelBuilder.Entity("E_VOTING.Models.Qyteti", b =>
+                {
+                    b.Property<int>("IDQyteti")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("EmriQytetit")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Shteti")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("IDQyteti");
+
+                    b.ToTable("Qyteti");
+                });
+
             modelBuilder.Entity("E_VOTING.Models.Shtete", b =>
                 {
                     b.Property<int>("shtetet_id")
@@ -171,6 +205,35 @@ namespace E_VOTING.Migrations
                     b.HasKey("shtetet_id");
 
                     b.ToTable("Shtete");
+                });
+
+            modelBuilder.Entity("E_VOTING.Models.Votimi", b =>
+                {
+                    b.Property<int>("IDVota")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("DeputetiDyte")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DeputetiKatert")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DeputetiPare")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DeputetiPeste")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DeputetiTrete")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Partia")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("IDVota");
+
+                    b.ToTable("Votimi");
                 });
 
             modelBuilder.Entity("E_VOTING.Models.Votuesit", b =>
