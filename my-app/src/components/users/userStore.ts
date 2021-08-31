@@ -17,21 +17,21 @@ export default class UserStore{
     login= async(creds: UserFormValues) => {
         try{
             const user = await agent.Account.login(creds);
-            store.commonStore.setToken(user.token);
-            runInAction(() => this.user = user);
+            // store.commonStore.setToken(user.token);
+            // runInAction(() => this.user = user);
         //    history.push('/dsfdsf');
-            // console.log(user);
+            console.log(user);
         } catch(error){
             throw error;
         }
     }
 
-    logout = () => {
-        store.commonStore.setToken(null);
-        window.localStorage.removeItem('jwt');
-        this.user=null;
+    // logout = () => {
+    //     store.commonStore.setToken(null);
+    //     window.localStorage.removeItem('jwt');
+    //     this.user=null;
         
-    }
+    // }
 }
 
 
