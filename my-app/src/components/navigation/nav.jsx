@@ -39,7 +39,7 @@ function Nav(){
                 <Link style={navStyle} to="/register">
                     <li>Register</li>
                 </Link> */}
-                <Link style={navStyle} to="/app2">
+                <Link style={navStyle} to="/login">
                     <li>Kyçu</li>
                 </Link>
 
