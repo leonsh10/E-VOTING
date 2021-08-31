@@ -1,13 +1,18 @@
 import React from "react";
 // import Component from "react";
 import loginImg from "../../login.svg";
-import { Formik,Form } from 'formik';
-import {  Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import UserStore from "../users/userStore";
+import { Formik,Form ,ErrorMessage} from 'formik';
+// import observer from "mobx";
+import { observer } from "mobx-react-lite"
+import {Label} from 'reactstrap';
+import {  Button,FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import MyTextInput from "./MyTextInput";
 // import initialValues from 'react-form-values';
 
-export class Login extends React.Component {
+// export class extends React.Component {
 
+    export default observer (function login(){
     // constructor(props) {
     //     super(props);
     // }
@@ -37,22 +42,26 @@ export class Login extends React.Component {
     //     </div>
     // }
 
-    render(){
+    // render(){
 
         return <Formik
                 initialValues={{nrLeternjoftimit : '', password: ''}}
-                onSubmit={values => console.log(values)}
+                onSubmit={values => console.log(values)} 
                 >
             {({handleSubmit}) => (
                 <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
                     <MyTextInput name='nrLeternjoftimit' placeholder='NrLeternjoftimit' />
                     <MyTextInput name='password' placeholder='Password' type='password' />
+                    {/* <ErrorMessage
+                    name='error' render={() => 
+                    <Label style={{marginBottom:10}} basic color='red' content={errors.error}/>}
+                    /> */}
                     <Button positive content='Login' type='submit' fluid />
                 </Form>
             )}
 
 
         </Formik>
-    }
+          })
 
-}
+        
