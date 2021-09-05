@@ -14,7 +14,7 @@ nav{
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  min-height: 5vh;
+  min-height: 5.6vh;
   width:initial;
   background-color: rgb(13, 13, 129);
   color: white;
@@ -232,6 +232,11 @@ nav{
   width: 100%;
   height: fit-content;
   margin: 0 auto;
+}
+.ul{
+  margin-top: -40px !important;
+  margin-bottom: 1rem !important;
+  margin-left: 920px;
 }
 
 // .form-content{
@@ -650,14 +655,16 @@ tr:nth-child(even) {
   flex-wrap: wrap;
   justify-content: center;
   padding-top: 500px;
+  width: 100%;
 }
 .voteOption{
-  width: 220px;
+  width: 220px !important;
   text-align: center;
   // background-color:rgb(230, 230, 223) !important;
 }
 .vote-btn{
-  margin-top: 43px;
+  margin-top: 49px !important;
+  width: 100px !important;
 }
 .formLabels{
   font-size: 19px;
@@ -751,54 +758,64 @@ tr:nth-child(even) {
   background-color: #00157f;
   border:1px solid #00157f;
   position:absolute;
-  bottom:745px;
+  bottom:748px;
+  left:0px;
+}
+
+#vijaLv{
+  width:2px;
+  height:157px;
+  background-color: #00157f;
+  border:1px solid #00157f;
+  position:absolute;
+  bottom:731px;
   left:0px;
 }
 
 .dep,th,td{
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  text-align:center;
-  left:100px;
+  justify-content: center !important;
+  align-content: center !important;
+  align-items: center !important;
+  text-align:center !important;
+  left:100px !important;
   // border:1px solid blue;
-  border:none;
-  border-right: 1px solid blue;
+  border:none !important;
+  border-right: 1px solid blue !important;
   // border:1px solid rgb(243, 240, 39);
 }
 .dep{
-  width:100%;
-  border-collapse: collapse;
-  font-family: sans-serif;
+  width:100% !important;
+  border-collapse: collapse !important;
+  font-family: sans-serif !important;
   // box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  border-bottom: none;
-  border-top: none;
+  border-bottom: none !important;
+  border-top: none !important;
 }
 .dep thead tr {
   // background-color: #009879;
-  color: #ffffff;
+  color: #ffffff !important;
   // text-align: left;
-  color: black;
+  color: black !important;
 }
 
 .dep th,
 .dep td {
-    padding: 12px 25px;
+    padding: 12px 25px !important;
 }
 
 .dep tr:hover{
   // border-bottom: 1px solid #dddddd;
-  background-color: rgb(238, 238, 238);
-  cursor: pointer;
+  background-color: rgb(238, 238, 238) !important;
+  cursor: pointer !important;
 }
 
 .dep tbody tr:nth-of-type(even) {
-  background-color: white;
+  background-color: white !important;
 }
 
 
 .dep tr:nth-of-type(even):hover{
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(238, 238, 238) !important;
 }
 
 .dep tbody tr:last-of-type {
