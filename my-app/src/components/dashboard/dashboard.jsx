@@ -13,6 +13,7 @@ import Contacti from "../content/contactDashboard";
 import  {HomeDashboard} from "../content/homeDashboard";
 import biografiDep from '../content/biografiDep';
 import Navbar from '../navigation/navBar';
+// import "bootstrap/dist/css/bootstrap.min.css";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 function Dashboard(){
     // return(
