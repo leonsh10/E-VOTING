@@ -54,7 +54,7 @@ export class EditPartModal extends Component {
               <Col sm={6}>
                 <Form onSubmit={this.handleSubmit}>
                   <Form.Group controlId="IDPartise">
-                    {/* <Form.Label>IDQyteti</Form.Label> */}
+                    <Form.Label>ID e Partise</Form.Label>
                     <Form.Control
                       type="text"
                       name="partit_id"
@@ -67,7 +67,7 @@ export class EditPartModal extends Component {
                   </Form.Group>
 
                   <Form.Group controlId="EmriPartise">
-                    {/* <Form.Label>EmriQytetit</Form.Label> */}
+                    <Form.Label>Partia</Form.Label>
                     <Form.Control
                       type="text"
                       name="emri_Partis"

@@ -25,7 +25,7 @@ observer (function Nav(){
     return (
         <nav>
             <img src={logo} class="imageH"/>
-            <ul className="nav-links">
+            <ul className="nav-links ul">
                 <Link style={navStyle} to="/home">
                     <li>Kryefaqja</li>
                 </Link>
