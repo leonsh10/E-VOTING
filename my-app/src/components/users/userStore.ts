@@ -5,10 +5,13 @@ import agent from "./agent";
 import { createContext } from "react";
 import { useContext } from "react";
 import CommonStore from "./commonStore";
-
+import {useHistory} from "react-router-dom";
+// import { observer } from "mobx-react-lite"
 
 export default class UserStore{
+    
     user: User | null = null;
+    props: any;
 
     constructor(){
         makeAutoObservable(this)
@@ -18,16 +21,15 @@ export default class UserStore{
         return !!this.user;
     }
 
-    
-
-    
     login= async(creds: UserFormValues) => {
         try{
+            var history = useHistory();
             const user = await agent.Account.login(creds);
              store.commonStore.setToken(user.token);
             runInAction(() => this.user = user);
-        //    history.push('/dsfdsf');
-            console.log(user);
+        //    this.props.history.push('/home');
+           history.push('/home');
+            // console.log(user);
         } catch(error){
             throw error;
         }

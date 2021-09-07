@@ -3,8 +3,10 @@ import "../../App.scss";
 import video1 from "../videos/video1.mp4";
 import {Button} from 'react-bootstrap';
 import logo from '.././images/logo.png';
+import { observer } from "mobx-react-lite"
 // export class home extends Component{
-function home() {
+export default observer(function home() {
+  // const {userStore} = useStore();
   function handleScroll() {
     window.scroll({
       top: document.body.offsetHeight,
@@ -19,6 +21,7 @@ function home() {
       <div class="homeContent">
         <div id="vijaL"></div>
         <h1>PER CFARE PERDORET E-VOTING</h1>
+     
         <p>
           E-Voting përdoret për arsyje se është mënyra më e mire dhe më e
           sigurtë për votim në tërë botën. Qe nga viti 2021 kjo menyrë e votimit
@@ -66,5 +69,5 @@ function home() {
   );
   // }
   // }
-}
-export default home;
+})
+// export default home;
