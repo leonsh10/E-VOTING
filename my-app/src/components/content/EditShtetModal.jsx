@@ -55,7 +55,7 @@ export class EditShtetModal extends Component {
                   <Col sm={6}>
                     <Form onSubmit={this.handleSubmit}>
                       <Form.Group controlId="IDShteti">
-                        {/* <Form.Label>IDQyteti</Form.Label> */}
+                        <Form.Label className="labels">IDShteti</Form.Label>
                         <Form.Control
                           type="text"
                           name="shtetet_id"
@@ -68,7 +68,7 @@ export class EditShtetModal extends Component {
                       </Form.Group>
     
                       <Form.Group controlId="EmriShtetit">
-                        {/* <Form.Label>EmriQytetit</Form.Label> */}
+                        <Form.Label className="labels">Emri i Shtetit</Form.Label>
                         <Form.Control
                           type="text"
                           name="emri_shtetet"

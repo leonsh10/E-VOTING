@@ -172,6 +172,7 @@ export class partite extends Component {
                       </Button>
                       <Button
                         className="fshijButon"
+                        variant="danger"
                         onClick={() => this.deletePartine(par.partit_id)}
                       >
                         Fshij

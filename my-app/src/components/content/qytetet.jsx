@@ -81,24 +81,32 @@ export class Qytetet extends Component {
         <h1 class="titulliLart">Qytetet</h1>
         <div>
           <Form className="forma1" onSubmit={this.handleSubmit}>
-            <Form.Group controlId="EmriQytetit">
+            {/* <Form.Group controlId="EmriQytetit"> */}
               {/* <Form.Label>EmriQytetit</Form.Label> */}
-              <Form.Control
+              {/* <Form.Control
                 type="text"
                 name="EmriQytetit"
                 required
                 placeholder="Emri i Qytetit"
                 className="form-content2"
               />
-            </Form.Group>
-            <Form.Group controlId="Shteti">
+            </Form.Group> */}
+            <input
+                type="text"
+                id="inputi"
+                name="EmriQytetit"
+                required
+                class="form-content2"
+                placeholder="Emri i Qytetit..."
+              ></input>
+            {/* <Form.Group controlId="Shteti"> */}
               {/* <Form.Label>Shteti</Form.Label> */}
-              <Form.Control as="select" className="form-content2">
+              <select className="form-content2">
                 {this.state.deps.map((dep) => (
                   <option key={dep.shtetet_id}>{dep.emri_shtetet}</option>
                 ))}
-              </Form.Control>
-            </Form.Group>
+              </select>
+            {/* </Form.Group> */}
             <div className="buton-div">
               <Button variant="primary" type="submit" className="shto-btnD">
                 Shto

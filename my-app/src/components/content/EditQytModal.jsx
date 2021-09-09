@@ -56,7 +56,7 @@ export class EditQytModal extends Component {
               <Col sm={6}>
                 <Form onSubmit={this.handleSubmit}>
                   <Form.Group controlId="IDQyteti">
-                    {/* <Form.Label>IDQyteti</Form.Label> */}
+                    <Form.Label className="labels">IDQyteti</Form.Label>
                     <Form.Control
                       type="text"
                       name="IDQyteti"
@@ -69,7 +69,7 @@ export class EditQytModal extends Component {
                   </Form.Group>
 
                   <Form.Group controlId="EmriQytetit">
-                    {/* <Form.Label>EmriQytetit</Form.Label> */}
+                    <Form.Label className="labels">Emri i Qytetit</Form.Label>
                     <Form.Control
                       type="text"
                       name="EmriQytetit"
@@ -81,7 +81,7 @@ export class EditQytModal extends Component {
                   </Form.Group>
 
                   <Form.Group controlId="Shteti">
-                    {/* <Form.Label>Shteti</Form.Label> */}
+                    <Form.Label className="labels">Shteti</Form.Label>
                     <Form.Control as="select" defaultValue={this.props.shteti} className="form-content2">
                       {this.state.deps.map((dep) => (
                         <option key={dep.shtetet_id}>

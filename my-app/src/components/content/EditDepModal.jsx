@@ -72,7 +72,7 @@ export class EditDepModal extends Component {
                   <Col sm={6}>
                     <Form onSubmit={this.handleSubmit}>
                       <Form.Group controlId="deputetet_id">
-                        {/* <Form.Label>IDQyteti</Form.Label> */}
+                        <Form.Label className="labels">IDDeputeti</Form.Label>
                         <Form.Control
                           type="text"
                           name="deputetet_id"
@@ -85,7 +85,7 @@ export class EditDepModal extends Component {
                       </Form.Group>
     
                       <Form.Group controlId="Partit">
-                        <Form.Label>Partite</Form.Label>
+                        <Form.Label className="labels">Partia</Form.Label>
                         <Form.Control as="select" name="Partia">
                         {this.state.part.map(par=>
                             <option key={par.partit_id}>{par.emri_Partis}</option>)}
@@ -94,7 +94,7 @@ export class EditDepModal extends Component {
                     </Form.Group>
 
                       <Form.Group controlId="Emri">
-                        {/* <Form.Label>EmriQytetit</Form.Label> */}
+                        <Form.Label className="labels">Emri dhe Mbiemri</Form.Label>
                         <Form.Control
                           type="text"
                           name="Emri"
@@ -106,7 +106,7 @@ export class EditDepModal extends Component {
                       </Form.Group>
 
                       <Form.Group controlId="Numri">
-                    <Form.Label>Numri I Deputetit</Form.Label>
+                    <Form.Label className="labels">Numri I Deputetit</Form.Label>
                     <select class="form-content2" name="Numri" >
                 <option >Zgjedh numrin</option>
                 <option>1</option>

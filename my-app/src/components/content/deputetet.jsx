@@ -85,26 +85,35 @@ export class deputetet extends Component {
 
         <div>
           <Form className="forma1" onSubmit={this.handleSubmit}>
-            <Form.Group controlId="Emri">
+             {/* <Form.Group controlId="Emri"> */}
               {/* <Form.Label>EmriQytetit</Form.Label> */}
               {/* <Form.Label>Emri</Form.Label> */}
-              <Form.Control
+              {/* <Form.Control
                 type="text"
                 name="Emri"
                 required
                 placeholder="Emri dhe Mbiemri..."
                 className="form-content2"
-              />
-            </Form.Group>
-            <Form.Group controlId="Partit">
+              /> */}
+            {/* </Form.Group> */}
+            <input
+                type="text"
+                id="inputi"
+                name="Emri"
+                required
+                class="form-content2"
+                placeholder="Emri dhe Mbiemri..."
+              ></input>
+            {/* <Form.Group controlId="Partit"> */}
               {/* <Form.Label>Partite</Form.Label> */}
-              <Form.Control as="select" name="Partia">
+              {/* <Form.Control as="select" name="Partia"> */}
+              <select name="Partia" className="form-content2">
                 {this.state.part.map((par) => (
                   <option key={par.partit_id}>{par.emri_Partis}</option>
                 ))}
-              </Form.Control>
-            </Form.Group>
-            <Form.Group controlId="Numri">
+              </select>
+            {/* </Form.Group> */}
+            {/* <Form.Group controlId="Numri"> */}
               {/* <Form.Label>Numri I Deputetit</Form.Label> */}
               <select class="form-content2" name="Numri">
                 <option>Zgjedh numrin</option>
@@ -114,7 +123,7 @@ export class deputetet extends Component {
                 <option>4</option>
                 <option>5</option>
               </select>
-            </Form.Group>
+            {/* </Form.Group> */}
 
             <div className="buton-div">
               <Button variant="primary" type="submit" className="shto-btnD">

@@ -135,7 +135,7 @@ export class HomeDashboard extends Component {
                         Edit
                       </Button>
                       <Button
-                        className="fshijButon"
+                        className="fshjButon"
                         variant="danger"
                         onClick={() => this.deleteHom(hom.idHome)}
                       >

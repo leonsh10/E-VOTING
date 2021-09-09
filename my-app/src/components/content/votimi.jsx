@@ -151,7 +151,7 @@ export class votimi extends Component {
         <div class="footerS">
           <img src={logo} class="imageF"></img>
           <i>&copy;</i>
-          <p>Te gjitha te drejtat e rezervuara</p>
+          <p>Republika e Kosovës - Te gjitha te drejtat e rezervuara</p>
         </div>
       </div>
     );

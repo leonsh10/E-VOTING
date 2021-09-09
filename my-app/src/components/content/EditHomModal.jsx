@@ -48,7 +48,7 @@ export class EditHomModal extends Component {
               <Col sm={6}>
                 <Form onSubmit={this.handleSubmit}>
                   <Form.Group controlId="idHome">
-                    {/* <Form.Label>IDQyteti</Form.Label> */}
+                    <Form.Label className="labels">idHome</Form.Label>
                     <Form.Control
                       type="text"
                       name="idHome"
@@ -61,7 +61,7 @@ export class EditHomModal extends Component {
                   </Form.Group>
 
                   <Form.Group controlId="Titulli">
-                    {/* <Form.Label>EmriQytetit</Form.Label> */}
+                    <Form.Label className="labels">Titulli</Form.Label>
                     <Form.Control
                       type="text"
                       name="Titulli"
@@ -73,7 +73,7 @@ export class EditHomModal extends Component {
                   </Form.Group>
 
                   <Form.Group controlId="Content">
-                    {/* <Form.Label>EmriQytetit</Form.Label> */}
+                    <Form.Label className="labels">Permbajtja</Form.Label>
                     <Form.Control
                       type="text"
                       name="Content"
