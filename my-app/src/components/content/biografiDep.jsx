@@ -78,7 +78,7 @@ export class biografiDep extends Component {
       <div className="deputetetContent">
           <h1 class="titulliLart">Biografia e Deputeteve</h1>
             <Row>
-              <Col sm={6}>
+              <Col sm={6} className="col">
                 {/* <Form onSubmit={this.handleSubmit}> */}
                 <Form className="forma1" onSubmit={this.handleSubmit}>
                     <label for="foto">Fotografia e deputetit</label>

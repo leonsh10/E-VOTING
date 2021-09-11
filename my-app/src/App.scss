@@ -274,7 +274,7 @@ nav{
   flex-direction: row;
 }
 .buton-div{
-  width: 200px;
+  // width: 200px;
   display: flex;
   flex-direction: row;
 }
@@ -405,6 +405,7 @@ width:137px;
   flex-direction: column;
   justify-content: center;
   padding-left: 300px;
+  padding-right: 300px;
 }
 .vot1,th,td{
   justify-content: center;
@@ -520,13 +521,13 @@ tr:nth-child(even) {
 }
 
 .forma1{
-  width:100%;
-  height:fit-content;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align:center;
-  align-items: center;
+  width:100% !important;
+  height:fit-content !important;
+  display:flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  text-align:center !important;
+  align-items: center !important;
 
 }
 .componentsHome{
@@ -571,7 +572,8 @@ tr:nth-child(even) {
   position:absolute;
   top:1000px;
   // background-color:#707070;
-  background-color:rgb(223, 223, 212);
+  // background-color:rgb(223, 223, 212);
+  background-color:rgb(224, 238, 243);
   display:flex;
   justify-content: center;
   align-items: center;
@@ -823,4 +825,22 @@ tr:nth-child(even) {
   // border-bottom: 2px solid rgb(13, 13, 129);
   // border-bottom: none;
   // border-bottom: 2px solid rgb(243, 240, 39);
+}
+
+.col{
+  margin: 0 auto;
+}
+
+p{
+  margin-top: 15px !important;
+}
+
+.modal-body{
+  padding-left: 240px !important;
+}
+
+.labels{
+  color: black;
+  padding-left: 11px;
+  font-weight: bold;
 }
