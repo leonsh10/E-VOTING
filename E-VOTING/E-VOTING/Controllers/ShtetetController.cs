@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 using MediatR;
 using E_VOTING.Models;
 using E_VOTING.Models.Shtetet;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace E_VOTING.Controller
 {
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class ShtetetController : ControllerBase

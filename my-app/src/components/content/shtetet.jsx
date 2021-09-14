@@ -122,6 +122,7 @@ export class shtetet extends Component {
                         Edit
                       </Button>
                       <Button
+                        variant="danger"
                         className="fshijButon"
                         onClick={() => this.deleteShtetin(shte.shtetet_id)}
                       >

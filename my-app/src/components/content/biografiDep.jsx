@@ -6,11 +6,11 @@ export class biografiDep extends Component {
     super(props);
     this.state = { deps: [] };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleFileSelected = this.handleFileSelected.bind(this);
+    // this.handleFileSelected = this.handleFileSelected.bind(this);
   }
 
-  photofilename = "anonymous.png";
-  imagesrc = process.env.REACT_APP_PHOTOPATH + this.photofilename;
+  // photofilename = "anonymous.png";
+  // imagesrc = process.env.REACT_APP_PHOTOPATH + this.photofilename;
 
   componentDidMount() {
     fetch("http://localhost:5000/api/Biografi")
@@ -30,11 +30,12 @@ export class biografiDep extends Component {
       },
       body: JSON.stringify({
         //IDBiografi:null,
-        PhotoFileName: this.photofilename,
+        // PhotoFileName: this.photofilename,
         Emri: event.target.Emri.value,
         Mbiemri: event.target.Mbiemri.value,
         Partia: event.target.Partia.value,
         Biografia: event.target.Biografia.value,
+        nrMandateve: event.target.nrMandateve.value
       }),
     })
       .then((res) => res.json())
@@ -48,30 +49,30 @@ export class biografiDep extends Component {
       );
   }
 
-  handleFileSelected(event) {
-    event.preventDefault();
-    this.photofilename = event.target.files[0].name;
-    const formData = new FormData();
-    formData.append(
-      "myFile",
-      event.target.files[0],
-      event.target.files[0].name
-    );
+  // handleFileSelected(event) {
+  //   event.preventDefault();
+  //   this.photofilename = event.target.files[0].name;
+  //   const formData = new FormData();
+  //   formData.append(
+  //     "myFile",
+  //     event.target.files[0],
+  //     event.target.files[0].name
+  //   );
 
-    fetch("http://localhost:5000/api/Biografi/SaveFile", {
-      method: "POST",
-      body: formData,
-    })
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          this.imagesrc = process.env.REACT_APP_PHOTOPATH + result;
-        },
-        (error) => {
-          alert("Failed");
-        }
-      );
-  }
+  //   fetch("http://localhost:5000/api/Biografi/SaveFile", {
+  //     method: "POST",
+  //     body: formData,
+  //   })
+  //     .then((res) => res.json())
+  //     .then(
+  //       (result) => {
+  //         this.imagesrc = process.env.REACT_APP_PHOTOPATH + result;
+  //       },
+  //       (error) => {
+  //         alert("Failed");
+  //       }
+  //     );
+  // }
 
   render() {
     return (
@@ -81,9 +82,9 @@ export class biografiDep extends Component {
               <Col sm={6} className="col">
                 {/* <Form onSubmit={this.handleSubmit}> */}
                 <Form className="forma1" onSubmit={this.handleSubmit}>
-                    <label for="foto">Fotografia e deputetit</label>
+                    {/* <label for="foto">Fotografia e deputetit</label>
                     <Image name="foto" width="200px" height="200px" src={this.imagesrc} />
-                    <input onChange={this.handleFileSelected} type="File" />
+                    <input onChange={this.handleFileSelected} type="File" /> */}
                   <Form.Group controlId="Emri">
                     <Form.Label>Emri i Deputetit</Form.Label>
                     <Form.Control
@@ -121,6 +122,18 @@ export class biografiDep extends Component {
                       required
                       placeholder="Biografia"
                     />
+                  </Form.Group>
+                  <Form.Group controlId="nrMandateve">
+                  <Form.Label>Numri i Mandateve</Form.Label>
+                    <Form.Control
+                      as="Select" name="nrMandateve" className="selecti"
+                    >
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </Form.Control>
                   </Form.Group>
 
                   <Form.Group>

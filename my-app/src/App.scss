@@ -35,6 +35,9 @@ nav{
   text-decoration: none;
 }
 
+.nav-links a:hover{
+  text-decoration: none;
+}
 
 
 .App-logo {
@@ -770,7 +773,7 @@ tr:nth-child(even) {
   background-color: #00157f;
   border:1px solid #00157f;
   position:absolute;
-  bottom:731px;
+  bottom:748px;
   left:0px;
 }
 
@@ -843,4 +846,13 @@ p{
   color: black;
   padding-left: 11px;
   font-weight: bold;
+}
+
+.selecti{
+  width: 246.667px !important;
+  margin-left: 31px !important;
+}
+
+.rreshti{
+  margin-right: 0px !important;
 }

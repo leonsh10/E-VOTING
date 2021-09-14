@@ -171,6 +171,7 @@ export class deputetet extends Component {
                         Edit
                       </Button>
                       <Button
+                        variant="danger"
                         className="fshijButon"
                         onClick={() => this.deleteDeputetin(dep.deputetet_id)}
                       >
