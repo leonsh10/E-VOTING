@@ -19,7 +19,7 @@ export class EditShtetModal extends Component {
     
       handleSubmit(event) {
         event.preventDefault();
-        fetch("http://localhost:5000/api/Shtetet", {
+        fetch("http://localhost:5000/api/Shtetet/" + this.props.shtetet_id, {
           method: "PUT",
           headers: {
             Accept: "application/json",

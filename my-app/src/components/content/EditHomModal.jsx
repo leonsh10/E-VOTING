@@ -11,7 +11,7 @@ export class EditHomModal extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    fetch("http://localhost:5000/api/Home", {
+    fetch("http://localhost:5000/api/Home/" + this.props.homid , {
       method: "PUT",
       headers: {
         Accept: "application/json",

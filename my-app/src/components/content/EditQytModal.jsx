@@ -19,7 +19,7 @@ export class EditQytModal extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    fetch("http://localhost:5000/api/Qyteti", {
+    fetch("http://localhost:5000/api/Qyteti/" + this.props.qyid, {
       method: "PUT",
       headers: {
         Accept: "application/json",
