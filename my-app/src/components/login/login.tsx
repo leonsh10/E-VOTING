@@ -6,18 +6,24 @@ import { Formik,Form ,ErrorMessage} from 'formik';
 // import observer from "mobx";
 import { observer } from "mobx-react-lite"
 import {Label} from 'reactstrap';
-import {  Button,FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+// import {  Button,FormGroup, FormControl} from "react-bootstrap";
 import MyTextInput from "./MyTextInput";
+import registro from "./RegisterForm";
+import { useStore } from "../users/userStore";
+import { Link } from "react-router-dom";
+import { Button } from "semantic-ui-react";
+
+
 // import initialValues from 'react-form-values';
 
 // export class extends React.Component {
 
-    export default observer (function login(){
+    export default observer (function Login(){
     // constructor(props) {
     //     super(props);
     // }
 
-
+    const {userStore} = useStore();
     // render() {
     //     return <div className="base-container" ref={this.props.conatinerRef}>
     //         <div className="header">Login</div>
@@ -45,11 +51,12 @@ import MyTextInput from "./MyTextInput";
     // render(){
 
         return <Formik
-                initialValues={{nrLeternjoftimit : '', password: ''}}
-                onSubmit={values => console.log(values)} 
+                initialValues={{email:'',nrLeternjoftimit : '', password: ''}}
+                onSubmit={values => userStore.login(values)} 
                 >
             {({handleSubmit}) => (
                 <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
+                    {/* <MyTextInput name='email' placeholder='Emaili' /> */}
                     <MyTextInput name='nrLeternjoftimit' placeholder='NrLeternjoftimit' />
                     <MyTextInput name='password' placeholder='Password' type='password' />
                     {/* <ErrorMessage
@@ -57,6 +64,9 @@ import MyTextInput from "./MyTextInput";
                     <Label style={{marginBottom:10}} basic color='red' content={errors.error}/>}
                     /> */}
                     <Button positive content='Login' type='submit' fluid />
+                    {/* <Link style={navStyle} to="/registro">
+                    <li>Regjistrohu</li>
+                </Link> */}
                 </Form>
             )}
 

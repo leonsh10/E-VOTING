@@ -4,8 +4,11 @@ import video1 from "../videos/video1.mp4";
 import {Button} from 'react-bootstrap';
 import logo from '.././images/logo.png';
 import { observer } from "mobx-react-lite"
+import { useStore } from "../users/userStore";
+import {useEffect} from 'react';
 // export class home extends Component{
-export default observer(function home() {
+export default observer(function Home() {
+  const {commonStore,userStore} = useStore();
   // const {userStore} = useStore();
   function handleScroll() {
     window.scroll({
@@ -14,6 +17,17 @@ export default observer(function home() {
       behavior: "smooth",
     });
   }
+
+  
+    
+  // useEffect(() => {
+  //   if(commonStore.token) {
+  //     userStore.getUser().finally(() => commonStore.setAppLoaded());
+  //   } else {
+  //     commonStore.setAppLoaded();
+  //   }
+  // }, [commonStore, userStore]
+  // )
 
   // render();{
   return (

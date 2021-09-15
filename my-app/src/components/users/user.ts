@@ -7,7 +7,7 @@ export interface User {
 
 export interface UserFormValues{
     nrLeternjoftimit: string;
-    email: string;
+    // email: string;
     password: string;
     
 }

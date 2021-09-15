@@ -2,16 +2,16 @@ import React from 'react';
 import { Dropdown } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import { DropdownItem } from 'reactstrap';
-import { MenuItem } from 'semantic-ui-react';
+import { MenuItem,Menu } from 'semantic-ui-react';
 import '../../App.scss';
 import logo from '../images/logo.png';
 import { useStore } from '../users/store';
-import UserStore, {userStore} from '../users/userStore';
+import userStore from '../users/userStore';
 import { observer } from "mobx-react-lite"
 import {Button} from "reactstrap";
-import {Nav} from "reactstrap";
-observer (function Nav(){
-    const {userStore: {user,logout}} = useStore();
+// import {Nav} from "reactstrap";
+export default observer (function Nav(){
+const {userStore: {user, logout}}= useStore();
     const navStyle = {
         color: 'white'
     };
@@ -38,26 +38,9 @@ observer (function Nav(){
                 <Link style={navStyle} to="/DeputetetBio">
                     <li>Deputetet</li>
                 </Link>
-                {UserStore.isLoggedIn?(
-                    <>
-                    <Link style={navStyle} to="/dashboard">
+                <Link style={navStyle} to="/dashboard">
                     <li>Dashboard</li>
                 </Link>
-                <Link style={navStyle} to="/votimi">
-                    <li style={votoStyle}>Voto</li>
-                </Link>
-                <MenuItem>
-                    <Dropdown pointing='right' text={user?.username}/>
-                </MenuItem>
-                    </>
-
-                ) : (
-                    <Button as={Link} onClick={logout} inverted>
-                            Logout
-                        </Button>
-                        
-                )}
-                
                 {/* <Link style={navStyle} to="/login">
                     <li>Login</li>
                 </Link>
@@ -68,13 +51,19 @@ observer (function Nav(){
                     <li>Kyçu</li>
                 </Link>
 
+                <Menu.Item position='left'>
+                    <Dropdown.Item onClick={logout} text="Logout"></Dropdown.Item>
+                    </Menu.Item>
+
                 {/* <Link style={navStyle} to="/otherData">
                     <li>Te dhenat</li>
                 </Link> */}
-                
+                <Link style={navStyle} to="/votimi">
+                    <li style={votoStyle}>Voto</li>
+                </Link>
             </ul>
         </nav>
     )
 })
 
-export default Nav;
+// export default Nav;

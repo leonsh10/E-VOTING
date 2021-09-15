@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.scss";
-import  {Login} from "./components/login/index";
-import {Register} from "./components/login/index";
+//import  {Login} from "./components/login/index";
+//import {Register} from "./components/login/index";
 // import {Navigation} from "./components/navigation/navigation";
-// <<<<<<< HEAD
 import Nav from './components/navigation/nav';
 import dashboard from "./components/dashboard/dashboard";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import App2 from "./components/login/App2";
+//import App2 from "./components/login/App2";
 import login from "./components/login/login";
 import otherData from "./components/login/otherData";
 import votimi from "./components/content/votimi";
@@ -15,17 +14,32 @@ import home from "./components/content/home";
 import statistikat from "./components/content/statistikat";
 import contactUs from "./components/content/contactus";
 import DeputetetBio from "./components/content/DeputetetBio";
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  
-//
+import { useStore } from "./components/users/userStore";
+import { observer } from "mobx-react";
 
-  render() {
-   
+export default observer (function App(){
+  // constructor(props) {
+  //   super(props);
+  // }
+  
+
+  // render() {
+    const {commonStore,userStore} = useStore();
     
+useEffect(() => {
+  if(commonStore.token) {
+    userStore.getUser().finally(() => commonStore.setAppLoaded());
+  } else {
+    commonStore.setAppLoaded();
+  }
+}, [commonStore, userStore]
+)
+
+// if(!commonStore.appLoaded) return<LoadingComponent content='Loading app...' />
+
     return (
+      
+      
       //  <div className="App">
          <Router>
            <div className="App1">
@@ -46,9 +60,9 @@ class App extends React.Component {
            </div>
          </Router>
    ); 
-  }
-}
+  // }
+})
 
 
 
-export default App;
+// export default App;
