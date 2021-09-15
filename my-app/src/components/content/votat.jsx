@@ -75,6 +75,7 @@ export class votuesit extends Component {
                     {" "}
                     <ButtonToolbar className="butonat">
                       <Button
+                        variant="danger"
                         className="fshijButon"
                         onClick={() => this.deleteVota(reg.IDVota)}
                       >

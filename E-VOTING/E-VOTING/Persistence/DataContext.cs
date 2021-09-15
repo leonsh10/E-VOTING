@@ -34,5 +34,7 @@ namespace E_VOTING.Persistence
         public DbSet<Qyteti> Qyteti { get; set; }
 
         public DbSet<Votimi> Votimi { get; set; }
+
+        public DbSet<Biografi> Biografi { get; set; }
     }
 }

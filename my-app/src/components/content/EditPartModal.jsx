@@ -18,7 +18,7 @@ export class EditPartModal extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    fetch("http://localhost:5000/api/Partit", {
+    fetch("http://localhost:5000/api/Partit/" + this.props.partit_id, {
       method: "PUT",
       headers: {
         Accept: "application/json",

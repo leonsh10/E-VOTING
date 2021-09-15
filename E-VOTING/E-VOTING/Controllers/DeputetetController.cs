@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 using MediatR;
 using E_VOTING.Models;
 using E_VOTING.Models.Deputetet;
+using Microsoft.AspNetCore.Authorization;
 
 //Me ndreq namespace
 namespace E_VOTING.Controller
 {
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class DeputetetController : ControllerBase

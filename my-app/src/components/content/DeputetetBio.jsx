@@ -41,7 +41,7 @@ export class DeputetetBio extends Component {
         });
       }
       render() {
-        const { regs, IDBiografi, PhotoFileName, Emri, Mbiemri, Partia, Biografia} = this.state;
+        const { regs, IDBiografi, PhotoFileName, Emri, Mbiemri, Partia, Biografia, nrMandateve} = this.state;
         return (
           <div className="deputetetContent">
             <h1 class="titulliLart">Deputetët e Kosovës</h1>
@@ -52,22 +52,23 @@ export class DeputetetBio extends Component {
                 <thead>
                   <tr>
                     
-                    <th>Fotoja</th>
+                    
                     <th>Emri</th>
                     <th>Mbiemri</th>
                     <th>Partia</th>
                     <th>Biografia</th>
+                    <th>Numri i Mandateve</th>
                     <th>Fshij</th>
                   </tr>
                 </thead>
                 <tbody>
                   {regs.map((reg) => (
                     <tr key={reg.IDBiografi}>
-                      <td><img src={reg.PhotoFileName}></img></td>
                       <td>{reg.Emri}</td>
                       <td>{reg.Mbiemri}</td>
                       <td>{reg.Partia}</td> 
-                      <td>{reg.Biografia}</td> 
+                      <td>{reg.Biografia}</td>
+                      <td>{reg.nrMandateve}</td>
                       <td>
                         {" "}
                         <ButtonToolbar className="butonat">

@@ -65,7 +65,7 @@ export class votimi extends Component {
     return (
       <div class="votePage">
         <div id="vijaLv"></div>
-        <Row>
+        <Row className="rreshti">
           <Form className="voteForm" onSubmit={this.handleSubmit}>
             <Form.Group controlId="Partia">
               <Form.Label className="formLabels">Zgjedh Partine</Form.Label>

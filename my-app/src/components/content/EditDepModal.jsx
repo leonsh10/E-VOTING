@@ -32,7 +32,7 @@ export class EditDepModal extends Component {
     
       handleSubmit(event) {
         event.preventDefault();
-        fetch("http://localhost:5000/api/Deputetet", {
+        fetch("http://localhost:5000/api/Deputetet/" + this.props.deputetet_id, {
           method: "PUT",
           headers: {
             Accept: "application/json",
