@@ -16,6 +16,7 @@ import contactUs from "./components/content/contactus";
 import DeputetetBio from "./components/content/DeputetetBio";
 import { useStore } from "./components/users/userStore";
 import { observer } from "mobx-react";
+import RegisterForm from "./components/login/RegisterForm";
 
 export default observer (function App(){
   // constructor(props) {
@@ -46,6 +47,7 @@ useEffect(() => {
              <Nav />
              <Switch>
               <Route path="/" exact component={home} />
+              <Route path="/RegisterForm" exact component={RegisterForm} />
               <Route path="/home" exact component={home} />
               <Route path="/statistikat" component={statistikat} />
               <Route path="/contactus" component={contactUs} />

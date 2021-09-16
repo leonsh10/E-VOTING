@@ -1,0 +1,38 @@
+#formaRegister{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width:300px;
+    height:300px;
+    align-items: center;
+    // text-align: center;
+    border:2px solid goldenrod;
+    background-color: aqua;
+
+}
+
+#formaRegister *{
+    margin:0;
+    // text-decoration: none;
+}
+
+Label{
+align-items: flex-end;
+}
+
+#butonRegister{
+    padding:10px 25px;
+    // margin:0 auto;
+    color:red;
+    background-color: rgb(173, 206, 255);
+}
+
+// .labelRegister{
+//     width:auto;
+//     height:auto;
+//     margin-top:10px;
+// }
+
+#butonRegister:hover{
+    background-color: rgb(196, 255, 196);
+}
