@@ -64,6 +64,7 @@ import { Button } from "semantic-ui-react";
                     <Label style={{marginBottom:10}} basic color='red' content={errors.error}/>}
                     /> */}
                     <Button positive content='Login' type='submit' fluid />
+                    <a href="./RegisterForm">Click here</a>
                     {/* <Link style={navStyle} to="/registro">
                     <li>Regjistrohu</li>
                 </Link> */}

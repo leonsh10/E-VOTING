@@ -26,9 +26,9 @@ const {userStore: {user, logout}}= useStore();
         <nav>
             <img src={logo} class="imageH"/>
             <ul className="nav-links ul">
-            <Link style={navStyle} to="/RegisterForm">
+            {/* <Link style={navStyle} to="/RegisterForm">
                     <li>Register</li>
-                </Link>
+                </Link> */}
                 <Link style={navStyle} to="/home">
                     <li>Kryefaqja</li>
                 </Link>
