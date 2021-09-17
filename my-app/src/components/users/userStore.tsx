@@ -8,9 +8,9 @@ import CommonStore from "./commonStore";
 // import {useHistory} from "react-router-dom";
 import ModalStore from "./modalStore";
 import React from "react";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router"
 // import { observer } from "mobx-react-lite"
-// var history = useHistory();
+
 export default class UserStore{
     
     user: User | null = null;
@@ -18,10 +18,12 @@ export default class UserStore{
 
     constructor(){
         makeAutoObservable(this)
+        
     }
 
     get isLoggedIn(){
         return !!this.user;
+        
     }
 
   
@@ -35,20 +37,22 @@ export default class UserStore{
              store.commonStore.setToken(user.token);
             runInAction(() => this.user = user);
         //    this.props.history.push('/home');
-          // history.push('/home');
-        //    history.push('home');
-        // history.push('/home');
+       // let history = useHistory();
+         //  history.push('/home');
+      
            store.modalStore.closeModal();
-            // console.log(user);
+            console.log(user);
         } catch(error){
             throw error;
         }
     }
 
     logout = () => {
+       // let history = useHistory();
         store.commonStore.setToken(null);
         window.localStorage.removeItem('jwt');
         this.user=null;
+        
         
     }
 
@@ -59,6 +63,7 @@ export default class UserStore{
         } catch (error) {
             console.log(error);
         }
+      
     }
 
     register = async (creds: UserFormValues) => {
@@ -68,13 +73,14 @@ export default class UserStore{
              store.commonStore.setToken(user.token);
             runInAction(() => this.user = user);
         //    this.props.history.push('/home');
-        //    history.push('/home');
+           //history.push('/home');
            store.modalStore.closeModal();
             // console.log(user);
         } catch(error){
             throw error;
         }
     }
+    
 }
 
 interface Store {
@@ -94,5 +100,4 @@ interface Store {
 export function useStore(){
     return useContext(StoreContext);
 }
-
 

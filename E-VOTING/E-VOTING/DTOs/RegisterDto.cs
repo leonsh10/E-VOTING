@@ -10,10 +10,10 @@ namespace E_VOTING.DTOs
     public class RegisterDto
     {
         [Required]
-        public string username { get; set; }
+        public string UserName { get; set; }
 
         [Required]
-        [RegularExpression("^[0-9]{10}$", ErrorMessage ="Duhet te kete 10 numra")]
+        //[RegularExpression("^[0-9]{10}$", ErrorMessage ="Duhet te kete 10 numra")]
         public string nrLeternjoftimit { get; set; }
 
         [Required]

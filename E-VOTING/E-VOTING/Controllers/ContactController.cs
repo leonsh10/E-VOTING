@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using MediatR;
 using E_VOTING.Models;
 using E_VOTING.Models.Kontakti;
+using Microsoft.AspNetCore.Authorization;
 
 namespace E_VOTING.Controllers
 {
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class ContactController : ControllerBase

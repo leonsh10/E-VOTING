@@ -11,10 +11,11 @@ namespace E_VOTING.Domain
         public string nrLeternjofimit
         { get; set; }
 
-        public string username
-        { get; set; }
+        //public string UserName
+        //{ get; set; }
 
-
+        //public string Email
+        //{ get; set; }
 
     }
 }

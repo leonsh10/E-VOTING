@@ -57,6 +57,7 @@ import { Button } from "semantic-ui-react";
             {({handleSubmit}) => (
                 <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
                     {/* <MyTextInput name='email' placeholder='Emaili' /> */}
+                    <MyTextInput name='Email' placeholder='Email' />
                     <MyTextInput name='nrLeternjoftimit' placeholder='NrLeternjoftimit' />
                     <MyTextInput name='password' placeholder='Password' type='password' />
                     {/* <ErrorMessage
@@ -64,7 +65,7 @@ import { Button } from "semantic-ui-react";
                     <Label style={{marginBottom:10}} basic color='red' content={errors.error}/>}
                     /> */}
                     <Button positive content='Login' type='submit' fluid />
-                    <a href="./RegisterForm">Click here</a>
+                    <a href="./RegisterForm">Regjistrohu</a>
                     {/* <Link style={navStyle} to="/registro">
                     <li>Regjistrohu</li>
                 </Link> */}

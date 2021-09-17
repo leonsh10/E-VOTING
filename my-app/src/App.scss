@@ -14,7 +14,7 @@ nav{
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  min-height: 5.6vh;
+  min-height: 6.6vh;
   width:initial;
   background-color: rgb(13, 13, 129);
   color: white;
@@ -855,4 +855,8 @@ p{
 
 .rreshti{
   margin-right: 0px !important;
+}
+
+.table td{
+  vertical-align: middle !important;
 }

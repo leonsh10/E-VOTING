@@ -40,8 +40,7 @@ namespace E_VOTING.Migrations
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
                     nrLeternjofimit = table.Column<string>(type: "TEXT", nullable: true),
-                    username = table.Column<string>(type: "TEXT", nullable: true),
-                    //UserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
+                    UserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
                     NormalizedEmail = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
@@ -59,6 +58,23 @@ namespace E_VOTING.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Biografi",
+                columns: table => new
+                {
+                    IDBiografi = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Emri = table.Column<string>(type: "TEXT", nullable: true),
+                    Mbiemri = table.Column<string>(type: "TEXT", nullable: true),
+                    Partia = table.Column<string>(type: "TEXT", nullable: true),
+                    Biografia = table.Column<string>(type: "TEXT", nullable: true),
+                    nrMandateve = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Biografi", x => x.IDBiografi);
                 });
 
             migrationBuilder.CreateTable(
@@ -356,6 +372,9 @@ namespace E_VOTING.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Biografi");
 
             migrationBuilder.DropTable(
                 name: "Contact");

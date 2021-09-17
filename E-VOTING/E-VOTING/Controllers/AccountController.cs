@@ -31,7 +31,7 @@ namespace E_VOTING.Controllers
            _tokenService = tokenService;
         }
 
-
+        [AllowAnonymous]
         [HttpPost("login")]
 
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
@@ -49,10 +49,16 @@ namespace E_VOTING.Controllers
             return Unauthorized();
         }
 
+        [AllowAnonymous]
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
         {
-            if(await _userManager.Users.AnyAsync(x => x.Email == registerDto.Email))
+            if (await _userManager.Users.AnyAsync(x => x.UserName == registerDto.UserName))
+            {
+                return BadRequest("username i zene");
+            }
+
+            if (await _userManager.Users.AnyAsync(x => x.Email == registerDto.Email))
             {
                 return BadRequest("Email i zene");
             }
@@ -65,7 +71,7 @@ namespace E_VOTING.Controllers
             var user = new AppUser
             {
                 nrLeternjofimit = registerDto.nrLeternjoftimit,
-                username = registerDto.username,
+                UserName = registerDto.UserName,
                 Email = registerDto.Email
             };
 
@@ -79,11 +85,14 @@ namespace E_VOTING.Controllers
             return BadRequest("Problem gjate regjistrimit te userit");
         }
 
+       
         [Authorize]
-        [HttpGet]
-        public async Task<ActionResult<UserDto>> GetCurrentUser()
+        [HttpGet("userat")]
+        public async Task<ActionResult<UserDto>> GetCurrentUser(UserDto userDto)
         {
-            var user = await _userManager.FindByEmailAsync(User.FindFirstValue(ClaimTypes.Email));
+            //var user = await _userManager.FindByEmailAsync(User.FindFirstValue(ClaimTypes.Email));
+
+            var user = await _userManager.FindByEmailAsync(userDto.Email);
 
             return CreateUserObject(user);
         }
@@ -93,8 +102,9 @@ namespace E_VOTING.Controllers
             return new UserDto
             {
                 nrLeternjoftimit = user.nrLeternjofimit,
+                Email=user.Email,
                 token = _tokenService.CreateToken(user),
-                username = user.username
+                UserName = user.UserName
             };
         }
     }

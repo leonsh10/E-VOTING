@@ -9,8 +9,11 @@ import { useStore } from '../users/store';
 import userStore from '../users/userStore';
 import { observer } from "mobx-react-lite"
 import {Button} from "reactstrap";
+import { useHistory } from "react-router";
 // import {Nav} from "reactstrap";
 export default observer (function Nav(){
+   // var history = useHistory();
+         
 const {userStore: {user, logout}}= useStore();
     const navStyle = {
         color: 'white'
@@ -54,9 +57,12 @@ const {userStore: {user, logout}}= useStore();
                     <li>Kyçu</li>
                 </Link>
 
-                <Menu.Item position='left'>
+
+                <Button onClick={logout}>Logout</Button>
+
+                {/* <Menu.Item position='left'>
                     <Dropdown.Item onClick={logout} text="Logout"></Dropdown.Item>
-                    </Menu.Item>
+                    </Menu.Item>  */}
 
                 {/* <Link style={navStyle} to="/otherData">
                     <li>Te dhenat</li>

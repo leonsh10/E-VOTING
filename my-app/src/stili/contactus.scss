@@ -126,17 +126,17 @@ box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
       height:445px;
       // border:1px solid green;
       position:absolute;
-      left:1000px;
+      left:1050px;
       background-color:transparent;
   }
  
  
   .llogot{
-    width:35px;
-    height:35px;
+    width:32px;
+    height:32px;
     position:absolute;
     top:44px;
-    left:70px;
+    left:101px;
     color:white;
   }
 
@@ -156,6 +156,7 @@ box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
 
   .h42{
     color:white;
+    font-size: 22px;
   }
 
   .dysh{
@@ -191,7 +192,7 @@ box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
     height:fit-content;
     position:absolute;
     top:350px;
-    left:200px;
+    left:270px;
     color:white;
     display:flex;
     flex-direction: row;
@@ -214,7 +215,7 @@ box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
   #posht{
     position:absolute;
     top:382px;
-    left:200px;
+    left:270px;
     
   }
 
@@ -229,4 +230,23 @@ box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
 
   #inputat::placeholder{
     color:whitesmoke !important;
+  }
+
+  #e-voting{
+    top: 26px;
+  }
+
+  #logoja1{
+    top: 35px;
+  }
+
+  #emaila{
+    top: 100px;
+  }
+  #logoja3{
+    top: 97px;
+  }
+
+  #numriT{
+    top: 102px;
   }

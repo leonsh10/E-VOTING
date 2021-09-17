@@ -84,7 +84,7 @@ render() {
         nrtelefonit:con.nrtelefonit,mesazhi:con.mesazhi})}>
             Edit
         </Button> */}
-          <Button className="editButon"onClick={()=>this.deleteUser(con.id_contact)}>
+          <Button className="editButon" variant="danger" onClick={()=>this.deleteUser(con.id_contact)}>
             Fshij
           </Button>
           <EditRegModal show={this.state.editModalShow}

@@ -74,6 +74,7 @@ export class DeputetetBio extends Component {
                         <ButtonToolbar className="butonat">
                           <Button
                             className="fshijButon"
+                            variant="danger"
                             onClick={() => this.deleteBio(reg.IDBiografi)}
                           >
                             Fshij

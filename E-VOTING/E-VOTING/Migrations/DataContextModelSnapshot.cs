@@ -71,9 +71,6 @@ namespace E_VOTING.Migrations
                     b.Property<string>("nrLeternjofimit")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("username")
-                        .HasColumnType("TEXT");
-
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -98,6 +95,32 @@ namespace E_VOTING.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Activities");
+                });
+
+            modelBuilder.Entity("E_VOTING.Models.Biografi", b =>
+                {
+                    b.Property<int>("IDBiografi")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Biografia")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Emri")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Mbiemri")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Partia")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("nrMandateve")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("IDBiografi");
+
+                    b.ToTable("Biografi");
                 });
 
             modelBuilder.Entity("E_VOTING.Models.Contact", b =>

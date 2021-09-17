@@ -25,7 +25,7 @@ namespace E_VOTING.Services
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, user.username),
+                new Claim(ClaimTypes.Name, user.UserName),
                 new Claim(ClaimTypes.NameIdentifier, user.nrLeternjofimit),
                 new Claim(ClaimTypes.Email, user.Email)
 
