@@ -4,7 +4,7 @@ import video1 from "../videos/video1.mp4";
 import {Button} from 'react-bootstrap';
 import logo from '.././images/logo.png';
 import { observer } from "mobx-react-lite"
-import { useStore } from "../users/userStore";
+import { useStore } from "../users/store";
 import {useEffect} from 'react';
 // export class home extends Component{
 export default observer(function Home() {

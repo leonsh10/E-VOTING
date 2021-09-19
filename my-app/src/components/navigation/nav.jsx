@@ -6,18 +6,20 @@ import { MenuItem,Menu } from 'semantic-ui-react';
 import '../../App.scss';
 import logo from '../images/logo.png';
 import { useStore } from '../users/store';
-import userStore from '../users/userStore';
+import {userStore} from "../users/userStore";
 import { observer } from "mobx-react-lite"
 import {Button} from "reactstrap";
 import { useHistory } from "react-router";
 // import {Nav} from "reactstrap";
 export default observer (function Nav(){
-   // var history = useHistory();
+//    var history = useHistory();
          
 const {userStore: {user, logout}}= useStore();
     const navStyle = {
         color: 'white'
     };
+
+    const {userStore}=useStore();
     const votoStyle = {
         border: '1px solid white',
         borderRadius: '15px',
@@ -53,12 +55,28 @@ const {userStore: {user, logout}}= useStore();
                 <Link style={navStyle} to="/register">
                     <li>Register</li>
                 </Link> */}
-                <Link style={navStyle} to="/login">
+               
+
+                  
+               {
+                   
+                   userStore.isLoggedIn ? (
+                    <>
+                   
+                    <Button onClick={logout}>Logout</Button>
+                    <Link style={navStyle} to="/votimi">
+                    <li style={votoStyle}>Voto</li>
+                </Link>
+                    </>
+                    
+                   ): (
+                    <Link style={navStyle} to="/login">
                     <li>Kyçu</li>
                 </Link>
+                   )
 
-
-                <Button onClick={logout}>Logout</Button>
+               }
+               
 
                 {/* <Menu.Item position='left'>
                     <Dropdown.Item onClick={logout} text="Logout"></Dropdown.Item>
@@ -67,9 +85,7 @@ const {userStore: {user, logout}}= useStore();
                 {/* <Link style={navStyle} to="/otherData">
                     <li>Te dhenat</li>
                 </Link> */}
-                <Link style={navStyle} to="/votimi">
-                    <li style={votoStyle}>Voto</li>
-                </Link>
+                
             </ul>
         </nav>
     )
