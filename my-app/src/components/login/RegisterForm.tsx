@@ -1,5 +1,5 @@
 import { Formik } from "formik"
-import UserStore, { useStore } from "../users/userStore"
+import { useStore } from "../users/store"
 import { observer } from "mobx-react"
 import { Form } from "semantic-ui-react"
 import {Button,Label} from "semantic-ui-react"

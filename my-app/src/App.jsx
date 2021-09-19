@@ -14,7 +14,7 @@ import home from "./components/content/home";
 import statistikat from "./components/content/statistikat";
 import contactUs from "./components/content/contactus";
 import DeputetetBio from "./components/content/DeputetetBio";
-import { useStore } from "./components/users/userStore";
+import { useStore } from "./components/users/store";
 import { observer } from "mobx-react";
 import RegisterForm from "./components/login/RegisterForm";
 

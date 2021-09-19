@@ -9,7 +9,7 @@ import {Label} from 'reactstrap';
 // import {  Button,FormGroup, FormControl} from "react-bootstrap";
 import MyTextInput from "./MyTextInput";
 import registro from "./RegisterForm";
-import { useStore } from "../users/userStore";
+import { useStore } from "../users/store";
 import { Link } from "react-router-dom";
 import { Button } from "semantic-ui-react";
 
