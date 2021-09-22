@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, ButtonToolbar, Form, Row, Col, Table } from "react-bootstrap";
 import "../../App.scss";
+import logo from '.././images/logo.png';
 
 export class DeputetetBio extends Component {
     constructor(props) {
@@ -85,6 +86,11 @@ export class DeputetetBio extends Component {
                    ))} 
                 </tbody>
               </Table>
+            </div>
+            <div class="footerD">
+              <img src={logo} class="imageF"></img>
+              <i>&copy;</i>
+              <p>Republika e Kosovës - Te gjitha te drejtat e rezervuara</p>
             </div>
           </div>
         );
