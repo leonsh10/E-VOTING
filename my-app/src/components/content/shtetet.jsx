@@ -82,6 +82,7 @@ export class shtetet extends Component {
               name="emri_shtetet"
               class="form-content2"
               placeholder="Emri i Shtetit..."
+              required
             ></input>
             <div className="buton-div">
               <Button variant="primary" type="submit" className="shto-btnD">

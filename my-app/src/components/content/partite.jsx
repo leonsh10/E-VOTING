@@ -91,6 +91,7 @@ export class partite extends Component {
                 name="emri_Partis"
                 class="form-content2"
                 placeholder="Emri i Partise..."
+                required
               ></input>
               {/* <Form.Control
                   size="lg"

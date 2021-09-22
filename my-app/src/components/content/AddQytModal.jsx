@@ -74,7 +74,7 @@ export class AddQytModal extends Component {
 
                   <Form.Group controlId="Shteti">
                     {/* <Form.Label>Shteti</Form.Label> */}
-                    <Form.Control as="select" className="form-content2">
+                    <Form.Control as="select"  className="form-content2">
                       {this.state.deps.map((dep) => (
                         <option key={dep.shtetet_id}>
                           {dep.emri_shtetet}

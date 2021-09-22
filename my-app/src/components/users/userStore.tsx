@@ -28,6 +28,7 @@ export default class UserStore {
 
     }
 
+
     redirectToHome = () => {
         const { history } = this.props;
         if(history) history.push('/home');
