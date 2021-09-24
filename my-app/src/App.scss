@@ -880,3 +880,22 @@ p{
 .table td{
   vertical-align: middle !important;
 }
+
+.loginForm{
+  margin: 300px auto;
+  border: 1px solid black;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.btnL{
+    background-color: rgb(13, 13, 129) !important;
+    margin-top: 10px;
+    outline: none;
+    text-decoration: none;
+}
+
+.btnL-btn:hover{
+  background-color:rgb(5, 5, 134);
+  cursor: pointer;
+}

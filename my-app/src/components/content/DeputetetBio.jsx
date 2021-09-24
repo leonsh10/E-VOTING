@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button, ButtonToolbar, Form, Row, Col, Table } from "react-bootstrap";
 import "../../App.scss";
 import logo from '.././images/logo.png';
+import { EditBioModal } from "./EditBioModal";
 
 export class DeputetetBio extends Component {
     constructor(props) {
@@ -43,6 +44,7 @@ export class DeputetetBio extends Component {
       }
       render() {
         const { regs, IDBiografi, PhotoFileName, Emri, Mbiemri, Partia, Biografia, nrMandateve} = this.state;
+        let editModalClose = () => this.setState({ editModalShow: false });
         return (
           <div className="deputetetContent">
             <h1 class="titulliLart">Deputetët e Kosovës</h1>
@@ -73,6 +75,23 @@ export class DeputetetBio extends Component {
                       <td>
                         {" "}
                         <ButtonToolbar className="butonat">
+                            <Button
+                            className="editButon"
+                            variant="info"
+                            onClick={() =>
+                              this.setState({
+                                editModalShow: true,
+                                IDBiografi: reg.IDBiografi,
+                                Emri: reg.Emri,
+                                Mbiemri: reg.Mbiemri,
+                                Partia: reg.Partia,
+                                Biografia: reg.Biografia,
+                                nrMandateve: reg.nrMandateve,
+                              })
+                            }
+                          >
+                            Edit
+                          </Button>
                           <Button
                             className="fshijButon"
                             variant="danger"
@@ -80,6 +99,16 @@ export class DeputetetBio extends Component {
                           >
                             Fshij
                           </Button>
+                          <EditBioModal
+                            show={this.state.editModalShow}
+                            onHide={editModalClose}
+                            IDBiografi={IDBiografi}
+                            Emri={Emri}
+                            Mbiemri={Mbiemri}
+                            Partia={Partia}
+                            Biografia={Biografia}
+                            nrMandateve={nrMandateve}
+                          />
                         </ButtonToolbar>
                       </td>
                     </tr>

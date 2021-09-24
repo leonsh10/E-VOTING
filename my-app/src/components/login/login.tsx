@@ -12,6 +12,7 @@ import registro from "./RegisterForm";
 import { useStore } from "../users/store";
 import { Link } from "react-router-dom";
 import { Button } from "semantic-ui-react";
+import "../../App.scss";
 
 
 // import initialValues from 'react-form-values';
@@ -55,7 +56,7 @@ import { Button } from "semantic-ui-react";
                 onSubmit={values => userStore.login(values)} 
                 >
             {({handleSubmit}) => (
-                <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
+                <Form className='ui form loginForm' onSubmit={handleSubmit} autoComplete='off'>
                     {/* <MyTextInput name='email' placeholder='Emaili' /> */}
                     <MyTextInput name='Email' placeholder='Email' />
                     <MyTextInput name='nrLeternjoftimit' placeholder='NrLeternjoftimit' />
@@ -64,7 +65,7 @@ import { Button } from "semantic-ui-react";
                     name='error' render={() => 
                     <Label style={{marginBottom:10}} basic color='red' content={errors.error}/>}
                     /> */}
-                    <Button positive content='Login' type='submit' fluid />
+                    <Button className="btn btn-info btn-md btnL" positive content='Login' type='submit' fluid />
                     <a href="./RegisterForm">Regjistrohu</a>
                     {/* <Link style={navStyle} to="/registro">
                     <li>Regjistrohu</li>
