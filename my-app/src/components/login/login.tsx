@@ -57,16 +57,23 @@ import "../../App.scss";
                 >
             {({handleSubmit}) => (
                 <Form className='ui form loginForm' onSubmit={handleSubmit} autoComplete='off'>
+                    <h3 className="text-info text-center">Kyçu</h3>
                     {/* <MyTextInput name='email' placeholder='Emaili' /> */}
-                    <MyTextInput name='Email' placeholder='Email' />
-                    <MyTextInput name='nrLeternjoftimit' placeholder='NrLeternjoftimit' />
-                    <MyTextInput name='password' placeholder='Password' type='password' />
+                    {/* <Label class="labelRegister text-info labelsR" for="Email">Email:</Label> */}
+                    <p className="text-info">Email:</p>
+                    <MyTextInput name='Email' placeholder='' />
+                    {/* <Label class="labelRegister text-info labelsR" for="nrLeternjoftimit">Numri i Leternjoftimit:</Label> */}
+                    <p className="text-info">Numri i Leternjoftimit:</p>
+                    <MyTextInput name='nrLeternjoftimit' placeholder='' />
+                    {/* <Label class="labelRegister text-info labelsR" for="password">Password:</Label> */}
+                    <p className="text-info">Password:</p>
+                    <MyTextInput name='password' placeholder='' type='password' />
                     {/* <ErrorMessage
                     name='error' render={() => 
                     <Label style={{marginBottom:10}} basic color='red' content={errors.error}/>}
                     /> */}
                     <Button className="btn btn-info btn-md btnL" positive content='Login' type='submit' fluid />
-                    <a href="./RegisterForm">Regjistrohu</a>
+                    <a href="./RegisterForm" className="linkuR">Regjistrohu</a>
                     {/* <Link style={navStyle} to="/registro">
                     <li>Regjistrohu</li>
                 </Link> */}

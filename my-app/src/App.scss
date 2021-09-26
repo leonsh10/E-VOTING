@@ -783,7 +783,7 @@ tr:nth-child(even) {
   background-color: #00157f;
   border:1px solid #00157f;
   position:absolute;
-  bottom:748px;
+  bottom:744px;
   left:0px;
 }
 
@@ -793,7 +793,7 @@ tr:nth-child(even) {
   background-color: #00157f;
   border:1px solid #00157f;
   position:absolute;
-  bottom:748px;
+  bottom:744px;
   left:0px;
 }
 
@@ -882,20 +882,40 @@ p{
 }
 
 .loginForm{
-  margin: 300px auto;
-  border: 1px solid black;
+  margin: 180px auto;
+  border: 1px solid rgb(13, 13, 129);
   max-width: 600px;
   padding: 20px;
+  //background-color: #e7eeee;
 }
 
 .btnL{
     background-color: rgb(13, 13, 129) !important;
-    margin-top: 10px;
+    margin-top: 20px;
     outline: none;
     text-decoration: none;
+    width: 90px;
 }
 
 .btnL-btn:hover{
-  background-color:rgb(5, 5, 134);
+  background-color:rgb(4, 4, 102);
   cursor: pointer;
+}
+
+.inputLogin{
+  width: 100%;
+  border-radius: 4px;
+  outline: none;
+  padding: 10px;
+}
+
+.linkuR{
+  float: right;
+  text-decoration: none;
+}
+
+.labelsR{
+  //margin-top: 20px !important;
+  //margin-bottom: -10px !important;
+  color: #17a2b8 !important;
 }
