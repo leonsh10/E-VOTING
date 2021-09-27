@@ -1,6 +1,7 @@
 ﻿using E_VOTING.Domain;
 using E_VOTING.DTOs;
 using E_VOTING.Services;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using E_VOTING.DTOs;
 
 namespace E_VOTING.Controllers
 {
@@ -23,12 +25,13 @@ namespace E_VOTING.Controllers
         private readonly SignInManager<AppUser> _signInManager;
 
         private readonly TokenService _tokenService;
-
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> SignInManager, TokenService tokenService)
+        private readonly IMediator _mediator;
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> SignInManager, TokenService tokenService, IMediator mediator)
         {
             _userManager = userManager;
             _signInManager = SignInManager;
-           _tokenService = tokenService;
+            _tokenService = tokenService;
+            _mediator = mediator;
         }
 
         [AllowAnonymous]
@@ -42,7 +45,7 @@ namespace E_VOTING.Controllers
 
             var result = await _signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
 
-            if(result.Succeeded)
+            if (result.Succeeded)
             {
                 return CreateUserObject(user);
             }
@@ -77,7 +80,7 @@ namespace E_VOTING.Controllers
 
             var result = await _userManager.CreateAsync(user, registerDto.Password);
 
-            if(result.Succeeded)
+            if (result.Succeeded)
             {
                 return CreateUserObject(user);
             }
@@ -85,9 +88,34 @@ namespace E_VOTING.Controllers
             return BadRequest("Problem gjate regjistrimit te userit");
         }
 
-       
-        [Authorize]
+        [AllowAnonymous]
         [HttpGet("userat")]
+        public IActionResult ListUsers()
+        {
+            var users = _userManager.Users;
+            return Ok(users);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteUser(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+
+            var result = await _userManager.DeleteAsync(user);
+
+            return Ok("ListUsers");
+        }
+
+        [AllowAnonymous]
+        [HttpPut("{nrLeternjoftimit}")]
+        public async Task<ActionResult<Unit>> Edit(int nrLeternjoftimit, Edit.Command command)
+        {
+            command.nrLeternjoftimit = nrLeternjoftimit;
+            return await _mediator.Send(command);
+        }
+
+        [Authorize]
+        [HttpGet]
         public async Task<ActionResult<UserDto>> GetCurrentUser(UserDto userDto)
         {
             //var user = await _userManager.FindByEmailAsync(User.FindFirstValue(ClaimTypes.Email));

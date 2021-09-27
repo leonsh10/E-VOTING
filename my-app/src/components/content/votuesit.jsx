@@ -12,7 +12,7 @@ export class votuesit extends Component {
     // this.handleSubmit=this.handleSubmit.bind(this);
   }
   componentDidMount() {
-    fetch("http://localhost:5000/api/Register")
+    fetch("http://localhost:5000/api/Account/userat")
       .then((response) => response.json())
       .then((data) => {
         this.setState({ regs: data });
@@ -20,7 +20,7 @@ export class votuesit extends Component {
   }
 
   refreshList() {
-    fetch("http://localhost:5000/api/Register")
+    fetch("http://localhost:5000/api/Account/userat")
       .then((response) => response.json())
       .then((data) => {
         this.setState({ regs: data });
@@ -35,8 +35,8 @@ export class votuesit extends Component {
     this.refreshList();
   }
 
-  deleteUser(votuesi_id) {
-    fetch("http://localhost:5000/api/Register/" + votuesi_id, {
+  deleteUser(Id) {
+    fetch("http://localhost:5000/api/Account/" + Id, {
       method: "DELETE",
       header: {
         Accept: "application/json",
@@ -46,7 +46,7 @@ export class votuesit extends Component {
   }
 
   render() {
-    const { regs, votuesi_id, username, nrLeternjoftimit, email } = this.state;
+    const { regs, Id, UserName, nrLeternjoftimit, Email } = this.state;
     let editModalClose = () => this.setState({ editModalShow: false });
     return (
       <div className="deputetetContent">
@@ -65,10 +65,10 @@ export class votuesit extends Component {
             </thead>
             <tbody>
               {regs.map((reg) => (
-                <tr key={reg.votuesi_id}>
-                  <td>{reg.username}</td>
+                <tr key={reg.nrLeternjoftimit}>
+                  <td>{reg.UserName}</td>
                   <td>{reg.nrLeternjoftimit}</td>
-                  <td>{reg.email}</td>
+                  <td>{reg.Email}</td>
                   <td>
                     {" "}
                     <ButtonToolbar className="butonat">
@@ -78,10 +78,10 @@ export class votuesit extends Component {
                         onClick={() =>
                           this.setState({
                             editModalShow: true,
-                            votuesi_id: reg.votuesi_id,
-                            username: reg.username,
+                           // Id: reg.Id,
+                            UserName: reg.UserName,
                             nrLeternjoftimit: reg.nrLeternjoftimit,
-                            email: reg.email,
+                            Email: reg.Email,
                           })
                         }
                       >
@@ -89,17 +89,17 @@ export class votuesit extends Component {
                       </Button>
                       <Button
                         className="fshijButon"
-                        onClick={() => this.deleteUser(reg.votuesi_id)}
+                        onClick={() => this.deleteUser(reg.Id)}
                       >
                         Fshij
                       </Button>
                       <EditRegModal
                         show={this.state.editModalShow}
                         onHide={editModalClose}
-                        username={username}
+                        UserName={UserName}
                         nrLeternjoftimit={nrLeternjoftimit}
-                        email={email}
-                        votuesi_id={votuesi_id}
+                        Email={Email}
+                        Id={Id}
                       />
                     </ButtonToolbar>
                   </td>

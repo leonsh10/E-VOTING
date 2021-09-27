@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace E_VOTING.Controller
 {
+
+    /*
     [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
@@ -35,13 +37,13 @@ namespace E_VOTING.Controller
             return await _mediator.Send(command);
         }
 
-        [HttpPut("{id}")]
+        //[HttpPut("{id}")]
 
-        public async Task<ActionResult<Unit>> Edit(int id, Edit.Command command)
-        {
-            command.votuesi_id = id;
-            return await _mediator.Send(command);
-        }
+       // public async Task<ActionResult<Unit>> Edit(int id, Edit.Command command)
+        //{
+          //  command.votuesi_id = id;
+            //return await _mediator.Send(command);
+        //}
 
         [HttpDelete("{id}")]
 
@@ -49,7 +51,7 @@ namespace E_VOTING.Controller
         {
             return await _mediator.Send(new Delete.Command { votuesi_id = id });
         }
-
+    */
     }
-}
+
 

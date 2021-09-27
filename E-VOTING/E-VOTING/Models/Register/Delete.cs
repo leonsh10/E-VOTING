@@ -10,6 +10,7 @@ namespace E_VOTING.Models.Register
 {
     public class Delete
     {
+        /*
         public class Command : IRequest
         {
             public int votuesi_id { get; set; }
@@ -47,6 +48,8 @@ namespace E_VOTING.Models.Register
                     throw new Exception("Problem saving changes.");
                 }
             }
+      
         }
-    }
+    */
+        }
 }

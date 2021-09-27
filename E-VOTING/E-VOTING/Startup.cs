@@ -22,6 +22,8 @@ using FluentValidation.AspNetCore;
 using E_VOTING.Extensions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using E_VOTING.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace E_VOTING
 {
@@ -32,23 +34,31 @@ namespace E_VOTING
         public Startup(IConfiguration configuration)
         {
             _config = configuration;
+           
         }
+
+       
 
         public IConfiguration _config { get; }
 
        
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddRoles<IdentityRole>();
 
             services.AddDbContext<DataContext>(opt =>
            {
                    opt.UseSqlite(_config.GetConnectionString("DefaultConnection"));
-              // opt.UseSqlServer(_config.GetConnectionString("IdentityConnection"));
+               // opt.UseSqlServer(_config.GetConnectionString("IdentityConnection"));
+               
+       
 
            });
+            
 
             services.AddControllers(opt =>
             {
+                
                 var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
                 opt.Filters.Add(new AuthorizeFilter(policy));
             })
@@ -58,12 +68,13 @@ namespace E_VOTING
             });
 
 
+            
             services.AddApplicationServices(_config);
             services.AddIdentityServices(_config);
 
-           
 
 
+            
 
             services.AddControllers();
            services.AddSwaggerGen(c =>
@@ -86,12 +97,14 @@ namespace E_VOTING
                 .AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver
                 = new DefaultContractResolver());
 
-
+           
         }
+        
 
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.SeedUsersAndRoles();
             app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             if (env.IsDevelopment())
             {

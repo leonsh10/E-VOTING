@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace E_VOTING.Models.Register
 {
-    public class Create
+     public class Create
     {
+        /*
         public class Command : IRequest
         {
             public int votuesi_id { get; set; }
@@ -35,11 +36,11 @@ namespace E_VOTING.Models.Register
                 {
                     var votuesi = new Votuesit
                     {
-                        votuesi_id = request.votuesi_id,
-                        username = request.username,
-                        nrLeternjoftimit= request.nrLeternjoftimit,
-                        email=request.email,
-                        Password=request.Password
+                       // votuesi_id = request.votuesi_id,
+                        //username = request.username,
+                        //nrLeternjoftimit= request.nrLeternjoftimit,
+                        //email=request.email,
+                        //Password=request.Password
 
                     };
                     _context.Votuesit.Add(votuesi);
@@ -50,5 +51,7 @@ namespace E_VOTING.Models.Register
                 }
             }
         }
+    */
     }
+
 }

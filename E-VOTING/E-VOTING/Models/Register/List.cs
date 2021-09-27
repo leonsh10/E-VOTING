@@ -11,6 +11,8 @@ namespace E_VOTING.Models.Register
 {
     public class List
     {
+
+        /*
         public class Query : IRequest<List<Votuesit>> { }
 
         public class Handler : IRequestHandler<Query, List<Votuesit>>
@@ -27,5 +29,6 @@ namespace E_VOTING.Models.Register
                 return votuesi;
             }
         }
-    }
+   */
+        }
 }
