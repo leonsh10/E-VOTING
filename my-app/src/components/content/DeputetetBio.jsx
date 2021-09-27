@@ -3,6 +3,7 @@ import { Button, ButtonToolbar, Form, Row, Col, Table } from "react-bootstrap";
 import "../../App.scss";
 import logo from '.././images/logo.png';
 import { EditBioModal } from "./EditBioModal";
+import logoK from "../../header-logo.svg";
 
 export class DeputetetBio extends Component {
     constructor(props) {
@@ -47,7 +48,11 @@ export class DeputetetBio extends Component {
         let editModalClose = () => this.setState({ editModalShow: false });
         return (
           <div className="deputetetContent">
-            <h1 class="titulliLart">Deputetët e Kosovës</h1>
+            <div className="logos">
+          <img src={logoK}></img>
+          <p>Republika e Kosovës</p>
+        </div>
+            <h2 class="titulliLart">Deputetët e Kosovës</h2>
             {/* <div className="votuesitDiv"> */}
             <div>
               

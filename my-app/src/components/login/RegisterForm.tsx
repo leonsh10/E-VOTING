@@ -3,7 +3,8 @@ import { useStore } from "../users/store"
 import { observer } from "mobx-react"
 import { Form } from "semantic-ui-react"
 import {Button,Label} from "semantic-ui-react"
-import "./register.scss";
+//import "./register.scss";
+import "../../App.scss";
 
 import MyTextInput from "./MyTextInput"
 
@@ -16,21 +17,25 @@ export default observer (function RegisterForm(){
                 >
             {({handleSubmit}) => (
                 <div id="formaRegister">
-                <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
-                    <h3>Forma E Regjistrimit</h3>
-                    <Label class="labelRegister" for="username">Username</Label>
-                    <MyTextInput  name='username' placeholder='Username' />
-                    <Label class="labelRegister"  for="email">Email</Label>
-                    <MyTextInput name='email' placeholder='Email' />
-                    <Label class="labelRegister"  for="nrLeternjoftimit">Numri i Leternjoftimit</Label>
-                    <MyTextInput name='nrLeternjoftimit' placeholder='NrLeternjoftimit' />
-                    <Label class="labelRegister"  for="password">Password</Label>
-                    <MyTextInput name='password' placeholder='Password' type='password' />
+                <Form className='ui form loginForm' onSubmit={handleSubmit} autoComplete='off'>
+                    <h3 className="text-info text-center">Regjistrohu</h3>
+                    {/* <Label class="labelRegister text-info labelsR" for="username">Username:</Label> */}
+                    <p className="text-info">Username:</p>
+                    <MyTextInput  name='username' placeholder='' />
+                    {/* <Label class="labelRegister text-info labelsR"  for="email">Email:</Label> */}
+                    <p className="text-info">Email:</p>
+                    <MyTextInput name='email' placeholder='' />
+                    {/* <Label class="labelRegister text-info labelsR"  for="nrLeternjoftimit">Numri i Leternjoftimit:</Label> */}
+                    <p className="text-info">Numri i Leternjoftimit:</p>
+                    <MyTextInput name='nrLeternjoftimit' placeholder='' />
+                    {/* <Label class="labelRegister text-info labelsR"  for="password">Password:</Label> */}
+                    <p className="text-info">Password:</p>
+                    <MyTextInput name='password' placeholder='' type='password' />
                     {/* <ErrorMessage
                     name='error' render={() => 
                     <Label style={{marginBottom:10}} basic color='red' content={errors.error}/>}
                     /> */}
-                    <Button id="butonRegister" positive content='Register' type='submit' fluid />
+                    <Button id="butonRegister" className="btn btn-info btn-md btnL" positive content='Register' type='submit' fluid />
                 </Form>
                 </div>
             )}
