@@ -27,6 +27,11 @@ const {userStore: {user, logout}}= useStore();
         paddingRight: '15px',
         paddingBottom: '2px',
     };
+
+    const logOutStyle = {
+        background: 'transparent',
+        border: 'none',
+    };
     return (
         <nav>
             <img src={logo} class="imageH"/>
@@ -63,10 +68,10 @@ const {userStore: {user, logout}}= useStore();
                    userStore.isLoggedIn ? (
                     <>
                    
-                    <Button onClick={logout}>Logout</Button>
                     <Link style={navStyle} to="/votimi">
                     <li style={votoStyle}>Voto</li>
-                </Link>
+                    </Link>
+                    <Button onClick={logout} style={logOutStyle} className="logOutButton">Logout</Button>
                     </>
                     
                    ): (

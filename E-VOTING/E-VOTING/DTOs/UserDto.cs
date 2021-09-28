@@ -10,7 +10,7 @@ namespace E_VOTING.DTOs
 
         public string UserName { get; set; }
 
-        public string nrLeternjoftimit { get; set; }
+        public string nrLeternjofimit { get; set; }
 
        public string Email { get; set; }
 

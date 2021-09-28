@@ -14,7 +14,7 @@ namespace E_VOTING.DTOs
 
         [Required]
         //[RegularExpression("^[0-9]{10}$", ErrorMessage ="Duhet te kete 10 numra")]
-        public string nrLeternjoftimit { get; set; }
+        public string nrLeternjofimit { get; set; }
 
         [Required]
         [EmailAddress]

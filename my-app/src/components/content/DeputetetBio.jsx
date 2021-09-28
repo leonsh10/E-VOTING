@@ -52,7 +52,7 @@ export class DeputetetBio extends Component {
           <img src={logoK}></img>
           <p>Republika e Kosovës</p>
         </div>
-            <h2 class="titulliLart">Deputetët e Kosovës</h2>
+            {/* <h2 class="titulliLart">Deputetët e Kosovës</h2> */}
             {/* <div className="votuesitDiv"> */}
             <div>
               

@@ -66,14 +66,14 @@ namespace E_VOTING.Controllers
                 return BadRequest("Email i zene");
             }
 
-            if (await _userManager.Users.AnyAsync(x => x.nrLeternjofimit == registerDto.nrLeternjoftimit))
+            if (await _userManager.Users.AnyAsync(x => x.nrLeternjofimit == registerDto.nrLeternjofimit))
             {
                 return BadRequest("Numri i leternjoftimit i zene");
             }
 
             var user = new AppUser
             {
-                nrLeternjofimit = registerDto.nrLeternjoftimit,
+                nrLeternjofimit = registerDto.nrLeternjofimit,
                 UserName = registerDto.UserName,
                 Email = registerDto.Email
             };
@@ -108,8 +108,8 @@ namespace E_VOTING.Controllers
 
         [Authorize]
         [AllowAnonymous]
-        [HttpPut("{id}")]
-        public async Task<ActionResult<Unit>> EditUser(string Id, EditUser.Command command)
+        [HttpPut("{Id}")]
+        public async Task<ActionResult<Unit>> Edit(string Id, EditUser.Command command)
         {
             command.Id = Id; 
             return await _mediator.Send(command);
@@ -130,7 +130,7 @@ namespace E_VOTING.Controllers
         {
             return new UserDto
             {
-                nrLeternjoftimit = user.nrLeternjofimit,
+                nrLeternjofimit = user.nrLeternjofimit,
                 Email=user.Email,
                 token = _tokenService.CreateToken(user),
                 UserName = user.UserName

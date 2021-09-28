@@ -32,7 +32,7 @@ export class EditPartModal extends Component {
       .then((res) => res.json())
       .then(
         (result) => {
-          alert(result);
+          alert("Partia u editua me sukses");
         },
         (error) => {
           alert("Failed");

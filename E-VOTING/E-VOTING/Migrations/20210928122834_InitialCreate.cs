@@ -25,6 +25,7 @@ namespace E_VOTING.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
+                    Discriminator = table.Column<string>(type: "TEXT", nullable: false),
                     Name = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
                     NormalizedName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
                     ConcurrencyStamp = table.Column<string>(type: "TEXT", nullable: true)
@@ -197,16 +198,15 @@ namespace E_VOTING.Migrations
                 name: "Votuesit",
                 columns: table => new
                 {
-                    votuesi_id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    username = table.Column<string>(type: "TEXT", nullable: true),
-                    nrLeternjoftimit = table.Column<int>(type: "INTEGER", nullable: false),
-                    email = table.Column<string>(type: "TEXT", nullable: true),
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    UserName = table.Column<string>(type: "TEXT", nullable: true),
+                    nrLeternjoftimit = table.Column<string>(type: "TEXT", nullable: true),
+                    Email = table.Column<string>(type: "TEXT", nullable: true),
                     Password = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Votuesit", x => x.votuesi_id);
+                    table.PrimaryKey("PK_Votuesit", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(

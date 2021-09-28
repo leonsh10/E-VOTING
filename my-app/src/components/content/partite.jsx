@@ -50,7 +50,7 @@ export class partite extends Component {
       .then((res) => res.json())
       .then(
         (result) => {
-          alert(result);
+          alert("Partia u shtua me sukses");
         },
         (error) => {
           alert("Failed");

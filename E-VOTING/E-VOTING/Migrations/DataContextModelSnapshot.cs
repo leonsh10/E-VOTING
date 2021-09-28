@@ -259,23 +259,22 @@ namespace E_VOTING.Migrations
 
             modelBuilder.Entity("E_VOTING.Models.Votuesit", b =>
                 {
-                    b.Property<int>("votuesi_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Password")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("email")
+                    b.Property<string>("UserName")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("nrLeternjoftimit")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("username")
+                    b.Property<string>("nrLeternjoftimit")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("votuesi_id");
+                    b.HasKey("Id");
 
                     b.ToTable("Votuesit");
                 });
@@ -303,6 +302,10 @@ namespace E_VOTING.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Name")
                         .HasMaxLength(256)
                         .HasColumnType("TEXT");
@@ -318,6 +321,8 @@ namespace E_VOTING.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityRole");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -420,6 +425,13 @@ namespace E_VOTING.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("E_VOTING.Models.RoleManager", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityRole");
+
+                    b.HasDiscriminator().HasValue("RoleManager");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

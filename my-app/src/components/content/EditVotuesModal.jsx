@@ -19,7 +19,7 @@ export class EditVotuesModal extends Component {
     
       handleSubmit(event) {
         event.preventDefault();
-        fetch("http://localhost:5000/api/Account/" + this.props.nrLeternjoftimit, {
+        fetch("http://localhost:5000/api/Account/" + this.props.Id, {
           method: "PUT",
           headers: {
             Accept: "application/json",
@@ -28,7 +28,7 @@ export class EditVotuesModal extends Component {
           body: JSON.stringify({
         Id: event.target.Id.value,
       UserName: event.target.UserName.value,
-      // nrLeternjoftimit: event.target.nrLeternjoftimit.value,
+      nrLeternjofimit: event.target.nrLeternjofimit.value,
       Email: event.target.Email.value
           }),
         })
@@ -81,17 +81,18 @@ export class EditVotuesModal extends Component {
                         />
                       </Form.Group>
 
-                      {/* <Form.Group controlId="nrLeternjoftimit">
+                      <Form.Group controlId="nrLeternjoftimit">
                         <Form.Label className="labels">NrLeternjoftimit</Form.Label>
                         <Form.Control
                           type="text"
-                          name="nrLeternjoftimit"
+                          name="nrLeternjofimit"
                           required
-                          defaultValue={this.props.nrLeternjoftimit}
+                          disabled
+                          defaultValue={this.props.nrLeternjofimit}
                           placeholder="Numri Leternjoftimit"
                           className="form-content2"
                         />
-                      </Form.Group> */}
+                      </Form.Group>
 
                       <Form.Group controlId="Email">
                         <Form.Label className="labels">Email</Form.Label>

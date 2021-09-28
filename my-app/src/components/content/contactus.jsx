@@ -8,6 +8,7 @@ import logoK from "../../header-logo.svg";
 import * as IoIcons from "react-icons/io";
 import * as AiIcons from "react-icons/ai";
 import * as FaIcons from "react-icons/fa";
+import logo from '.././images/logo.png';
 // import { Alert } from 'reactstrap';
 // import {Alert} from 'react-bootstrap/Alert';
 class contactus extends React.Component {
@@ -147,9 +148,9 @@ class contactus extends React.Component {
             </div>
 
             <div class="tresh">
-              <IoIcons.IoMdMail class="llogot" id="logoja3"/>
+              <IoIcons.IoMdMail class="llogot" id="logoja3" />
               <div class="dyshi" id="emaila">
-                <h4 class="h42">e_voting@outlook.com</h4>
+                <h4 class="h42">evoting@gmail.com</h4>
               </div>
             </div>
 
@@ -182,7 +183,12 @@ class contactus extends React.Component {
               E-VOTING KOSOVA
             </p>
           </div>
-          </div>
+        </div>
+        <div class="footerC">
+          <img src={logo} class="imageF"></img>
+          <i>&copy;</i>
+          <p>Republika e Kosovës - Te gjitha te drejtat e rezervuara</p>
+      </div>
       </div>
     );
   }

@@ -46,7 +46,7 @@ export class votuesit extends Component {
   }
 
   render() {
-    const { regs, Id, nrLeternjoftimit,UserName, Email } = this.state;
+    const { regs, nrLeternjofimit,Id,UserName, Email, PasswordHash } = this.state;
     let editModalClose = () => this.setState({ editModalShow: false });
     return (
       <div className="deputetetContent">
@@ -58,7 +58,7 @@ export class votuesit extends Component {
               <tr>
                 {/* <th>Votuesi_ID</th> */}
                 <th>Username</th>
-                {/* <th>Numri i Leternjoftimit</th> */}
+                <th>Numri i Leternjoftimit</th>
                 <th>Email</th>
                 <th>Edit/Fshij</th>
               </tr>
@@ -67,8 +67,9 @@ export class votuesit extends Component {
               {regs.map((reg) => (
                 <tr key={reg.Id}>
                   <td>{reg.UserName}</td>
-                  {/* <td>{reg.nrLeternjoftimit}</td>                  */}
+                  <td>{reg.nrLeternjofimit}</td>                 
                   <td>{reg.Email}</td>
+                  
                   <td>
                  
                     <ButtonToolbar className="butonat">
@@ -80,7 +81,7 @@ export class votuesit extends Component {
                             editModalShow: true,
                             Id: reg.Id,
                             UserName: reg.UserName,
-                            // nrLeternjoftimit: reg.nrLeternjoftimit,
+                            nrLeternjofimit: reg.nrLeternjofimit,
                             Email: reg.Email,
                           })
                         }
@@ -89,6 +90,7 @@ export class votuesit extends Component {
                       </Button>
                       <Button
                         className="fshijButon"
+                        variant = "danger"
                         onClick={() => this.deleteUser(reg.Id)}
                       >
                         Fshij
@@ -97,7 +99,7 @@ export class votuesit extends Component {
                         show={this.state.editModalShow}
                         onHide={editModalClose}
                         UserName={UserName}
-                        // nrLeternjoftimit={nrLeternjoftimit}
+                        nrLeternjofimit={nrLeternjofimit}
                         Email={Email}
                         Id={Id}
                       />

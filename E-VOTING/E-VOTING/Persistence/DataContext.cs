@@ -36,5 +36,9 @@ namespace E_VOTING.Persistence
         public DbSet<Votimi> Votimi { get; set; }
 
         public DbSet<Biografi> Biografi { get; set; }
+
+        public DbSet<AppUser> AppUser { get; set; }
+
+        public DbSet<RoleManager> RoleManager { get; set; }
     }
 }

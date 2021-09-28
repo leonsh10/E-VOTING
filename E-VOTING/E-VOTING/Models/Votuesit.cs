@@ -11,10 +11,10 @@ namespace E_VOTING.Models
     {
 
         [Key]
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string UserName { get; set; }
         
-        public int nrLeternjoftimit { get; set; }
+        public string nrLeternjoftimit { get; set; }
        
         public string Email { get; set; }
         
