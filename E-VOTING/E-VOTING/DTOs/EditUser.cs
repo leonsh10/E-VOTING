@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace E_VOTING.DTOs
 {
-    public class Edit
+    public class EditUser
     {
         public class Command : IRequest
         {
-           
+           public string Id { get; set; }
             public string UserName { get; set; }
 
             public int? nrLeternjoftimit { get; set; }
@@ -33,13 +33,18 @@ namespace E_VOTING.DTOs
 
                 public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
                 {
-                    var votuesi = await _context.Votuesit.FindAsync(request.nrLeternjoftimit);
+                    var votuesi = await _context.Votuesit.FindAsync(request.Id);
 
                     if (votuesi == null)
                         throw new Exception("Could not find Activity.");
 
-                    votuesi.UserName = request.UserName ?? votuesi.UserName;
+
+                    // votuesi.Id = request.Id;
+                  //  votuesi.Id = votuesi.Id;
+
                     votuesi.nrLeternjoftimit = request.nrLeternjoftimit ?? votuesi.nrLeternjoftimit;
+                    votuesi.UserName = request.UserName ?? votuesi.UserName;
+                    
                     votuesi.Email = request.Email ?? votuesi.Email;
                     
 

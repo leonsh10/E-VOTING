@@ -106,11 +106,12 @@ namespace E_VOTING.Controllers
             return Ok("ListUsers");
         }
 
+        [Authorize]
         [AllowAnonymous]
-        [HttpPut("{nrLeternjoftimit}")]
-        public async Task<ActionResult<Unit>> Edit(int nrLeternjoftimit, Edit.Command command)
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Unit>> EditUser(string Id, EditUser.Command command)
         {
-            command.nrLeternjoftimit = nrLeternjoftimit;
+            command.Id = Id; 
             return await _mediator.Send(command);
         }
 
