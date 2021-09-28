@@ -3,7 +3,7 @@ import "../../App.scss";
 import { Button, ButtonToolbar, Form, Row, Col, Table } from "react-bootstrap";
 import { register } from "../login/register";
 import { FaRegSnowflake } from "react-icons/fa";
-import { EditRegModal } from "../login/EditRegModal";
+import { EditVotuesModal } from "./EditVotuesModal";
 
 export class votuesit extends Component {
   constructor(props) {
@@ -46,7 +46,7 @@ export class votuesit extends Component {
   }
 
   render() {
-    const { regs, Id, UserName, nrLeternjoftimit, Email } = this.state;
+    const { regs, Id, nrLeternjoftimit,UserName, Email } = this.state;
     let editModalClose = () => this.setState({ editModalShow: false });
     return (
       <div className="deputetetContent">
@@ -58,19 +58,19 @@ export class votuesit extends Component {
               <tr>
                 {/* <th>Votuesi_ID</th> */}
                 <th>Username</th>
-                <th>Numri i Leternjoftimit</th>
+                {/* <th>Numri i Leternjoftimit</th> */}
                 <th>Email</th>
                 <th>Edit/Fshij</th>
               </tr>
             </thead>
             <tbody>
               {regs.map((reg) => (
-                <tr key={reg.nrLeternjoftimit}>
+                <tr key={reg.Id}>
                   <td>{reg.UserName}</td>
-                  <td>{reg.nrLeternjoftimit}</td>
+                  {/* <td>{reg.nrLeternjoftimit}</td>                  */}
                   <td>{reg.Email}</td>
                   <td>
-                    {" "}
+                 
                     <ButtonToolbar className="butonat">
                       <Button
                         className="editButon"
@@ -78,9 +78,9 @@ export class votuesit extends Component {
                         onClick={() =>
                           this.setState({
                             editModalShow: true,
-                           // Id: reg.Id,
+                            Id: reg.Id,
                             UserName: reg.UserName,
-                            nrLeternjoftimit: reg.nrLeternjoftimit,
+                            // nrLeternjoftimit: reg.nrLeternjoftimit,
                             Email: reg.Email,
                           })
                         }
@@ -93,11 +93,11 @@ export class votuesit extends Component {
                       >
                         Fshij
                       </Button>
-                      <EditRegModal
+                      <EditVotuesModal
                         show={this.state.editModalShow}
                         onHide={editModalClose}
                         UserName={UserName}
-                        nrLeternjoftimit={nrLeternjoftimit}
+                        // nrLeternjoftimit={nrLeternjoftimit}
                         Email={Email}
                         Id={Id}
                       />

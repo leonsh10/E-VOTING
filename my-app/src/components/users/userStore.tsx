@@ -10,7 +10,7 @@ import ModalStore from "./modalStore";
 import React from "react";
 // import { useHistory } from "react-router-dom"
 import { store } from "./store";
-import { Redirect, useHistory } from "react-router";
+import { Redirect, useHistory } from "react-router-dom";
 // import { observer } from "mobx-react-lite"
 
 export default class UserStore {
@@ -30,13 +30,15 @@ export default class UserStore {
 
 
     redirectToHome = () => {
-        const { history } = this.props;
-        if(history) history.push('/home');
+        // const { history } = this.props;
+        // history.push('/Home');
+        <Redirect to='/home'/>
        }
 
        redirectToLogin = () => {
-        const { history } = this.props;
-        if(history) history.push('/login');
+        // const { history } = this.props;
+        // if(history) history.push('/login');
+        <Redirect to='/login'/>
        }
 
     
@@ -49,8 +51,9 @@ export default class UserStore {
             // const { history } = this.props;
             store.commonStore.setToken(user.token);
             runInAction(() => this.user = user);
-            //    this.props.history.push('/home');
+            
             store.modalStore.closeModal();
+            // history.push('/home');
            this.redirectToHome();
             // return <Redirect to="/home"></Redirect>
             //    console.log(user);
@@ -61,10 +64,12 @@ export default class UserStore {
 
     logout = () => {
         // let history = useHistory();
+        // const { history } = this.props;
         store.commonStore.setToken(null);
         window.localStorage.removeItem('jwt');
         this.user = null;
-        this.redirectToLogin();
+        // history.push('/login');
+       // this.redirectToLogin();
 
     }
 
@@ -81,13 +86,16 @@ export default class UserStore {
     register = async (creds: UserFormValues) => {
         try {
             // let history = useHistory();
+            // const { history } = this.props;
             const user = await agent.Account.register(creds);
             store.commonStore.setToken(user.token);
             runInAction(() => this.user = user);
-            //    this.props.history.push('/home');
+              
             //    history.push('/home');
             
             store.modalStore.closeModal();
+            // this.props.history.push('/home');
+
             this.redirectToHome();
             // console.log(user);
         } catch (error) {
