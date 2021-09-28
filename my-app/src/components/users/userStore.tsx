@@ -17,6 +17,7 @@ export default class UserStore {
 
     user: User | null = null;
     props: any;
+    setState: any;
 
     constructor() {
         makeAutoObservable(this)
@@ -28,6 +29,27 @@ export default class UserStore {
 
     }
 
+    state = {
+        redirect: false
+    }
+
+    setRedirect = () => {
+        this.setState({
+          redirect: true
+        })
+      }
+
+      renderRedirect = () => {
+        if (this.state.redirect) {
+          return <Redirect to='/home' />
+        }
+      }
+
+      renderRedirectLogin = () => {
+        if (this.state.redirect) {
+          return <Redirect to='/login' />
+        }
+      }
 
     redirectToHome = () => {
         // const { history } = this.props;
@@ -54,7 +76,8 @@ export default class UserStore {
             
             store.modalStore.closeModal();
             // history.push('/home');
-           this.redirectToHome();
+        //    this.redirectToHome();
+           this.renderRedirect();
             // return <Redirect to="/home"></Redirect>
             //    console.log(user);
         } catch (error) {
@@ -70,7 +93,7 @@ export default class UserStore {
         this.user = null;
         // history.push('/login');
        // this.redirectToLogin();
-
+        this.renderRedirectLogin();
     }
 
     getUser = async () => {
@@ -95,8 +118,8 @@ export default class UserStore {
             
             store.modalStore.closeModal();
             // this.props.history.push('/home');
-
-            this.redirectToHome();
+            this.renderRedirect();
+            // this.redirectToHome();
             // console.log(user);
         } catch (error) {
             throw error;
