@@ -27,9 +27,9 @@ namespace E_VOTING
                 try
                 {
                     var context = services.GetRequiredService<DataContext>();
-                    var roleManager = services.GetRequiredService<RoleManager<RoleManager>>();
+                  //  var roleManager = services.GetRequiredService<RoleManager<RoleManager>>();
                     context.Database.Migrate();
-                    Seed.SeedRole(context, roleManager).Wait();
+                    //Seed.SeedRole(context, roleManager).Wait();
 
                 }
                 catch (Exception ex)
