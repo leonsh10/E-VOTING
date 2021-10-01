@@ -34,7 +34,7 @@ export class EditQytModal extends Component {
       .then((res) => res.json())
       .then(
         (result) => {
-          alert(result);
+          alert("Qyteti u editua me sukses");
         },
         (error) => {
           alert("Failed");

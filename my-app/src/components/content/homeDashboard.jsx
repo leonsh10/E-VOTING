@@ -57,7 +57,7 @@ export class HomeDashboard extends Component {
       .then((res) => res.json())
       .then(
         (result) => {
-          alert(result);
+          alert("Te dhenat u shtuan me sukses");
         },
         (error) => {
           alert("Failed");

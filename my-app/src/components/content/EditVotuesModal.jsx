@@ -35,7 +35,7 @@ export class EditVotuesModal extends Component {
           .then((res) => res.json())
           .then(
             (result) => {
-              alert(result);
+              alert("Votuesi u editua me sukses");
             },
             (error) => {
               alert("Failed");

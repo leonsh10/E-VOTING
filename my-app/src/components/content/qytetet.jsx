@@ -58,14 +58,15 @@ export class Qytetet extends Component {
       },
       body: JSON.stringify({
         // IDQyteti:null,
-        EmriQytetit: event.target.EmriQytetit.value,
         Shteti: event.target.Shteti.value,
+        EmriQytetit: event.target.EmriQytetit.value
+        // Shteti: event.target.Shteti.value,
       }),
     })
       .then((res) => res.json())
       .then(
         (result) => {
-          alert(result);
+          alert("Qyteti u shtua me sukses");
         },
         (error) => {
           alert("Failed");
@@ -91,6 +92,11 @@ export class Qytetet extends Component {
                 className="form-content2"
               />
             </Form.Group> */}
+            <select className="form-content2" name="Shteti">
+                {this.state.deps.map((dep) => (
+                  <option key={dep.shtetet_id}>{dep.emri_shtetet}</option>
+                ))}
+              </select>
             <input
                 type="text"
                 id="inputi"
@@ -101,11 +107,11 @@ export class Qytetet extends Component {
               ></input>
             {/* <Form.Group controlId="Shteti"> */}
               {/* <Form.Label>Shteti</Form.Label> */}
-              <select className="form-content2">
+              {/* <select className="form-content2">
                 {this.state.deps.map((dep) => (
                   <option key={dep.shtetet_id}>{dep.emri_shtetet}</option>
                 ))}
-              </select>
+              </select> */}
             {/* </Form.Group> */}
             <div className="buton-div">
               <Button variant="primary" type="submit" className="shto-btnD">
