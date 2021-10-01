@@ -9,22 +9,24 @@ namespace E_VOTING.Persistence
 {
     public class Seed
     {
-        public static async Task SeedRole(DataContext context, RoleManager<RoleManager> roleManager) {
-            if (!roleManager.Roles.Any()) {
-                var roles = new List<RoleManager> {
-                    new RoleManager{
-                        Name = "Admin"
-                    },
-                    new RoleManager{
-                        Name = "Basic"
-                    }
-                };
-                foreach (var role in roles) {
-                    await roleManager.CreateAsync(role);
-                }
-                context.RoleManager.AddRange(roles);
-                context.SaveChanges();
-            }
-        }
+        /* public static async Task SeedRole(DataContext context, RoleManager<RoleManager> roleManager) {
+             if (!roleManager.Roles.Any()) {
+                 var roles = new List<RoleManager> {
+                     new RoleManager{
+                         Name = "Admin"
+                     },
+                     new RoleManager{
+                         Name = "Basic"
+                     }
+                 };
+                 foreach (var role in roles) {
+                     await roleManager.CreateAsync(role);
+                 }
+                 context.RoleManager.AddRange(roles);
+                 context.SaveChanges();
+             }
+         }
+     }
+ */
     }
 }
