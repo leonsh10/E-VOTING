@@ -557,7 +557,7 @@ tr:nth-child(even) {
   border-radius:25px;
   padding: 15px;
   outline: none;
-  margin-top: 30px;
+  margin-top: 20px;
   font-size: 16px;
   text-decoration: none;
   // display: inline-block;
@@ -944,3 +944,20 @@ p{
   background-color: red !important;
   border-radius: 10px;
 }
+
+.textHome{
+  background-color: transparent !important;
+  //margin-top: -25px;
+  padding-top: 15px;
+}
+
+// .tabler{
+//   padding: 20px !important;
+// }
+
+
+
+.firstTr{
+  display: grid;
+}
+

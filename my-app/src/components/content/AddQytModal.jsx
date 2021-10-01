@@ -35,7 +35,7 @@ export class AddQytModal extends Component {
       .then((res) => res.json())
       .then(
         (result) => {
-          alert(result);
+          alert("Qyteti u shtua me sukses");
         },
         (error) => {
           alert("Failed");

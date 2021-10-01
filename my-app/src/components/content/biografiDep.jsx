@@ -41,7 +41,7 @@ export class biografiDep extends Component {
       .then((res) => res.json())
       .then(
         (result) => {
-          alert(result);
+          alert("Deputeti/ja u shtua me sukses");
         },
         (error) => {
           alert("Failed");

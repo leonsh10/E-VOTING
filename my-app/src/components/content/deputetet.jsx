@@ -58,7 +58,7 @@ export class deputetet extends Component {
       .then((res) => res.json())
       .then(
         (result) => {
-          alert(result);
+          alert("Deputeti u shtua me sukses");
         },
         (error) => {
           alert("Failed");

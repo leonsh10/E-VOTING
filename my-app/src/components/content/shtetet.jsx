@@ -49,7 +49,7 @@ export class shtetet extends Component {
       .then((res) => res.json())
       .then(
         (result) => {
-          alert(result);
+          alert("Shteti u shtua me sukses");
         },
         (error) => {
           alert("Failed");

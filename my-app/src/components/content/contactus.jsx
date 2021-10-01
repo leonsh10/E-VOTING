@@ -61,7 +61,7 @@ class contactus extends React.Component {
       .then((res) => res.json())
       .then(
         (result) => {
-          alert(result);
+          alert("Mesazhi u dergua me sukses");
         },
         (error) => {
           alert("Failed");

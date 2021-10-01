@@ -33,7 +33,7 @@ export class EditShtetModal extends Component {
           .then((res) => res.json())
           .then(
             (result) => {
-              alert(result);
+              alert("Shteti u editua me sukses");
             },
             (error) => {
               alert("Failed");

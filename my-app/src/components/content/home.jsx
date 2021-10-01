@@ -1,22 +1,42 @@
 import React, { Component } from "react";
 import "../../App.scss";
 import video1 from "../videos/video1.mp4";
-import {Button} from 'react-bootstrap';
+import {Button, Table} from 'react-bootstrap';
 import logo from '.././images/logo.png';
 import { observer } from "mobx-react-lite"
 import { useStore } from "../users/store";
 import {useEffect} from 'react';
-// export class home extends Component{
-export default observer(function Home() {
-  const {commonStore,userStore} = useStore();
+export class home extends Component{
+//export default observer(function Home() {
+  //const {commonStore,userStore} = useStore();
   // const {userStore} = useStore();
-  function handleScroll() {
-    window.scroll({
-      top: document.body.offsetHeight,
-      left: 0,
-      behavior: "smooth",
-    });
+  constructor(props) {
+    super(props);
+    this.state = { homs: []};
   }
+
+  refreshList() {
+    fetch("http://localhost:5000/api/Home")
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ homs: data });
+      });
+  }
+
+  componentDidMount() {
+    this.refreshList();
+  }
+
+  componentDidUpdate() {
+    this.refreshList();
+  }
+  // handleScroll() {
+  //   window.scroll({
+  //     top: document.body.offsetHeight,
+  //     left: 0,
+  //     behavior: "smooth",
+  //   });
+  // }
 
   
     
@@ -29,18 +49,38 @@ export default observer(function Home() {
   // }, [commonStore, userStore]
   // )
 
-  // render();{
+  render(){
+  function handleScroll() {
+      window.scroll({
+        top: document.body.offsetHeight,
+        left: 0,
+        behavior: "smooth",
+      });
+    }
+  const { homs, homid, titulli, content } = this.state;
   return (
     <div class="componentsHome">
       <div class="homeContent">
         <div id="vijaL"></div>
-        <h1>PER CFARE PERDORET E-VOTING</h1>
+        <div className="homeData">
+          <Table className="homeTable">
+          <tbody>
+              {homs.map((hom) => (
+                <tr key={hom.idHome} className="firstTr">
+                  <tr className="h1 tabler">{hom.Titulli}</tr>
+                  <tr className="textHome tabler">{hom.Content}</tr>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </div>
+        {/* <h1>PER CFARE PERDORET E-VOTING</h1>
      
         <p>
           E-Voting përdoret për arsyje se është mënyra më e mire dhe më e
           sigurtë për votim në tërë botën. Qe nga viti 2021 kjo menyrë e votimit
           përdoret edhe në Kosovë
-        </p>
+        </p> */}
         <button class="home-btn" onClick={handleScroll}>
           SI TE VOTONI
         </button>
@@ -81,7 +121,8 @@ export default observer(function Home() {
       </div>
     </div>
   );
+          }
   // }
   // }
-})
-// export default home;
+}//)
+export default home;

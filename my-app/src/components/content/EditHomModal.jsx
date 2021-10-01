@@ -26,7 +26,7 @@ export class EditHomModal extends Component {
       .then((res) => res.json())
       .then(
         (result) => {
-          alert(result);
+          alert("Kryefaqja u editua me sukses");
         },
         (error) => {
           alert("Failed");

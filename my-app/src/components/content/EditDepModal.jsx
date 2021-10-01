@@ -48,7 +48,7 @@ export class EditDepModal extends Component {
           .then((res) => res.json())
           .then(
             (result) => {
-              alert(result);
+              alert("Deputeti u editua me sukses");
             },
             (error) => {
               alert("Failed");
