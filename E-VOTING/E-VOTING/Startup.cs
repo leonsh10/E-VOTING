@@ -24,6 +24,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using E_VOTING.Models;
 using Microsoft.AspNetCore.Identity;
+using E_VOTING.Domain;
 
 namespace E_VOTING
 {
@@ -72,9 +73,14 @@ namespace E_VOTING
             services.AddApplicationServices(_config);
             services.AddIdentityServices(_config);
 
+            services.AddIdentity<AppUser, IdentityRole>()
+                 .AddEntityFrameworkStores<DataContext>()
+    .AddDefaultTokenProviders();
+    
 
 
-            
+
+
 
             services.AddControllers();
            services.AddSwaggerGen(c =>

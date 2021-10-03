@@ -1,3 +1,4 @@
+using E_VOTING.Enums;
 using E_VOTING.Models;
 using E_VOTING.Persistence;
 using Microsoft.AspNetCore.Hosting;
@@ -27,10 +28,11 @@ namespace E_VOTING
                 try
                 {
                     var context = services.GetRequiredService<DataContext>();
-                  //  var roleManager = services.GetRequiredService<RoleManager<RoleManager>>();
+                    //  var roleManager = services.GetRequiredService<RoleManager<RoleManager>>();
+                    DbInitializer.InitializeAsync(context, services).Wait();
                     context.Database.Migrate();
                     //Seed.SeedRole(context, roleManager).Wait();
-
+                   
                 }
                 catch (Exception ex)
                 {
