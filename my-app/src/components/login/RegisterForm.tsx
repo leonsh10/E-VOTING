@@ -12,7 +12,7 @@ import MyTextInput from "./MyTextInput"
 export default observer (function RegisterForm(){
     const {userStore} = useStore();
     return <Formik
-                initialValues={{username: '',email:'',nrLeternjoftimit : '', password: ''}}
+                initialValues={{username: '',email:'',nrLeternjofimit : '', password: ''}}
                 onSubmit={values => userStore.register(values)} 
                 >
             {({handleSubmit}) => (
@@ -27,7 +27,7 @@ export default observer (function RegisterForm(){
                     <MyTextInput name='email' placeholder='' />
                     {/* <Label class="labelRegister text-info labelsR"  for="nrLeternjoftimit">Numri i Leternjoftimit:</Label> */}
                     <p className="text-info">Numri i Leternjoftimit:</p>
-                    <MyTextInput name='nrLeternjoftimit' placeholder='' />
+                    <MyTextInput name='nrLeternjofimit' placeholder='' />
                     {/* <Label class="labelRegister text-info labelsR"  for="password">Password:</Label> */}
                     <p className="text-info">Password:</p>
                     <MyTextInput name='password' placeholder='' type='password' />

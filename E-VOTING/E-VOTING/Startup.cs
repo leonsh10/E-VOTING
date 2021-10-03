@@ -25,6 +25,7 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using E_VOTING.Models;
 using Microsoft.AspNetCore.Identity;
 using E_VOTING.Domain;
+using Microsoft.AspNetCore.Http;
 
 namespace E_VOTING
 {
@@ -55,7 +56,8 @@ namespace E_VOTING
        
 
            });
-            
+
+            //services.AddDefaultIdentity<AppUser>().AddRoles<IdentityRole>().AddEntityFrameworkStores<DataContext>();
 
             services.AddControllers(opt =>
             {
@@ -76,9 +78,6 @@ namespace E_VOTING
             services.AddIdentity<AppUser, IdentityRole>()
                  .AddEntityFrameworkStores<DataContext>()
     .AddDefaultTokenProviders();
-    
-
-
 
 
 

@@ -8,7 +8,7 @@ import { EditVotuesModal } from "./EditVotuesModal";
 export class votuesit extends Component {
   constructor(props) {
     super(props);
-    this.state = { regs: [], editModalShow: false };
+    this.state = { regs: [],regs2: [], editModalShow: false };
     // this.handleSubmit=this.handleSubmit.bind(this);
   }
   componentDidMount() {
@@ -26,6 +26,22 @@ export class votuesit extends Component {
         this.setState({ regs: data });
       });
   }
+
+  // componentDidMount() {
+  //   fetch("http://localhost:5000/api/role")
+  //     .then((response) => response.json())
+  //     .then((data2) => {
+  //       this.setState({ regs2: data2 });
+  //     });
+  // }
+
+  // refreshList() {
+  //   fetch("http://localhost:5000/api/role")
+  //     .then((response) => response.json())
+  //     .then((data2) => {
+  //       this.setState({ regs2: data2 });
+  //     });
+  // }
 
   componentDidMount() {
     this.refreshList();
@@ -46,7 +62,9 @@ export class votuesit extends Component {
   }
 
   render() {
-    const { regs, nrLeternjofimit,Id,UserName, Email, PasswordHash } = this.state;
+    const { regs, nrLeternjofimit,Id,UserName, Email, Name ,PasswordHash } = this.state;
+
+    
     let editModalClose = () => this.setState({ editModalShow: false });
     return (
       <div className="deputetetContent">
@@ -60,6 +78,7 @@ export class votuesit extends Component {
                 <th>Username</th>
                 <th>Numri i Leternjoftimit</th>
                 <th>Email</th>
+                <th>Roli</th>
                 <th>Edit/Fshij</th>
               </tr>
             </thead>
@@ -67,9 +86,9 @@ export class votuesit extends Component {
               {regs.map((reg) => (
                 <tr key={reg.Id}>
                   <td>{reg.UserName}</td>
-                  <td>{reg.nrLeternjofimit}</td>                 
+                  <td>{reg.nrLeternjofimit}</td>                
                   <td>{reg.Email}</td>
-                  
+                  <td>{reg.Name}</td> 
                   <td>
                  
                     <ButtonToolbar className="butonat">
@@ -83,6 +102,7 @@ export class votuesit extends Component {
                             UserName: reg.UserName,
                             nrLeternjofimit: reg.nrLeternjofimit,
                             Email: reg.Email,
+                            Name: reg.Name
                           })
                         }
                       >
@@ -101,6 +121,7 @@ export class votuesit extends Component {
                         UserName={UserName}
                         nrLeternjofimit={nrLeternjofimit}
                         Email={Email}
+                        Name={Name}
                         Id={Id}
                       />
                     </ButtonToolbar>

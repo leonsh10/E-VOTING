@@ -75,13 +75,14 @@ namespace E_VOTING.Controllers
             {
                 nrLeternjofimit = registerDto.nrLeternjofimit,
                 UserName = registerDto.UserName,
-                Email = registerDto.Email
+                Email = registerDto.Email,
             };
 
             var result = await _userManager.CreateAsync(user, registerDto.Password);
-
             if (result.Succeeded)
             {
+                var result1 = await _userManager.AddToRoleAsync(user, "Basic");
+
                 return CreateUserObject(user);
             }
 

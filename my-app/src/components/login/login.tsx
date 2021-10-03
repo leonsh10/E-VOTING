@@ -52,7 +52,7 @@ import "../../App.scss";
     // render(){
 
         return <Formik
-                initialValues={{email:'',nrLeternjoftimit : '', password: ''}}
+                initialValues={{email:'',nrLeternjofimit : '', password: ''}}
                 onSubmit={values => userStore.login(values)} 
                 >
             {({handleSubmit}) => (

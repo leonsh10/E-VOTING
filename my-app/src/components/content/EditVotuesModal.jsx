@@ -5,7 +5,7 @@ import "../../App.scss";
 export class EditVotuesModal extends Component {
     constructor(props) {
       super(props);
-      this.state = { votuesit: [] };
+      this.state = { votuesit: [],  role: []};
       this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -14,6 +14,14 @@ export class EditVotuesModal extends Component {
           .then((response) => response.json())
           .then((data) => {
             this.setState({ shtet: data });
+          });
+      }
+
+      componentDidMount() {
+        fetch("http://localhost:5000/api/role")
+          .then((response) => response.json())
+          .then((data) => {
+            this.setState({ role: data });
           });
       }
     
@@ -29,7 +37,8 @@ export class EditVotuesModal extends Component {
         Id: event.target.Id.value,
       UserName: event.target.UserName.value,
       nrLeternjofimit: event.target.nrLeternjofimit.value,
-      Email: event.target.Email.value
+      Email: event.target.Email.value,
+      //Roli: event.target.Roli.value
           }),
         })
           .then((res) => res.json())
@@ -104,6 +113,21 @@ export class EditVotuesModal extends Component {
                           placeholder="Email"
                           className="form-content2"
                         />
+                      </Form.Group>
+
+                      <Form.Group controlId="Roli">
+                        <Form.Label className="labels">Roli</Form.Label>
+                        <Form.Control
+                          as="select"
+                          name="Roli"
+                          required
+                          defaultValue={this.props.Email}
+                          placeholder="Roli"
+                          className="form-content2"
+                        >
+                          {this.state.role.map(rol=>
+                            <option key={rol.Id}>{rol.Name}</option>)}
+                        </Form.Control>
                       </Form.Group>
     
                   

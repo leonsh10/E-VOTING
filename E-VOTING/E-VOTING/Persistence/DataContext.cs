@@ -1,5 +1,6 @@
 ﻿using E_VOTING.Domain;
 using E_VOTING.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -39,6 +40,8 @@ namespace E_VOTING.Persistence
 
         public DbSet<AppUser> AppUser { get; set; }
 
-       // public DbSet<RoleManager> RoleManager { get; set; }
+        public DbSet<IdentityRole> IdentityRole { get; set; }
+
+        // public DbSet<RoleManager> RoleManager { get; set; }
     }
 }

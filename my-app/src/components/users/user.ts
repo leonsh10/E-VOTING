@@ -1,12 +1,12 @@
 export interface User {
     username: string;
     email: string;
-    nrLeternjoftimit: string;
+    nrLeternjofimit: string;
     token:string;
 }
 
 export interface UserFormValues{
-    nrLeternjoftimit: string;
+    nrLeternjofimit: string;
     // email: string;
     password: string;
     
