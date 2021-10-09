@@ -17,7 +17,6 @@ using Microsoft.Extensions.FileProviders;
 using E_VOTING.Persistence;
 using Microsoft.EntityFrameworkCore;
 using MediatR;
-using E_VOTING.Models.Activities;
 using FluentValidation.AspNetCore;
 using E_VOTING.Extensions;
 using Microsoft.AspNetCore.Authorization;
@@ -26,6 +25,7 @@ using E_VOTING.Models;
 using Microsoft.AspNetCore.Identity;
 using E_VOTING.Domain;
 using Microsoft.AspNetCore.Http;
+using E_VOTING.Models.Biografia;
 
 namespace E_VOTING
 {
@@ -40,7 +40,7 @@ namespace E_VOTING
         }
 
        
-
+        
         public IConfiguration _config { get; }
 
        
@@ -61,22 +61,26 @@ namespace E_VOTING
 
             services.AddControllers(opt =>
             {
-                
+
                 var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
                 opt.Filters.Add(new AuthorizeFilter(policy));
             })
                 .AddFluentValidation(config =>
             {
                 config.RegisterValidatorsFromAssemblyContaining<Create>();
+
             });
+               
 
 
-            
+            services.AddRazorPages(); 
+            services.AddMvc();
             services.AddApplicationServices(_config);
             services.AddIdentityServices(_config);
 
-            services.AddIdentity<AppUser, IdentityRole>()
+            services.AddIdentity<AppUser, IdentityRole>().AddRoles<IdentityRole>()
                  .AddEntityFrameworkStores<DataContext>()
+               
     .AddDefaultTokenProviders();
 
 
@@ -85,6 +89,7 @@ namespace E_VOTING
            services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v2", new OpenApiInfo { Title = "E_VOTING", Version = "v2" });
+                c.CustomSchemaIds(type => type.ToString());
             });
 
             services.AddCors(c =>
@@ -109,7 +114,7 @@ namespace E_VOTING
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.SeedUsersAndRoles();
+          
             app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             if (env.IsDevelopment())
             {

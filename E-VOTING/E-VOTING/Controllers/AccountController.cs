@@ -12,6 +12,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using E_VOTING.DTOs;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace E_VOTING.Controllers
 {
@@ -26,12 +27,17 @@ namespace E_VOTING.Controllers
 
         private readonly TokenService _tokenService;
         private readonly IMediator _mediator;
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> SignInManager, TokenService tokenService, IMediator mediator)
+        private readonly RoleManager<IdentityRole> _roleManager;
+
+
+
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> SignInManager, TokenService tokenService, IMediator mediator, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = SignInManager;
             _tokenService = tokenService;
             _mediator = mediator;
+            _roleManager = roleManager;
         }
 
         [AllowAnonymous]
@@ -79,10 +85,11 @@ namespace E_VOTING.Controllers
             };
 
             var result = await _userManager.CreateAsync(user, registerDto.Password);
+            
+            
             if (result.Succeeded)
             {
-                var result1 = await _userManager.AddToRoleAsync(user, "Basic");
-
+           await _userManager.AddToRoleAsync(user, "Basic");
                 return CreateUserObject(user);
             }
 
@@ -134,8 +141,8 @@ namespace E_VOTING.Controllers
                 nrLeternjofimit = user.nrLeternjofimit,
                 Email=user.Email,
                 token = _tokenService.CreateToken(user),
-                UserName = user.UserName
-            };
+                UserName = user.UserName             
+        };
         }
     }
 

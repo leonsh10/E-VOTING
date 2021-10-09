@@ -34,5 +34,6 @@ namespace E_VOTING.Controllers
         {
             return await _mediator.Send(new List.Query());
         }
+        
     }
 }

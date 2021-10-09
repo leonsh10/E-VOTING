@@ -17,7 +17,6 @@ using Microsoft.Extensions.FileProviders;
 using E_VOTING.Persistence;
 using Microsoft.EntityFrameworkCore;
 using MediatR;
-using E_VOTING.Models.Activities;
 using FluentValidation.AspNetCore;
 using System.Configuration;
 
@@ -44,7 +43,7 @@ namespace E_VOTING.Extensions
                  .AllowAnyHeader());
             });
 
-            services.AddMediatR(typeof(List.Handler).Assembly);
+           // services.AddMediatR(typeof(List.Handler).Assembly);
            // services.AddAutoMapper(typeof(MappingProfiles).Assembly);
             return services;
         }
