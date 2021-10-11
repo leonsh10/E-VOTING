@@ -78,10 +78,9 @@ namespace E_VOTING
             services.AddApplicationServices(_config);
             services.AddIdentityServices(_config);
 
-            services.AddIdentity<AppUser, IdentityRole>().AddRoles<IdentityRole>()
+            services.AddIdentity<AppUser, IdentityRole>()
                  .AddEntityFrameworkStores<DataContext>()
-               
-    .AddDefaultTokenProviders();
+                    .AddDefaultTokenProviders();
 
 
 
