@@ -10,33 +10,26 @@ import ModalStore from "./modalStore";
 import React from "react";
 // import { useHistory } from "react-router-dom"
 import { store } from "./store";
-import { Redirect, useHistory, Switch } from "react-router-dom";
-import {Route, withRouter} from "react-router";
-import home from "../content/home";
-import {createHashHistory} from 'history';
+import { Redirect, useHistory } from "react-router-dom";
 // import { observer } from "mobx-react-lite"
 
 export default class UserStore {
+
     user: User | null = null;
     props: any;
     setState: any;
 
     constructor() {
         makeAutoObservable(this)
+       
     }
 
     get isLoggedIn() {
         return !!this.user;
-
     }
 
     state = {
         redirect: false
-    }
-
-    redirectLogin = () => {
-        //const {history} = this.props;
-        this.props.history.push('/login');
     }
 
     setRedirect = () => {
@@ -47,7 +40,7 @@ export default class UserStore {
 
       renderRedirect = () => {
         if (this.state.redirect) {
-          return <Redirect strict to='/home' />
+          return <Redirect to='/home' />
         }
       }
 
@@ -60,14 +53,13 @@ export default class UserStore {
     redirectToHome = () => {
         // const { history } = this.props;
         // history.push('/Home');
-        //return <Route path="/home" exact component={home} />
-        //return window.location.href = "http://localhost:3000/home";
+        return <Redirect to='/home'/>
        }
 
        redirectToLogin = () => {
         // const { history } = this.props;
         // if(history) history.push('/login');
-        return <Redirect to='/login'/>
+        <Redirect to='/login'/>
        }
 
     
@@ -83,24 +75,14 @@ export default class UserStore {
             
             store.modalStore.closeModal();
             // history.push('/home');
-            //this.setRedirect();
-            //this.redirectToHome();
-           //this.renderRedirect();
+        //    this.redirectToHome();
+           this.renderRedirect();
             // return <Redirect to="/home"></Redirect>
             //    console.log(user);
-            const history = createHashHistory();
-            history.go(-1);
-            // if(isLoggedIn()){
-            //     window.location.href = "http://localhost:3000/home";
-            // }
         } catch (error) {
             throw error;
         }
     }
-
-    // componentDidMount(){
-    //     this.props.history.push('/login');
-    // }
 
     logout = () => {
         // let history = useHistory();
@@ -109,12 +91,8 @@ export default class UserStore {
         window.localStorage.removeItem('jwt');
         this.user = null;
         // history.push('/login');
-        //this.redirectToLogin();
-        //this.redirectLogin();
-        //this.renderRedirectLogin();
-        // const history = createHashHistory();
-        // history.go(-1);
-        window.location.href = 'http://localhost:3000/login'
+       // this.redirectToLogin();
+        this.renderRedirectLogin();
     }
 
     getUser = async () => {
@@ -139,11 +117,9 @@ export default class UserStore {
             
             store.modalStore.closeModal();
             // this.props.history.push('/home');
-            //this.renderRedirect();
+            this.renderRedirect();
             // this.redirectToHome();
             // console.log(user);
-            const history = createHashHistory();
-            history.go(-1);
         } catch (error) {
             throw error;
         }
