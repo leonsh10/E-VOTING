@@ -6,7 +6,7 @@ import { MenuItem,Menu } from 'semantic-ui-react';
 import '../../App.scss';
 import logo from '../images/logo.png';
 import { useStore } from '../users/store';
-import {userStore} from "../users/userStore";
+import UserStore, {userStore} from "../users/userStore";
 import { observer } from "mobx-react-lite"
 import {Button} from "reactstrap";
 import { useHistory } from "react-router";
@@ -51,32 +51,45 @@ const {userStore: {user, logout}}= useStore();
                 <Link style={navStyle} to="/DeputetetBio">
                     <li>Deputetet</li>
                 </Link>
-                <Link style={navStyle} to="/dashboard">
-                    <li>Dashboard</li>
-                </Link>
-                {/* <Link style={navStyle} to="/login">
-                    <li>Login</li>
-                </Link>
-                <Link style={navStyle} to="/register">
-                    <li>Register</li>
-                </Link> */}
-               
-
-                  
-               {
-                   
-                   userStore.isLoggedIn ? (
-                    <>
-                   
-                    <Link style={navStyle} to="/votimi">
-                    <li style={votoStyle}>Voto</li>
-                    </Link>
-                    <Button onClick={logout} style={logOutStyle} className="logOutButton">Logout</Button>
-                    </>
+                {
                     
-                   ): (
+                    userStore.isLoggedIn
+                    ?
+                    (
+                        <>
+                <Link style={navStyle} to="/voto">
+                <li style={votoStyle}>Voto</li>
+                </Link>
+              
+                <Button onClick={logout} style={logOutStyle} className="logOutButton">Logout</Button>
+
+                </> 
+                ) :  (
                     <Link style={navStyle} to="/login">
                     <li>Kyçu</li>
+                </Link>
+                   )
+                }
+
+
+            
+
+                               
+               {
+                   
+                   userStore.isLoggedIn && userStore.getNrLeter ? (
+                    <>
+                
+                    <Link style={navStyle} to="/dashboard">
+                    <li style={votoStyle}>Voto</li>
+                    </Link>
+                    </>
+                    
+                   ): 
+                   
+                   (
+                    <Link to="/">
+                  
                 </Link>
                    )
 

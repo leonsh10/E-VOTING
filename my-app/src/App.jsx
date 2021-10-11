@@ -17,12 +17,13 @@ import DeputetetBio from "./components/content/DeputetetBio";
 import { useStore } from "./components/users/store";
 import { observer } from "mobx-react";
 import RegisterForm from "./components/login/RegisterForm";
+import useHistory  from "react-router-dom"
 
 export default observer (function App(){
   // constructor(props) {
   //   super(props);
   // }
-  
+  // let history = useHistory();
 
   // render() {
     const {commonStore,userStore} = useStore();
@@ -44,6 +45,7 @@ useEffect(() => {
       //  <div className="App">
          <Router>
            <div className="App1">
+             
              <Nav />
              <Switch>
               <Route path="/" exact component={home} />

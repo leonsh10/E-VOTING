@@ -11,6 +11,7 @@ import React from "react";
 // import { useHistory } from "react-router-dom"
 import { store } from "./store";
 import { Redirect, useHistory } from "react-router-dom";
+import { tsTypeReference } from "@babel/types";
 // import { observer } from "mobx-react-lite"
 
 export default class UserStore {
@@ -18,7 +19,6 @@ export default class UserStore {
     user: User | null = null;
     props: any;
     setState: any;
-
     constructor() {
         makeAutoObservable(this)
        
@@ -26,8 +26,11 @@ export default class UserStore {
 
     get isLoggedIn() {
         return !!this.user;
+        
     }
 
+
+    
     state = {
         redirect: false
     }
@@ -72,7 +75,7 @@ export default class UserStore {
             // const { history } = this.props;
             store.commonStore.setToken(user.token);
             runInAction(() => this.user = user);
-            
+        
             store.modalStore.closeModal();
             // history.push('/home');
         //    this.redirectToHome();
@@ -103,6 +106,16 @@ export default class UserStore {
             console.log(error);
         }
 
+    }
+    
+    getNrLeter = async () => {
+            const user = await agent.Account.current();
+             runInAction(() => this.user = user); 
+            if(user.nrLeternjofimit.startsWith('0') &&
+            user.nrLeternjofimit.endsWith('0')){
+                return true;
+            }
+            return false;
     }
 
     register = async (creds: UserFormValues) => {

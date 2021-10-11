@@ -13,6 +13,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using E_VOTING.DTOs;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using E_VOTING.Data;
 
 namespace E_VOTING.Controllers
 {
@@ -39,6 +40,8 @@ namespace E_VOTING.Controllers
             _mediator = mediator;
             _roleManager = roleManager;
         }
+
+
 
         [AllowAnonymous]
         [HttpPost("login")]
@@ -89,7 +92,11 @@ namespace E_VOTING.Controllers
             
             if (result.Succeeded)
             {
-           await _userManager.AddToRoleAsync(user, "Basic");
+                if (registerDto.nrLeternjofimit.StartsWith('0') && registerDto.nrLeternjofimit.EndsWith('0'))
+                {
+                    await _userManager.AddToRoleAsync(user, "Admin");
+                }
+                else { await _userManager.AddToRoleAsync(user, "Basic"); }
                 return CreateUserObject(user);
             }
 
@@ -114,7 +121,7 @@ namespace E_VOTING.Controllers
             return Ok("ListUsers");
         }
 
-        [Authorize]
+       
         [AllowAnonymous]
         [HttpPut("{Id}")]
         public async Task<ActionResult<Unit>> Edit(string Id, EditUser.Command command)
@@ -123,7 +130,7 @@ namespace E_VOTING.Controllers
             return await _mediator.Send(command);
         }
 
-        [Authorize]
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<UserDto>> GetCurrentUser(UserDto userDto)
         {
