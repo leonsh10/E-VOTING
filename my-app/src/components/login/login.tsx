@@ -52,26 +52,28 @@ import "../../App.scss";
     // render(){
 
         return <Formik
-                initialValues={{email:'',nrLeternjofimit : '', password: ''}}
-                onSubmit={values => userStore.login(values)} 
+                initialValues={{email:'',nrLeternjofimit : '', password: '', error:null}}
+                onSubmit={(values, {setErrors}) => userStore.login(values).catch(error =>
+                    setErrors({error:"Ploteso te dhenat sakte!."}) )} 
                 >
-            {({handleSubmit}) => (
+            {({handleSubmit,errors}) => (
                 <Form className='ui form loginForm' onSubmit={handleSubmit} autoComplete='off'>
                     <h3 className="text-info text-center">Kyçu</h3>
+                    
                     {/* <MyTextInput name='email' placeholder='Emaili' /> */}
                     {/* <Label class="labelRegister text-info labelsR" for="Email">Email:</Label> */}
                     <p className="text-info">Email:</p>
-                    <MyTextInput name='Email' placeholder='' />
+                    <MyTextInput pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name='Email' placeholder='Email' required />
                     {/* <Label class="labelRegister text-info labelsR" for="nrLeternjoftimit">Numri i Leternjoftimit:</Label> */}
-                    <p className="text-info">Numri i Leternjoftimit:</p>
-                    <MyTextInput name='nrLeternjoftimit' placeholder='' />
+                    <p className="text-info">Numri i Leternjoftimit: (10 Numra)</p>
+                    <MyTextInput pattern="[0-9*].{10}" name='nrLeternjoftimit' placeholder='Numri i Leternjoftimit' required/>
                     {/* <Label class="labelRegister text-info labelsR" for="password">Password:</Label> */}
-                    <p className="text-info">Password:</p>
-                    <MyTextInput name='password' placeholder='' type='password' />
-                    {/* <ErrorMessage
+                    <p className="text-info">Password: (8-12 Karaktere)</p>
+                    <MyTextInput pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$"  name='password' placeholder='Password' type='password' required/>
+                    <ErrorMessage
                     name='error' render={() => 
-                    <Label style={{marginBottom:10}} basic color='red' content={errors.error}/>}
-                    /> */}
+                    <Label style={{marginBottom:5,color:'red',fontSize:20}} basic color='red' content={errors.error}/>}
+                    /> 
                     <Button className="btn btn-info btn-md btnL" positive content='Login' type='submit' fluid />
                     <a href="./RegisterForm" className="linkuR">Regjistrohu</a>
                     {/* <Link style={navStyle} to="/registro">

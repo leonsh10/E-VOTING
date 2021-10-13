@@ -10,6 +10,8 @@ interface Props {
     name: string;
     type?: string;
     label? : string;
+    required:true;
+    pattern:string;
 }
 
 export default function MyTextInput(props: Props){
