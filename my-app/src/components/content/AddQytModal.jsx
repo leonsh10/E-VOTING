@@ -60,44 +60,42 @@ export class AddQytModal extends Component {
           <Modal.Body>
             <Row>
               {/* <Col sm={6}> */}
-                <Form onSubmit={this.handleSubmit}>
-                  <Form.Group controlId="EmriQytetit">
-                    {/* <Form.Label>EmriQytetit</Form.Label> */}
-                    <Form.Control
-                      type="text"
-                      name="EmriQytetit"
-                      required
-                      placeholder="Emri i Qytetit"
-                      className="form-content2"
-                    />
-                  </Form.Group>
+              <Form onSubmit={this.handleSubmit}>
+                <Form.Group controlId="EmriQytetit">
+                  {/* <Form.Label>EmriQytetit</Form.Label> */}
+                  <Form.Control
+                    type="text"
+                    name="EmriQytetit"
+                    required
+                    placeholder="Emri i Qytetit"
+                    className="form-content2"
+                  />
+                </Form.Group>
 
-                  <Form.Group controlId="Shteti">
-                    {/* <Form.Label>Shteti</Form.Label> */}
-                    <Form.Control as="select"  className="form-content2">
-                      {this.state.deps.map((dep) => (
-                        <option key={dep.shtetet_id}>
-                          {dep.emri_shtetet}
-                        </option>
-                      ))}
-                      {/* <option>Kosove</option>
+                <Form.Group controlId="Shteti">
+                  {/* <Form.Label>Shteti</Form.Label> */}
+                  <Form.Control as="select" className="form-content2">
+                    {this.state.deps.map((dep) => (
+                      <option key={dep.shtetet_id}>{dep.emri_shtetet}</option>
+                    ))}
+                    {/* <option>Kosove</option>
                       <option>Shqiperi</option>
                       <option>Angli</option>
                       <option>Amerike</option>
                       <option>Austri</option>
                       <option>Gjermani</option> */}
-                    </Form.Control>
-                  </Form.Group>
-                  <Form.Group>
-                    <Button variant="primary" type="submit" className="shto-btnD">
-                      Shto
-                    </Button>
-                    <Button variant="danger" onClick={this.props.onHide}>
-                      Mbyll
-                    </Button>
-                  </Form.Group>
-                </Form>
-                {/* <Form
+                  </Form.Control>
+                </Form.Group>
+                <Form.Group>
+                  <Button variant="primary" type="submit" className="shto-btnD">
+                    Shto
+                  </Button>
+                  <Button variant="danger" onClick={this.props.onHide}>
+                    Mbyll
+                  </Button>
+                </Form.Group>
+              </Form>
+              {/* <Form
                   onSubmit={this.handleSubmit}
                   style={{
                     backgroundColor: "#15181f",

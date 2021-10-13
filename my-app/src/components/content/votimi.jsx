@@ -4,7 +4,6 @@ import { Button, ButtonToolbar, Form, Row, Col, Table } from "react-bootstrap";
 // import {Link} from 'react-router-dom';
 import logo from ".././images/logo.png";
 export class votimi extends Component {
-
   constructor(props) {
     super(props);
     this.state = { part: [] };
@@ -53,7 +52,7 @@ export class votimi extends Component {
       .then((res) => res.json())
       .then(
         (result) => {
-          alert(result);
+          alert("Votuat me sukses!");
         },
         (error) => {
           alert("Failed");
@@ -75,14 +74,18 @@ export class votimi extends Component {
                 ))}
               </Form.Control> */}
               <Form.Control as="select" name="Partia" className="voteOption">
-                {this.state.part.map(par=>
+                {this.state.part.map((par) => (
                   <option key={par.partit_id}>{par.emri_Partis}</option>
-                )}
+                ))}
               </Form.Control>
             </Form.Group>
             <Form.Group controlId="DeputetiPare">
               <Form.Label className="formLabels">Deputeti 1</Form.Label>
-              <Form.Control as="select" className="voteOption" name="DeputetiPare">
+              <Form.Control
+                as="select"
+                className="voteOption"
+                name="DeputetiPare"
+              >
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -94,7 +97,11 @@ export class votimi extends Component {
             </Form.Group>
             <Form.Group controlId="DeputetiDyte">
               <Form.Label className="formLabels">Deputeti 2</Form.Label>
-              <Form.Control as="select" className="voteOption" name="DeputetiDyte">
+              <Form.Control
+                as="select"
+                className="voteOption"
+                name="DeputetiDyte"
+              >
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -106,7 +113,11 @@ export class votimi extends Component {
             </Form.Group>
             <Form.Group controlId="DeputetiTrete">
               <Form.Label className="formLabels">Deputeti 3</Form.Label>
-              <Form.Control as="select" className="voteOption" name="DeputetiTrete">
+              <Form.Control
+                as="select"
+                className="voteOption"
+                name="DeputetiTrete"
+              >
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -118,7 +129,11 @@ export class votimi extends Component {
             </Form.Group>
             <Form.Group controlId="DeputetiKatert">
               <Form.Label className="formLabels">Deputeti 4</Form.Label>
-              <Form.Control as="select" className="voteOption" name="DeputetiKatert">
+              <Form.Control
+                as="select"
+                className="voteOption"
+                name="DeputetiKatert"
+              >
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -130,7 +145,11 @@ export class votimi extends Component {
             </Form.Group>
             <Form.Group controlId="DeputetiPeste">
               <Form.Label className="formLabels">Deputeti 5</Form.Label>
-              <Form.Control as="select" className="voteOption" name="DeputetiPeste">
+              <Form.Control
+                as="select"
+                className="voteOption"
+                name="DeputetiPeste"
+              >
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -141,7 +160,12 @@ export class votimi extends Component {
               </Form.Control>
             </Form.Group>
             <Form.Group controlId="buton">
-              <Button variant="primary" type="submit" className="vote-btn" name="buton">
+              <Button
+                variant="primary"
+                type="submit"
+                className="vote-btn"
+                name="buton"
+              >
                 {" "}
                 Voto
               </Button>

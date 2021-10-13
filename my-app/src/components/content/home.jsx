@@ -81,7 +81,7 @@ export class home extends Component{
           sigurtë për votim në tërë botën. Qe nga viti 2021 kjo menyrë e votimit
           përdoret edhe në Kosovë
         </p> */}
-        <button class="home-btn" onClick={handleScroll}>
+        <button className="home-btn" onClick={handleScroll}>
           SI TE VOTONI
         </button>
 
@@ -100,7 +100,7 @@ export class home extends Component{
             height="300"
             class="vid"
             controls="controls"
-            autoplay={false}
+            autoPlay={false}
           />
         </div>
         <div class="pershkrimi">

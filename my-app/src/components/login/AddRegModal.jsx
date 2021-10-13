@@ -6,7 +6,7 @@
 //         super(props);
 //         this.handleSubmit=this.handleSubmit.bind(this);
 //     }
-    
+
 //     render = ()=> { return <p></p>}
 //         handleSubmit(event){
 //             event.preventDefault();
@@ -17,9 +17,9 @@
 //                     'Content-Type':'application/json'
 //                 },
 //                 body:JSON.stringify({
-                  
+
 //                     username:event.target.username.value,
-//                 nrLeternjoftimit:event.target.nrLeternjoftimit.value, 
+//                 nrLeternjoftimit:event.target.nrLeternjoftimit.value,
 //                 email:event.target.email.value,
 //                 password:event.target.password.value
 //                 })
@@ -33,6 +33,4 @@
 //             })
 //         }
 
-    
-            
 //         }

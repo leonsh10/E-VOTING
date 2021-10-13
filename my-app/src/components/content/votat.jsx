@@ -43,16 +43,23 @@ export class votuesit extends Component {
   }
 
   render() {
-    const { regs, IDVota, Partia, DeputetiPare, DeputetiDyte, DeputetiTrete, DeputetiKatert, DeputetiPeste} = this.state;
+    const {
+      regs,
+      IDVota,
+      Partia,
+      DeputetiPare,
+      DeputetiDyte,
+      DeputetiTrete,
+      DeputetiKatert,
+      DeputetiPeste,
+    } = this.state;
     return (
       <div className="deputetetContent">
         <h1 class="titulliLart">Votat</h1>
         <div className="votuesitDiv">
-          
           <Table className="vot1">
             <thead>
               <tr>
-                
                 <th>Partia</th>
                 <th>Deputeti 1</th>
                 <th>Deputeti 2</th>
@@ -68,9 +75,9 @@ export class votuesit extends Component {
                   <td>{reg.Partia}</td>
                   <td>{reg.DeputetiPare}</td>
                   <td>{reg.DeputetiDyte}</td>
-                  <td>{reg.DeputetiTrete}</td> 
-                  <td>{reg.DeputetiKatert}</td> 
-                  <td>{reg.DeputetiPeste}</td>  
+                  <td>{reg.DeputetiTrete}</td>
+                  <td>{reg.DeputetiKatert}</td>
+                  <td>{reg.DeputetiPeste}</td>
                   <td>
                     {" "}
                     <ButtonToolbar className="butonat">
@@ -84,7 +91,7 @@ export class votuesit extends Component {
                     </ButtonToolbar>
                   </td>
                 </tr>
-               ))} 
+              ))}
             </tbody>
           </Table>
         </div>

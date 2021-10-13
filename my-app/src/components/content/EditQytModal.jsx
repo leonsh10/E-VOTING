@@ -82,18 +82,24 @@ export class EditQytModal extends Component {
 
                   <Form.Group controlId="Shteti">
                     <Form.Label className="labels">Shteti</Form.Label>
-                    <Form.Control as="select" defaultValue={this.props.shteti} className="form-content2">
+                    <Form.Control
+                      as="select"
+                      defaultValue={this.props.shteti}
+                      className="form-content2"
+                    >
                       {this.state.deps.map((dep) => (
-                        <option key={dep.shtetet_id}>
-                          {dep.emri_shtetet}
-                        </option>
+                        <option key={dep.shtetet_id}>{dep.emri_shtetet}</option>
                       ))}
                       {/* <option>Kosove</option>
                       <option>Shqiperi</option> */}
                     </Form.Control>
                   </Form.Group>
                   <Form.Group>
-                    <Button variant="primary" type="submit" className="shto-btnD">
+                    <Button
+                      variant="primary"
+                      type="submit"
+                      className="shto-btnD"
+                    >
                       Update
                     </Button>
                     <Button variant="danger" onClick={this.props.onHide}>

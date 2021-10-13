@@ -8,7 +8,7 @@ import { EditVotuesModal } from "./EditVotuesModal";
 export class votuesit extends Component {
   constructor(props) {
     super(props);
-    this.state = { regs: [],regs2: [], editModalShow: false };
+    this.state = { regs: [], regs2: [], editModalShow: false };
     // this.handleSubmit=this.handleSubmit.bind(this);
   }
   componentDidMount() {
@@ -62,9 +62,9 @@ export class votuesit extends Component {
   }
 
   render() {
-    const { regs, nrLeternjofimit,Id,UserName, Email, Name ,PasswordHash } = this.state;
+    const { regs, nrLeternjofimit, Id, UserName, Email, Name, PasswordHash } =
+      this.state;
 
-    
     let editModalClose = () => this.setState({ editModalShow: false });
     return (
       <div className="deputetetContent">
@@ -86,11 +86,10 @@ export class votuesit extends Component {
               {regs.map((reg) => (
                 <tr key={reg.Id}>
                   <td>{reg.UserName}</td>
-                  <td>{reg.nrLeternjofimit}</td>                
+                  <td>{reg.nrLeternjofimit}</td>
                   <td>{reg.Email}</td>
-                  <td>{reg.Name}</td> 
+                  <td>{reg.Name}</td>
                   <td>
-                 
                     <ButtonToolbar className="butonat">
                       <Button
                         className="editButon"
@@ -102,7 +101,7 @@ export class votuesit extends Component {
                             UserName: reg.UserName,
                             nrLeternjofimit: reg.nrLeternjofimit,
                             Email: reg.Email,
-                            Name: reg.Name
+                            Name: reg.Name,
                           })
                         }
                       >
@@ -110,7 +109,7 @@ export class votuesit extends Component {
                       </Button>
                       <Button
                         className="fshijButon"
-                        variant = "danger"
+                        variant="danger"
                         onClick={() => this.deleteUser(reg.Id)}
                       >
                         Fshij

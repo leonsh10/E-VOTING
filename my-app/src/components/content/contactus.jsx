@@ -73,12 +73,12 @@ class contactus extends React.Component {
     return (
       <div class="divContent">
         <div className="logos">
-          <img src={logoK}></img>
+          <img src={logoK} style={{height: '80px'}}></img>
           <p>Republika e Kosovës</p>
         </div>
         <div class="divForma">
           <div class="formm">
-            <h4 id="epara">CONTACT US</h4>
+            <h4 id="epara">.</h4>
             <form className="forma1" onSubmit={this.handleSubmit}>
               {/* <Form.Label>Shkruaj Emrin:</Form.Label> */}
               <input
@@ -123,7 +123,7 @@ class contactus extends React.Component {
                 required
               ></textarea>
 
-              <button type="submit" class="butoni">
+              <button type="submit" className="butoni">
                 Dergo Mesazhin
               </button>
             </form>

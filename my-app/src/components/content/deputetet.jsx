@@ -85,10 +85,10 @@ export class deputetet extends Component {
 
         <div>
           <Form className="forma1" onSubmit={this.handleSubmit}>
-             {/* <Form.Group controlId="Emri"> */}
-              {/* <Form.Label>EmriQytetit</Form.Label> */}
-              {/* <Form.Label>Emri</Form.Label> */}
-              {/* <Form.Control
+            {/* <Form.Group controlId="Emri"> */}
+            {/* <Form.Label>EmriQytetit</Form.Label> */}
+            {/* <Form.Label>Emri</Form.Label> */}
+            {/* <Form.Control
                 type="text"
                 name="Emri"
                 required
@@ -97,32 +97,32 @@ export class deputetet extends Component {
               /> */}
             {/* </Form.Group> */}
             <input
-                type="text"
-                id="inputi"
-                name="Emri"
-                required
-                class="form-content2"
-                placeholder="Emri dhe Mbiemri..."
-              ></input>
+              type="text"
+              id="inputi"
+              name="Emri"
+              required
+              class="form-content2"
+              placeholder="Emri dhe Mbiemri..."
+            ></input>
             {/* <Form.Group controlId="Partit"> */}
-              {/* <Form.Label>Partite</Form.Label> */}
-              {/* <Form.Control as="select" name="Partia"> */}
-              <select name="Partia" className="form-content2">
-                {this.state.part.map((par) => (
-                  <option key={par.partit_id}>{par.emri_Partis}</option>
-                ))}
-              </select>
+            {/* <Form.Label>Partite</Form.Label> */}
+            {/* <Form.Control as="select" name="Partia"> */}
+            <select name="Partia" className="form-content2">
+              {this.state.part.map((par) => (
+                <option key={par.partit_id}>{par.emri_Partis}</option>
+              ))}
+            </select>
             {/* </Form.Group> */}
             {/* <Form.Group controlId="Numri"> */}
-              {/* <Form.Label>Numri I Deputetit</Form.Label> */}
-              <select class="form-content2" name="Numri">
-                <option>Zgjedh numrin</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
+            {/* <Form.Label>Numri I Deputetit</Form.Label> */}
+            <select class="form-content2" name="Numri">
+              <option>Zgjedh numrin</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
             {/* </Form.Group> */}
 
             <div className="buton-div">

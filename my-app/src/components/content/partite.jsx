@@ -85,26 +85,26 @@ export class partite extends Component {
         <div className="forma">
           <Form className="forma1" onSubmit={this.handleSubmit}>
             {/* <Form.Row> */}
-              <input
-                type="text"
-                id="inputi"
-                name="emri_Partis"
-                class="form-content2"
-                placeholder="Emri i Partise..."
-                required
-              ></input>
-              {/* <Form.Control
+            <input
+              type="text"
+              id="inputi"
+              name="emri_Partis"
+              class="form-content2"
+              placeholder="Emri i Partise..."
+              required
+            ></input>
+            {/* <Form.Control
                   size="lg"
                   type="text"
                   name="EmriMbiemri"
                   placeholder="Partia..."
                   className="form-content"
                 /> */}
-              <div className="buton-div">
-                <Button variant="primary" type="submit" className="shto-btnD">
-                  Shto
-                </Button>
-              </div>
+            <div className="buton-div">
+              <Button variant="primary" type="submit" className="shto-btnD">
+                Shto
+              </Button>
+            </div>
             {/* </Form.Row> */}
           </Form>
         </div>

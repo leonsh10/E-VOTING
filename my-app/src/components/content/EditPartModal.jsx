@@ -25,8 +25,8 @@ export class EditPartModal extends Component {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-       partit_id: event.target.partit_id.value,
-      emri_Partis: event.target.emri_Partis.value
+        partit_id: event.target.partit_id.value,
+        emri_Partis: event.target.emri_Partis.value,
       }),
     })
       .then((res) => res.json())
@@ -78,9 +78,12 @@ export class EditPartModal extends Component {
                     />
                   </Form.Group>
 
-              
                   <Form.Group>
-                    <Button variant="primary" type="submit" className="shto-btnD">
+                    <Button
+                      variant="primary"
+                      type="submit"
+                      className="shto-btnD"
+                    >
                       Update
                     </Button>
                     <Button variant="danger" onClick={this.props.onHide}>

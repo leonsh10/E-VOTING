@@ -8,7 +8,7 @@ import { EditQytModal } from "./EditQytModal";
 export class Qytetet extends Component {
   constructor(props) {
     super(props);
-    this.state = { qyts: [], deps: [],editModalShow: false };
+    this.state = { qyts: [], deps: [], editModalShow: false };
   }
 
   refreshList() {
@@ -59,7 +59,7 @@ export class Qytetet extends Component {
       body: JSON.stringify({
         // IDQyteti:null,
         Shteti: event.target.Shteti.value,
-        EmriQytetit: event.target.EmriQytetit.value
+        EmriQytetit: event.target.EmriQytetit.value,
         // Shteti: event.target.Shteti.value,
       }),
     })
@@ -83,8 +83,8 @@ export class Qytetet extends Component {
         <div>
           <Form className="forma1" onSubmit={this.handleSubmit}>
             {/* <Form.Group controlId="EmriQytetit"> */}
-              {/* <Form.Label>EmriQytetit</Form.Label> */}
-              {/* <Form.Control
+            {/* <Form.Label>EmriQytetit</Form.Label> */}
+            {/* <Form.Control
                 type="text"
                 name="EmriQytetit"
                 required
@@ -93,21 +93,21 @@ export class Qytetet extends Component {
               />
             </Form.Group> */}
             <select className="form-content2" name="Shteti">
-                {this.state.deps.map((dep) => (
-                  <option key={dep.shtetet_id}>{dep.emri_shtetet}</option>
-                ))}
-              </select>
+              {this.state.deps.map((dep) => (
+                <option key={dep.shtetet_id}>{dep.emri_shtetet}</option>
+              ))}
+            </select>
             <input
-                type="text"
-                id="inputi"
-                name="EmriQytetit"
-                required
-                class="form-content2"
-                placeholder="Emri i Qytetit..."
-              ></input>
+              type="text"
+              id="inputi"
+              name="EmriQytetit"
+              required
+              class="form-content2"
+              placeholder="Emri i Qytetit..."
+            ></input>
             {/* <Form.Group controlId="Shteti"> */}
-              {/* <Form.Label>Shteti</Form.Label> */}
-              {/* <select className="form-content2">
+            {/* <Form.Label>Shteti</Form.Label> */}
+            {/* <select className="form-content2">
                 {this.state.deps.map((dep) => (
                   <option key={dep.shtetet_id}>{dep.emri_shtetet}</option>
                 ))}

@@ -11,7 +11,7 @@ export class EditHomModal extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    fetch("http://localhost:5000/api/Home/" + this.props.homid , {
+    fetch("http://localhost:5000/api/Home/" + this.props.homid, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -84,7 +84,11 @@ export class EditHomModal extends Component {
                     />
                   </Form.Group>
                   <Form.Group>
-                    <Button variant="primary" type="submit" className="shto-btnD">
+                    <Button
+                      variant="primary"
+                      type="submit"
+                      className="shto-btnD"
+                    >
                       Update
                     </Button>
                     <Button variant="danger" onClick={this.props.onHide}>

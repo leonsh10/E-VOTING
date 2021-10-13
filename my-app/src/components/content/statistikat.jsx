@@ -3,7 +3,7 @@ import FusionCharts from "fusioncharts";
 import charts from "fusioncharts/fusioncharts.charts";
 import ReactFusioncharts from "react-fusioncharts";
 import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
-import logo from '.././images/logo.png';
+import logo from ".././images/logo.png";
 charts(FusionCharts);
 
 const dataSource = {
@@ -140,30 +140,30 @@ const dataSource3 = {
     showpercentintooltip: "0",
     // numberprefix: "$",
     enablemultislicing: "1",
-    theme: "fusion"
+    theme: "fusion",
   },
   data: [
     {
       label: "PDK",
-      value: "25"
+      value: "25",
     },
     {
       label: "VV",
-      value: "30"
+      value: "30",
     },
     {
       label: "AAK",
-      value: "10"
+      value: "10",
     },
     {
       label: "LDK",
-      value: "22"
+      value: "22",
     },
     {
       label: "AKR",
-      value: "5"
-    }
-  ]
+      value: "5",
+    },
+  ],
 };
 
 const dataSource4 = {
@@ -174,50 +174,48 @@ const dataSource4 = {
     // numbersuffix: " mph",
     rotatelabels: "1",
     setadaptiveymin: "1",
-    theme: "candy"
+    theme: "candy",
   },
   data: [
     {
       label: "2005",
-      value: "1200000"
+      value: "1200000",
     },
     {
       label: "2007",
-      value: "1100000"
+      value: "1100000",
     },
     {
       label: "2009",
-      value: "1300000"
+      value: "1300000",
     },
     {
       label: "2011",
-      value: "1150000"
+      value: "1150000",
     },
     {
       label: "2013",
-      value: "800000"
+      value: "800000",
     },
     {
       label: "2015",
-      value: "1520000"
+      value: "1520000",
     },
     {
       label: "2017",
-      value: "1000000"
+      value: "1000000",
     },
 
     {
       label: "2019",
-      value: "1250000"
+      value: "1250000",
     },
     {
       label: "2021",
-      value: "1200000"
+      value: "1200000",
     },
-    
-  ]
+  ],
 };
-
 
 export class statistikat extends React.Component {
   render() {
@@ -231,13 +229,13 @@ export class statistikat extends React.Component {
           dataSource={dataSource}
         />
 
-<ReactFusioncharts
-        type="pie3d"
-        width="100%"
-        height="300"
-        dataFormat="JSON"
-        dataSource={dataSource3}
-      />
+        <ReactFusioncharts
+          type="pie3d"
+          width="100%"
+          height="300"
+          dataFormat="JSON"
+          dataSource={dataSource3}
+        />
 
         <ReactFusioncharts
           type="mscolumn3d"
@@ -247,17 +245,17 @@ export class statistikat extends React.Component {
           dataSource={dataSource2}
         />
 
-<ReactFusioncharts
-        type="line"
-        width="100%"
-        height="30%"
-        dataFormat="JSON"
-        dataSource={dataSource4}
-      />
+        <ReactFusioncharts
+          type="line"
+          width="100%"
+          height="30%"
+          dataFormat="JSON"
+          dataSource={dataSource4}
+        />
 
-<div class="footerS">
+        <div class="footerS">
           <img src={logo} class="imageF"></img>
-            <i>&copy;</i>
+          <i>&copy;</i>
           <p>Republika e Kosovës - Te gjitha te drejtat e rezervuara</p>
         </div>
       </div>
