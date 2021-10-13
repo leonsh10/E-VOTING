@@ -51,16 +51,41 @@ const {userStore: {user, logout}}= useStore();
                 <Link style={navStyle} to="/DeputetetBio">
                     <li>Deputetet</li>
                 </Link>
+
+
+                {
+                   
+                   userStore.isLoggedIn && userStore.getNrLeter ? (
+                    <>
+                
+                    <Link style={navStyle} to="/dashboard">
+                    <li>Dashboard</li>
+                    </Link>
+                    </>
+                    
+                   ): 
+                   
+                   (
+                    <Link to="/">
+                  
+                </Link>
+                   )
+
+               } 
+
+
                 {
                     
                     userStore.isLoggedIn
                     ?
                     (
                         <>
-                <Link style={navStyle} to="/voto">
+                <Link style={navStyle} to="/votimi">
                 <li style={votoStyle}>Voto</li>
                 </Link>
-              
+                     
+                
+
                 <Button onClick={logout} style={logOutStyle} className="logOutButton">Logout</Button>
 
                 </> 
@@ -75,25 +100,7 @@ const {userStore: {user, logout}}= useStore();
             
 
                                
-               {
-                   
-                   userStore.isLoggedIn && userStore.getNrLeter ? (
-                    <>
-                
-                    <Link style={navStyle} to="/dashboard">
-                    <li style={votoStyle}>Voto</li>
-                    </Link>
-                    </>
-                    
-                   ): 
-                   
-                   (
-                    <Link to="/">
-                  
-                </Link>
-                   )
-
-               }
+               
                
 
                 {/* <Menu.Item position='left'>
